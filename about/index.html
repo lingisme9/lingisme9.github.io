@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
-
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="关于, Lingisme9">
@@ -28,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery.min.js"></script>
-
+    
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Lingisme9" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -351,7 +350,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['死亡不是生命的终点，而是生命另一个轮回的开始 for KOBE','Never really desperate, only the lost of the soul'],
+                        strings: ['死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE','Never really desperate, only the lost of the soul'],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
@@ -368,7 +367,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
 </script>
 
 
@@ -616,7 +615,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"C","value":1},{"name":"项目","value":2},{"name":"java","value":1},{"name":"html","value":1},{"name":"python","value":1},{"name":"软件","value":2}],
+                data: [{"name":"C","value":1},{"name":"项目","value":2},{"name":"html","value":1},{"name":"python","value":1},{"name":"java","value":1},{"name":"软件","value":2}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -640,7 +639,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["C","软件开发","笔记","程序设计","资源","破解","java","html","网页开发","项目"]
+                data: ["C","软件开发","笔记","程序设计","资源","破解","项目","html","网页开发","python"]
             }
         ],
         yAxis: [
@@ -841,11 +840,9 @@
             
             
             
-            <a href="/tags/java/">
-                <span class="chip center-align waves-effect waves-light chip-default">java</span>
+            <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                <span class="chip center-align waves-effect waves-light chip-default">项目</span>
             </a>
-            
-            
             
             
             
@@ -861,14 +858,16 @@
             
             
             
-            <a href="/tags/%E9%A1%B9%E7%9B%AE/">
-                <span class="chip center-align waves-effect waves-light chip-default">项目</span>
+            <a href="/tags/python/">
+                <span class="chip center-align waves-effect waves-light chip-default">python</span>
             </a>
             
             
             
-            <a href="/tags/python/">
-                <span class="chip center-align waves-effect waves-light chip-default">python</span>
+            
+            
+            <a href="/tags/java/">
+                <span class="chip center-align waves-effect waves-light chip-default">java</span>
             </a>
             
             
@@ -984,7 +983,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="lingisme-hexo.github.io" target="_blank">坏蛋先生</a>
+            <a href="https://lingisme9.club" target="_blank">坏蛋先生</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1121,6 +1120,13 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
+    </script>
 
 </body>
 
