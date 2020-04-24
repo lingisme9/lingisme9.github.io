@@ -8,7 +8,7 @@
       <link href="/2020/04233337.html"/>
       <url>/2020/04233337.html</url>
       
-        <content type="html"><![CDATA[<h1 id="python操作数据库"><a href="#python操作数据库" class="headerlink" title="python操作数据库"></a>python操作数据库</h1><h2 id="第一章：为什么要数据库-gt-数据量大-方便管理"><a href="#第一章：为什么要数据库-gt-数据量大-方便管理" class="headerlink" title="第一章：为什么要数据库->数据量大,方便管理"></a>第一章：为什么要数据库-&gt;数据量大,方便管理</h2><pre><code>    sqlite:嵌入式数据库,数据库就是一个文件    mysql:开源</code></pre><h3 id="第一节-数据库编程接口"><a href="#第一节-数据库编程接口" class="headerlink" title="第一节:数据库编程接口"></a>第一节:数据库编程接口</h3><pre><code>    OB_API:数据库标准规范：PEP249:API规范</code></pre><h4 id="1-连接对象：connect-函数创建"><a href="#1-连接对象：connect-函数创建" class="headerlink" title="1.连接对象：connect()函数创建"></a>1.连接对象：connect()函数创建</h4><pre><code>    参数：        dsn：数据源名称        user：用户名        password：用户密码        host：主机名        datebase：数据库名</code></pre><h5 id="1-connect的常用方法"><a href="#1-connect的常用方法" class="headerlink" title="1.connect的常用方法"></a>1.connect的常用方法</h5><pre><code>    方法：    cursor():获取游标对象    commit():提交事务    rollback():回滚事务    close():关闭数据库连接</code></pre><h5 id="2-事务：转钱失败-回滚"><a href="#2-事务：转钱失败-回滚" class="headerlink" title="2.事务：转钱失败-回滚"></a>2.事务：转钱失败-回滚</h5><h4 id="2-游标对象cursor"><a href="#2-游标对象cursor" class="headerlink" title="2.游标对象cursor"></a>2.游标对象cursor</h4><pre><code>    方法：    callproc：调用存储过程    close：关闭    execute：执行数据库操作    executemany：批量执行    fechone：获取查询结果下一条    fechmany：获取指定数量    fechall：获取结构集的所有记录    nextset：跳至下一个结果集</code></pre><h4 id="3-先关闭cur再关闭connect"><a href="#3-先关闭cur再关闭connect" class="headerlink" title="3.先关闭cur再关闭connect"></a>3.先关闭cur再关闭connect</h4><h3 id="第二节：创建数据库文件"><a href="#第二节：创建数据库文件" class="headerlink" title="第二节：创建数据库文件"></a>第二节：创建数据库文件</h3><p><img src="/2020/04233337/%5Cimages%5Cpasted-2.png" alt="upload successful"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1 id="python操作数据库"><a href="#python操作数据库" class="headerlink" title="python操作数据库"></a>python操作数据库</h1><h2 id="第一章：为什么要数据库-gt-数据量大-方便管理"><a href="#第一章：为什么要数据库-gt-数据量大-方便管理" class="headerlink" title="第一章：为什么要数据库->数据量大,方便管理"></a>第一章：为什么要数据库-&gt;数据量大,方便管理</h2><pre><code>    sqlite:嵌入式数据库,数据库就是一个文件    mysql:开源</code></pre><h3 id="第一节-数据库编程接口"><a href="#第一节-数据库编程接口" class="headerlink" title="第一节:数据库编程接口"></a>第一节:数据库编程接口</h3><pre><code>    OB_API:数据库标准规范：PEP249:API规范</code></pre><h4 id="1-连接对象：connect-函数创建"><a href="#1-连接对象：connect-函数创建" class="headerlink" title="1.连接对象：connect()函数创建"></a>1.连接对象：connect()函数创建</h4><pre><code>    参数：        dsn：数据源名称        user：用户名        password：用户密码        host：主机名        datebase：数据库名</code></pre><h5 id="1-connect的常用方法"><a href="#1-connect的常用方法" class="headerlink" title="1.connect的常用方法"></a>1.connect的常用方法</h5><pre><code>    方法：    cursor():获取游标对象    commit():提交事务    rollback():回滚事务    close():关闭数据库连接</code></pre><h5 id="2-事务：转钱失败-回滚"><a href="#2-事务：转钱失败-回滚" class="headerlink" title="2.事务：转钱失败-回滚"></a>2.事务：转钱失败-回滚</h5><h4 id="2-游标对象cursor"><a href="#2-游标对象cursor" class="headerlink" title="2.游标对象cursor"></a>2.游标对象cursor</h4><pre><code>    方法：    callproc：调用存储过程    close：关闭    execute：执行数据库操作    executemany：批量执行    fechone：获取查询结果下一条    fechmany：获取指定数量    fechall：获取结构集的所有记录    nextset：跳至下一个结果集</code></pre><h4 id="3-先关闭cur再关闭connect"><a href="#3-先关闭cur再关闭connect" class="headerlink" title="3.先关闭cur再关闭connect"></a>3.先关闭cur再关闭connect</h4><h3 id="第二节：创建数据库文件"><a href="#第二节：创建数据库文件" class="headerlink" title="第二节：创建数据库文件"></a>第二节：创建数据库文件</h3><p><img src="/2020/04233337/%5Cimages%5Cpasted-0.png" alt="upload successful"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       
@@ -70,9 +70,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 程序设计 </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -97,9 +97,9 @@
       
         <tags>
             
-            <tag> 程序设计 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 程序设计 </tag>
             
         </tags>
       
@@ -127,35 +127,6 @@
             <tag> html </tag>
             
             <tag> 网页开发 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>C个人学习笔记</title>
-      <link href="/2020/042012132.html"/>
-      <url>/2020/042012132.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> C </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C </tag>
-            
-            <tag> 笔记 </tag>
-            
-            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -214,6 +185,35 @@
             <tag> 软件开发 </tag>
             
             <tag> 项目 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C个人学习笔记</title>
+      <link href="/2020/042012132.html"/>
+      <url>/2020/042012132.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> C </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 软件开发 </tag>
             
         </tags>
       
