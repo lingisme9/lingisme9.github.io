@@ -11,6 +11,20 @@
         <content type="html"><![CDATA[<h1 id="python爬取网页图片源代码"><a href="#python爬取网页图片源代码" class="headerlink" title="python爬取网页图片源代码"></a>python爬取网页图片源代码</h1><pre><code>import requestsfrom bs4 import BeautifulSoupurl = "    "#发送源代码response = requests.get(url)#response=200:没毛病# print(response)#指定编码集response.encoding = 'utf-8'#获取源码# print(response.text)#把源代码交给beautifulmain_page = BeautifulSoup(response.text,"html.parser")#find：找# 1.find(标签，attrs={属性，值})：找一个# 2.find_all（标签，attrs={属性，值}）：找一堆alist = main_page.find("div",attrs={"class":"TypeList"}).find_all("a",attrs={"class":"TypeBigPics"})for a in alist:    href = a.get("href")    child_resp = requests.get(href) # 请求到子页面    #设置字符集    child_resp.encoding = "utf-8"    child_page = BeautifulSoup(child_resp.text,"html.parser") # 子页面提取内容    img = child_page.find("div",attrs={"id":"ArticleId8"}).find("img")    # print(img.get("src")) #拿到路径    title = child_page.find('div',attrs={"class":"ArticleTitle"}).text    #下载图片    f = open("%s.jpg" % title, mode='wb')    f.write(requests.get(img.get("src")).content)    print(1)</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 图片 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -175,35 +189,6 @@
     
     
     <entry>
-      <title>C语言-学生成绩管理系统</title>
-      <link href="/2020/042013214.html"/>
-      <url>/2020/042013214.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 项目 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C </tag>
-            
-            <tag> 笔记 </tag>
-            
-            <tag> 软件开发 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>C个人学习笔记</title>
       <link href="/2020/042012132.html"/>
       <url>/2020/042012132.html</url>
@@ -254,6 +239,35 @@
             <tag> 软件开发 </tag>
             
             <tag> 项目 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言-学生成绩管理系统</title>
+      <link href="/2020/042013214.html"/>
+      <url>/2020/042013214.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 软件开发 </tag>
             
         </tags>
       
