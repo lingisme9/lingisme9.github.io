@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Hexo后台搭建</title>
+      <title>Hexo文章编辑后台搭建</title>
       <link href="/2020/042423408.html"/>
       <url>/2020/042423408.html</url>
       
@@ -83,9 +83,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 程序设计 </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -110,9 +110,9 @@
       
         <tags>
             
-            <tag> 程序设计 </tag>
-            
             <tag> java </tag>
+            
+            <tag> 程序设计 </tag>
             
         </tags>
       
@@ -177,35 +177,6 @@
     
     
     <entry>
-      <title>C语言-学生成绩管理系统</title>
-      <link href="/2020/042013214.html"/>
-      <url>/2020/042013214.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 项目 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C </tag>
-            
-            <tag> 笔记 </tag>
-            
-            <tag> 软件开发 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>C语言-贪吃蛇</title>
       <link href="/2020/042013548.html"/>
       <url>/2020/042013548.html</url>
@@ -227,6 +198,35 @@
             <tag> 软件开发 </tag>
             
             <tag> 项目 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言-学生成绩管理系统</title>
+      <link href="/2020/042013214.html"/>
+      <url>/2020/042013214.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 软件开发 </tag>
             
         </tags>
       
