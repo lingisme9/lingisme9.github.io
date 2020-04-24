@@ -4,6 +4,137 @@
   
     
     <entry>
+      <title>python操作数据库</title>
+      <link href="/2020/04233337.html"/>
+      <url>/2020/04233337.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="python操作数据库"><a href="#python操作数据库" class="headerlink" title="python操作数据库"></a>python操作数据库</h1><h2 id="第一章：为什么要数据库-gt-数据量大-方便管理"><a href="#第一章：为什么要数据库-gt-数据量大-方便管理" class="headerlink" title="第一章：为什么要数据库->数据量大,方便管理"></a>第一章：为什么要数据库-&gt;数据量大,方便管理</h2><pre><code>    sqlite:嵌入式数据库,数据库就是一个文件    mysql:开源</code></pre><h3 id="第一节-数据库编程接口"><a href="#第一节-数据库编程接口" class="headerlink" title="第一节:数据库编程接口"></a>第一节:数据库编程接口</h3><pre><code>    OB_API:数据库标准规范：PEP249:API规范</code></pre><h4 id="1-连接对象：connect-函数创建"><a href="#1-连接对象：connect-函数创建" class="headerlink" title="1.连接对象：connect()函数创建"></a>1.连接对象：connect()函数创建</h4><pre><code>    参数：        dsn：数据源名称        user：用户名        password：用户密码        host：主机名        datebase：数据库名</code></pre><h5 id="1-connect的常用方法"><a href="#1-connect的常用方法" class="headerlink" title="1.connect的常用方法"></a>1.connect的常用方法</h5><pre><code>    方法：    cursor():获取游标对象    commit():提交事务    rollback():回滚事务    close():关闭数据库连接</code></pre><h5 id="2-事务：转钱失败-回滚"><a href="#2-事务：转钱失败-回滚" class="headerlink" title="2.事务：转钱失败-回滚"></a>2.事务：转钱失败-回滚</h5><h4 id="2-游标对象cursor"><a href="#2-游标对象cursor" class="headerlink" title="2.游标对象cursor"></a>2.游标对象cursor</h4><pre><code>    方法：    callproc：调用存储过程    close：关闭    execute：执行数据库操作    executemany：批量执行    fechone：获取查询结果下一条    fechmany：获取指定数量    fechall：获取结构集的所有记录    nextset：跳至下一个结果集</code></pre><h4 id="3-先关闭cur再关闭connect"><a href="#3-先关闭cur再关闭connect" class="headerlink" title="3.先关闭cur再关闭connect"></a>3.先关闭cur再关闭connect</h4><h3 id="第二节：创建数据库文件"><a href="#第二节：创建数据库文件" class="headerlink" title="第二节：创建数据库文件"></a>第二节：创建数据库文件</h3><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo框架matery主题+github搭建个人博客</title>
+      <link href="/2020/042219999.html"/>
+      <url>/2020/042219999.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="hexo框架-github搭建个人博客"><a href="#hexo框架-github搭建个人博客" class="headerlink" title="hexo框架+github搭建个人博客"></a>hexo框架+github搭建个人博客</h1><p><img src="https://s1.ax1x.com/2020/04/22/JN7gcq.jpg" alt="坏蛋先生"></p><h2 id="一、hexo简介"><a href="#一、hexo简介" class="headerlink" title="一、hexo简介"></a>一、hexo简介</h2><p>1、Hexo 是一个快速、简洁且高效的博客框架。</p><p>2、官网入口及api：<a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a></p><p>3、Hexo 是基于nodejs的框架</p><p>4、可以配置在很多地方：github、gitee、coding等</p><h2 id="二、nodejs安装配置"><a href="#二、nodejs安装配置" class="headerlink" title="二、nodejs安装配置"></a>二、nodejs安装配置</h2><p>1、Hexo是基于nodeJS环境的静态博客，需要用到nodejs中的npm安装（npm安装nodejs时自动安装）</p><p>2、下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a>推荐LTS (说明：LTS为长期支持版，Current为当前最新版)</p><p>3、安装步骤：下载好msi文件,一路next</p><p>4、验证安装:<code>win + r</code>输入 <code>cmd</code> 进入命令行窗口输入如下命令出现版本号安装成功：<br>    <code>$ node -v</code></p><h2 id="创建github仓库"><a href="#创建github仓库" class="headerlink" title="创建github仓库"></a>创建github仓库</h2><p>1、<code>你的用户名.github.io</code>   比如: 如果你的github用户名是<code>test</code>，那么你就新建<code>test.github.io的仓库</code>（必须是你的用户名）</p><p>2、新建<code>readerme</code>文件，什么都不用添加</p><p>3、访问：<code>你的用户名.github.io</code>（不出现404就行）</p><h2 id="三、git安装配置"><a href="#三、git安装配置" class="headerlink" title="三、git安装配置"></a>三、git安装配置</h2><p>1、<a href="https://git-scm.com/" target="_blank" rel="noopener">下载git</a></p><p>2、安装git（除图片这一步选第二个其他都next）<br>3、因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为你github注册的账号和邮箱右键打开git-bash.exe<br><code>$ git config --global user.name "你的github用户名"</code><br><code>$ git config --global user.email "你注册github的邮箱"</code><br><img src="https://s1.ax1x.com/2020/04/22/JNHwx1.png" alt=""></p><p>4、为Github账户设置<code>SSH key</code>(ssh key是加密传输)<br>    首先检查是否生成了秘钥,如果没有生成，那么通过如下命令：<br>    <code>$ ssh-keygen -t rsa -C “你的github注册邮箱”</code>        </p><pre><code>1.是路径确认，直接按回车存默认路径即可2.直接回车键，这里我们不使用密码进行登录, 用密码太麻烦3.直接回车键</code></pre><p><img src="https://s1.ax1x.com/2020/04/22/JNHqiQ.png" alt=""></p><p>5、可以打开你的电脑<code>C:\Users\Administrator.ssh</code>里面找到，生成成功后，可以查看 <code>id_rsa.pub</code> 公钥文件</p><p>6、为github账号配置<code>ssh_key</code>：setting—&gt;SSH and GPG keys<br> <img src="https://s1.ax1x.com/2020/04/22/JNbKoD.png" alt=""></p><p>7、验证是否成功输入如下代码：<br>    <code>$ ssh -T git@github.com</code><br>正常情况下会出现(有警告可以不用管)：<br>    <code>Hi Your Name! You've successfully authenticated, but GitHub does not provide shell access.</code></p><h2 id="四、hexo安装"><a href="#四、hexo安装" class="headerlink" title="四、hexo安装"></a>四、hexo安装</h2><h3 id="这里介绍两种方法安装："><a href="#这里介绍两种方法安装：" class="headerlink" title="这里介绍两种方法安装："></a>这里介绍两种方法安装：</h3><h4 id="1、正常安装"><a href="#1、正常安装" class="headerlink" title="1、正常安装"></a>1、正常安装</h4><p>(1)右键打开<code>git bash here</code>输入如下代码：<br>    <code>$ npm install -g hexo-cli</code><br>如下成功：<br><img src="https://s1.ax1x.com/2020/04/22/JNqxET.png" alt=""><br>(2)查看版本信息输入如下代码：<br>    <code>$ hexo -v</code><br><img src="https://s1.ax1x.com/2020/04/22/JNLM2d.jpg" alt=""><br>(3)初始化hexo程序任意你想要保存博客文件的位置(推荐桌面,文件名随意)输入代码：<br>    <code>$ hexo init myblog</code></p><p>(4)进入<code>myblog</code>查看文件目录</p><p>** node_modules: 依赖包<br>** scaffolds：生成文章的一些模板<br>** source：用来存放你的文章<br>** themes：主题<br>** _config.yml: 博客的配置文件<br>** package.json：项目所需模块项目的配置信息</p><p><img src="https://s1.ax1x.com/2020/04/22/JNLYa8.jpg" alt=""><br>(5)打开hexo,本地查看，文件夹中会出现public的静态博客文件夹<br>a.输入如下命令生成public静态网页文件夹<br><code>$ hexo g</code></p><p>b.输入如下命令，本地查看（在浏览器中输入localhost：4000查看）<br><code>$ hexo s</code> </p><h4 id="2、hexo-init命令无法正常执行安装"><a href="#2、hexo-init命令无法正常执行安装" class="headerlink" title="2、hexo init命令无法正常执行安装"></a>2、<code>hexo init</code>命令无法正常执行安装</h4><p>(1)<a href="https://pan.baidu.com/s/1uaabyjR2ZdnmfjLu1QIBQg" target="_blank" rel="noopener">下载hexo基本文件 提取码：fn26</a></p><pre><code>_config.yml package.json scaffolds/ source/ themes/</code></pre><p>(2)安装依赖<br><code>$ npm install</code><br><code>$ npm install hexo-deployer-git --save  // 文章部署到 git 的模块</code></p><p>(3)输入如下命令生成public文件<br><code>$ hexo g</code></p><p>(4)输入如下命令本地查看<br><code>hexo s</code></p><h2 id="五、测试发布原生主题到github"><a href="#五、测试发布原生主题到github" class="headerlink" title="五、测试发布原生主题到github"></a>五、测试发布原生主题到github</h2><h3 id="1、修改你的根目录-config-yml-配置文件如下："><a href="#1、修改你的根目录-config-yml-配置文件如下：" class="headerlink" title="1、修改你的根目录 _config.yml 配置文件如下："></a>1、修改你的根目录 _config.yml 配置文件如下：</h3><pre><code># 注意是git开头的仓库地址# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy:  type: git  repo: git@github.com:flyoob/flyoob.github.io.git  branch: master</code></pre><p>如何获取仓库地址<br><img src="https://s1.ax1x.com/2020/04/22/JUFycV.png" alt=""><br><img src="https://s1.ax1x.com/2020/04/22/JUFqBD.png" alt=""></p><h3 id="2、修改url：你的github用户名-github-io"><a href="#2、修改url：你的github用户名-github-io" class="headerlink" title="2、修改url：你的github用户名.github.io"></a>2、修改url：<code>你的github用户名.github.io</code></h3><p><img src="https://s1.ax1x.com/2020/04/22/JUFESx.png" alt="">也可以是你自己绑定的域名</p><h3 id="3、部署"><a href="#3、部署" class="headerlink" title="3、部署"></a>3、部署</h3><pre><code>hexo clean   // 清除缓存 网页正常情况下可以忽略此条命令hexo g       // 生成静态网页hexo d       // 开始部署</code></pre><h3 id="2、访问：你的用户名-github-io查看"><a href="#2、访问：你的用户名-github-io查看" class="headerlink" title="2、访问：你的用户名.github.io查看"></a>2、访问：<code>你的用户名.github.io</code>查看</h3><h2 id="六、下载matery主题"><a href="#六、下载matery主题" class="headerlink" title="六、下载matery主题"></a>六、下载matery主题</h2><h4 id="matery"><a href="#matery" class="headerlink" title="matery"></a><a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">matery</a></h4><h2 id="七、配置matery主题"><a href="#七、配置matery主题" class="headerlink" title="七、配置matery主题"></a>七、配置matery主题</h2><h3 id="1-解压缩后，将hexo-theme-matery的文件夹复制到你-Hexo-的themes文件夹中即可。"><a href="#1-解压缩后，将hexo-theme-matery的文件夹复制到你-Hexo-的themes文件夹中即可。" class="headerlink" title="(1) 解压缩后，将hexo-theme-matery的文件夹复制到你 Hexo 的themes文件夹中即可。"></a>(1) 解压缩后，将<code>hexo-theme-matery</code>的文件夹复制到你 <code>Hexo</code> 的<code>themes</code>文件夹中即可。</h3><h3 id="2-切换主题"><a href="#2-切换主题" class="headerlink" title="(2) 切换主题"></a>(2) 切换主题</h3><pre><code>    修改 `Hexo `根目录下的` _config.yml `的 `theme `的值：`theme: hexo-theme-matery`</code></pre><h3 id="3-config-yml文件的其它修改建议"><a href="#3-config-yml文件的其它修改建议" class="headerlink" title="(3)_config.yml文件的其它修改建议:"></a>(3)<code>_config.yml</code>文件的其它修改建议:</h3><pre><code>请修改 _config.yml 的 url 的值为你的网站主 `URL（如：http://xxx.github.io）`。建议修改两个 `per_page `的分页条数值为 6 的倍数，如：12、18 等，这样文章列表在各个屏幕下都能较好的显示。如果你是中文用户，则建议修改 language 的值为` zh-CN`</code></pre><h3 id="4-新建分类-categories-页-注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签"><a href="#4-新建分类-categories-页-注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签" class="headerlink" title="(4)新建分类 categories 页(注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签)"></a>(4)新建分类 <code>categories</code> 页(<code>注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签</code>)</h3><p><code>categories</code>页是用来展示所有分类的页面，如果在你的博客 <code>source</code>目录下还没有 <code>categories/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "categories"</code><br>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>至少需要以下内容：</p><pre><code>---title: categoriesdate: 2018-09-30 17:25:30type: "categories"layout: "categories"---</code></pre><h3 id="5-新建标签-tags-页"><a href="#5-新建标签-tags-页" class="headerlink" title="(5)新建标签 tags 页"></a>(5)新建标签 tags 页</h3><p><code>tags</code> 页是用来展示所有标签的页面，如果在你的博客 <code>source</code>目录下还没有<code>tags/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "tags"</code><br>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p><pre><code>---title: tagsdate: 2018-09-30 18:23:38type: "tags"layout: "tags"---</code></pre><h3 id="6-新建关于我-about-页"><a href="#6-新建关于我-about-页" class="headerlink" title="(6)新建关于我 about 页"></a>(6)新建关于我 <code>about</code> 页</h3><p>about 页是用来展示关于我和我的博客信息的页面，如果在你的博客 <code>source</code>目录下还没有<code>about/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "about"</code><br>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p><pre><code>---title: aboutdate: 2018-09-30 17:25:30type: "about"layout: "about"---</code></pre><h3 id="7-新建友情连接-friends页（可选的）"><a href="#7-新建友情连接-friends页（可选的）" class="headerlink" title="(7)新建友情连接 friends页（可选的）"></a>(7)新建友情连接 <code>friends</code>页（可选的）</h3><p><code>friends</code> 页是用来展示友情连接信息的页面，如果在你的博客 source 目录下还没有<code>friends/index.md</code> 文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "friends"</code><br>编辑你刚刚新建的页面文件 <code>/source/friends/index.md</code>至少需要以下内容：</p><pre><code>---title: friendsdate: 2018-12-12 21:25:30type: "friends"layout: "friends"---</code></pre><p>同时，在你的博客 <code>source</code> 目录下新建 <code>_data</code>目录，在 <code>_data</code>目录中新建 <code>friends.json</code> 文件，文件内容如下所示：</p><pre><code>[{    "avatar": "http://image.luokangyuan.com/1_qq_27922023.jpg",    "name": "码酱",    "introduction": "我不是大佬，只是在追寻大佬的脚步",    "url": "http://luokangyuan.com/",    "title": "前去学习"}, {    "avatar": "http://image.luokangyuan.com/4027734.jpeg",    "name": "闪烁之狐",    "introduction": "编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬",    "url": "https://blinkfox.github.io/",    "title": "前去学习"}, {    "avatar": "http://image.luokangyuan.com/avatar.jpg",    "name": "ja_rome",    "introduction": "平凡的脚步也可以走出伟大的行程",    "url": "ttps://me.csdn.net/jlh912008548",    "title": "前去学习"}]</code></pre><h3 id="8-代码高亮"><a href="#8-代码高亮" class="headerlink" title="(8)代码高亮"></a>(8)代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 hexo-prism-plugin 的 Hexo 插件来做代码高亮，安装命令如下：<br><code>npm i -S hexo-prism-plugin</code><br>然后，修改 <code>Hexo</code>根目录下 <code>_config.yml</code> 文件中<code>highlight.enable</code> 的值为 <code>false</code>，并新增<code>prism</code> 插件相关的配置，主要配置如下：</p><pre><code>highlight:  enable: falseprism_plugin:  mode: 'preprocess'    # realtime/preprocess  theme: 'tomorrow'  line_number: false    # default false  custom_css:</code></pre><h3 id="9-搜索"><a href="#9-搜索" class="headerlink" title="(9)搜索"></a>(9)搜索</h3><p>本主题中还使用到了 <code>hexo-generator-search</code> 的 <code>Hex</code>o 插件来做内容搜索，安装命令如下：<br><code>npm install hexo-generator-search --save</code><br>在 <code>Hexo</code>根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p><pre><code>search:  path: search.xml  field: post</code></pre><h3 id="10-中文链接转拼音（可选的）"><a href="#10-中文链接转拼音（可选的）" class="headerlink" title="(10)中文链接转拼音（可选的）"></a>(10)中文链接转拼音（可选的）</h3><p>如果你的文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。我们可以用<code>hexo-permalink-pinyin Hexo</code>插件使在生成文章时生成中文拼音的永久链接。<br>安装命令如下：<br><code>npm i hexo-permalink-pinyin --save</code><br>在 <code>Hexo</code>根目录下的<code>_config.yml</code>文件中，新增以下的配置项：</p><pre><code>permalink_pinyin:  enable: true  separator: '-' # default: '-'</code></pre><h3 id="11-文章字数统计插件（可选的）"><a href="#11-文章字数统计插件（可选的）" class="headerlink" title="(11)文章字数统计插件（可选的）"></a>(11)文章字数统计插件（可选的）</h3><p>如果你想要在文章中显示文章字数、阅读时长信息，可以安装 <code>hexo-wordcount</code>插件。<br>安装命令如下：<br><code>npm i --save hexo-wordcount</code><br>然后只需在本主题下的 <code>_config.yml</code>文件中，激活以下配置项即可：</p><pre><code>wordCount:  enable: false # 将这个值设置为 true 即可.  postWordCount: true  min2read: true  totalCount: true</code></pre><h3 id="12-添加-RSS-订阅支持（可选的）"><a href="#12-添加-RSS-订阅支持（可选的）" class="headerlink" title="(12)添加 RSS 订阅支持（可选的）"></a>(12)添加 RSS 订阅支持（可选的）</h3><p>本主题中还使用到了 <code>hexo-generator-feed</code> 的 <code>Hexo</code> 插件来做<code>RSS</code>，安装命令如下：<br><code>npm install hexo-generator-feed --save</code><br>在<code>Hexo</code>根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p><pre><code>feed:  type: atom  path: atom.xml  limit: 20  hub:  content:  content_limit: 140  content_limit_delim: ' '  order_by: -date</code></pre><p>执行<code>hexo clean &amp;&amp; hexo g</code> 重新生成博客文件，然后在 <code>public</code> 文件夹中即可看到 <code>atom.xml</code>文件，说明你已经安装成功了。</p><h3 id="13-修改社交链接-主题中本来就有不用复制粘贴，源代码中修改即可"><a href="#13-修改社交链接-主题中本来就有不用复制粘贴，源代码中修改即可" class="headerlink" title="(13)修改社交链接(主题中本来就有不用复制粘贴，源代码中修改即可)"></a>(13)修改社交链接(<code>主题中本来就有不用复制粘贴，源代码中修改即可</code>)</h3><p>在主题的 _config.yml 文件中，默认支持 QQ、GitHub 和邮箱的配置，你可以在主题文件的 <code>/layout/_partial/social-link.ejs</code> 文件中，新增、修改你需要的社交链接地址，增加链接可参考如下代码：</p><pre><code>&lt;a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"&gt;    &lt;i class="fa fa-github"&gt;&lt;/i&gt;&lt;/a&gt;</code></pre><p>其中，社交图标（如：<code>fa-github</code>）你可以在<code>Font Awesome</code>中搜索找到。以下是常用社交图标的标识，供你参考：</p><pre><code>    Facebook: fa-facebook    Twitter: fa-twitter    Google-plus: fa-google-plus    Linkedin: fa-linkedin    Tumblr: fa-tumblr    Medium: fa-medium    Slack: fa-slack    新浪微博: fa-weibo    微信: fa-wechat    QQ: fa-qq    注意: 本主题中使用的 Font Awesome 版本为 4.7.0。</code></pre><h3 id="14-修改打赏的二维码图片"><a href="#14-修改打赏的二维码图片" class="headerlink" title="(14)修改打赏的二维码图片"></a>(14)修改打赏的二维码图片</h3><p>在主题文件的 <code>source/medias/reward</code> 文件中，你可以替换成你的的微信和支付宝的打赏二维码图片。</p><h3 id="15-配置音乐播放器（可选的）"><a href="#15-配置音乐播放器（可选的）" class="headerlink" title="(15)配置音乐播放器（可选的）"></a>(15)配置音乐播放器（可选的）</h3><p>要支持音乐播放，就必须开启音乐的播放配置和音乐数据的文件。</p><p>首先，在你的博客 <code>source</code> 目录下的 <code>_data</code> 目录（没有的话就新建一个）中新建 <code>musics.json</code> 文件，文件内容如下所示：</p><pre><code>[{    "name": "五月雨变奏电音",    "artist": "AnimeVibe",    "url": "http://xxx.com/music1.mp3",    "cover": "http://xxx.com/music-cover1.png"}, {    "name": "Take me hand",    "artist": "DAISHI DANCE,Cecile Corbel",    "url": "/medias/music/music2.mp3",    "cover": "/medias/music/cover2.png"}, {    "name": "Shape of You",    "artist": "J.Fla",    "url": "http://xxx.com/music3.mp3",    "cover": "http://xxx.com/music-cover3.png"}]</code></pre><p>注：以上 <code>JSON</code>中的属性：<code>name、artist、url、cover</code> 分别表示音乐的名称、作者、音乐文件地址、音乐封面。<br>然后，在主题的 <code>_config.yml</code>配置文件中激活配置即可：</p><pre><code># 是否在首页显示音乐.music:  enable: true  showTitle: false  title: 听听音乐  fixed: false # 是否开启吸底模式  autoplay: false # 是否自动播放  theme: '#42b983'  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'  order: 'list' # 音频循环顺序, 可选值: 'list', 'random'  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'  volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效  listFolded: false # 列表默认折叠  listMaxHeight: # 列表最大高度</code></pre><h3 id="16-文章-Front-matter介绍-阅读文章时显示的信息"><a href="#16-文章-Front-matter介绍-阅读文章时显示的信息" class="headerlink" title="(16)文章 Front-matter介绍(阅读文章时显示的信息)"></a>(16)文章 <code>Front-matter</code>介绍(阅读文章时显示的信息)</h3><pre><code>---title: typora-vue-theme主题介绍date: 2018-09-07 09:25:00author: 赵奇img: /source/images/xxx.jpgtop: truecover: truecoverImg: /images/1.jpgpassword: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92toc: falsemathjax: falsesummary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要categories: Markdowntags:  - Typora  - Markdown---</code></pre><h2 id="八、优化matery主题"><a href="#八、优化matery主题" class="headerlink" title="八、优化matery主题"></a>八、优化matery主题</h2><h3 id="1-修改主题颜色"><a href="#1-修改主题颜色" class="headerlink" title="(1)修改主题颜色"></a>(1)修改主题颜色</h3><p>在主题文件的<code>/source/css/matery.css</code>文件中，搜索 <code>.bg-color</code> 来修改背景颜色：</p><pre><code>/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */.bg-color {    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);}@-webkit-keyframes rainbow {   /* 动态切换背景颜色. */}@keyframes rainbow {    /* 动态切换背景颜色. */}</code></pre><h3 id="2-修改-banner图和文章特色图-只要名字命名一样就行，图过大加载慢，图小不清晰图片批量压缩（密码：yvb5）"><a href="#2-修改-banner图和文章特色图-只要名字命名一样就行，图过大加载慢，图小不清晰图片批量压缩（密码：yvb5）" class="headerlink" title="(2)修改 banner图和文章特色图(只要名字命名一样就行，图过大加载慢，图小不清晰图片批量压缩（密码：yvb5）)"></a>(2)修改 <code>banner</code>图和文章特色图(只要名字命名一样就行，图过大加载慢，图小不清晰<a href="https://pan.baidu.com/s/1DlxWnHm5GLiopsJ21wkKyg" target="_blank" rel="noopener">图片批量压缩（密码：yvb5）</a>)</h3><p>你可以直接在 <code>/source/medias/banner</code>文件夹中更换你喜欢的 <code>banner</code> 图片，主题代码中是每天动态切换一张，只需 7 张即可。如果你会 <code>JavaScript</code> 代码，可以修改成你自己喜欢切换逻辑，如：随机切换等，</p><p><code>banner</code>切换的代码位置在 /<code>layout/_partial/bg-cover-content.ejs</code>文件的 <code>&lt;script&gt;&lt;/script&gt;</code> 代码中：</p><p><code>$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');</code></p><p>在<code>/source/medias/featureimages</code> 文件夹中默认有 24 张特色图片，你可以再增加或者减少，并需要在 _config.yml 做同步修改。</p><h3 id="3-添加emoji表情支持（可选的）"><a href="#3-添加emoji表情支持（可选的）" class="headerlink" title="(3)添加emoji表情支持（可选的）"></a>(3)添加emoji表情支持（可选的）</h3><p>本主题新增了对emoji表情的支持，使用到了 hexo-filter-github-emojis 的 Hexo 插件来支持 emoji表情的生成，把对应的markdown emoji语法（::,例如：:smile:）转变成会跳跃的emoji表情，安装命令如下：<br><code>npm install hexo-filter-github-emojis --save</code><br>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p><pre><code>githubEmojis:  enable: true  className: github-emoji  inject: true  styles:  customEmojis:</code></pre><h3 id="4-给文章添加valine评论功能"><a href="#4-给文章添加valine评论功能" class="headerlink" title="(4)给文章添加valine评论功能"></a>(4)给文章添加valine评论功能</h3><p>进入主题文件的配置文件themes\matery_config.yml启用valine，其中需要设置Appid和appkey。此两项需要到<br><a href="https://www.leancloud.cn/" target="_blank" rel="noopener">Leancloud官网</a><br><img src="https://s1.ax1x.com/2020/04/22/JNz2i6.jpg" alt=""><br>注册和身份验证通过后，新建应用，名字随意起。<br><img src="https://s1.ax1x.com/2020/04/22/JNzjSS.jpg" alt=""></p><p>再将信息填入</p><pre><code>valine:enable: trueappid: your app idappkey: your app keynotify: false # mail notifier , https://github.com/xCss/Valine/wikiverify: false # Verification codeplaceholder: just so soguest_info: nick,mail,linkpageSize: 10</code></pre><h3 id="5-修改头部幻灯片滤镜颜色和透明度"><a href="#5-修改头部幻灯片滤镜颜色和透明度" class="headerlink" title="(5)修改头部幻灯片滤镜颜色和透明度"></a>(5)修改头部幻灯片滤镜颜色和透明度</h3><p>打开matery.css，找到450行左右(建议直接注释掉，不好看)<br><img src="https://s1.ax1x.com/2020/04/22/JUSNmd.png" alt=""></p><h3 id="6-添加樱花飘落效果"><a href="#6-添加樱花飘落效果" class="headerlink" title="(6)添加樱花飘落效果"></a>(6)添加樱花飘落效果</h3><p>在<code>themes/matery/source/js</code>目录下新建<code>sakura.js</code>文件，打开这个网址<a href="https://cdn.jsdelivr.net/gh/baifeng66/cdn@1.1/source/js/sakura.js" target="_blank" rel="noopener">传送门</a>，将内容复制粘贴到sakura.js即可。</p><p>然后再themes/matery/layout/layout.ejs文件内添加下面的内容：</p><pre><code>&lt;script type="text/javascript"&gt;//只在桌面版网页启用特效var windowWidth = $(window).width();if (windowWidth &gt; 768) {    document.write('&lt;script type="text/javascript" src="/js/sakura.js"&gt;&lt;\/script&gt;');}&lt;/script&gt;</code></pre><h3 id="7-添加雪花飘落效果"><a href="#7-添加雪花飘落效果" class="headerlink" title="(7)添加雪花飘落效果"></a>(7)添加雪花飘落效果</h3><p>在<code>themes/matery/source/js</code>目录下新建<code>snow.js</code>文件，打开这个网址<a href="https://cdn.jsdelivr.net/gh/baifeng66/cdn@1.1/source/js/snow.js" target="_blank" rel="noopener">传送门</a>，将内容复制粘贴到<code>snow.js</code>即可。<br>然后再<code>themes/matery/layout/layout.ejs</code>文件内添加下面的内容：</p><pre><code>&lt;script src="/js/snow.js"&gt;&lt;/script&gt;</code></pre><h3 id="8-文章生成永久链接-提交github时会自动生成"><a href="#8-文章生成永久链接-提交github时会自动生成" class="headerlink" title="(8)文章生成永久链接(提交github时会自动生成)"></a>(8)文章生成永久链接(提交github时会自动生成)</h3><p>主题默认的文章链接配置是<br><code>permalink: :year/:month/:day/:title</code><br>这种生成的链接地址很长，文章版权的链接地址会出现一大串字符编码，一点也不好看。因此需要修改文章生成链接的格式。<br>首先再根目录下执行下面的命令：<br><code>npm install hexo-abbrlink --save</code><br>然后再根目录yml文件下添加如下配置：</p><pre><code>abbrlink:    alg: crc16   #算法： crc16(default) and crc32    rep: hex     #进制： dec(default) and hex: dec #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制</code></pre><p>然后再根目录yml文件下<code>permalink</code>的值修改为：<br><code>permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink</code><br>生成完后，原md文件的Front-matter 内会增加abbrlink 字段，值为生成的ID 。这个字段确保了在我们修改了Front-matter 内的博客标题title或创建日期date字段之后而不会改变链接地址。</p><h2 id="提交github（剧终）"><a href="#提交github（剧终）" class="headerlink" title="提交github（剧终）"></a>提交github（剧终）</h2><pre><code>hexo clean   // 清除缓存 网页正常情况下可以忽略此条命令hexo g       // 生成静态网页hexo d       // 开始部署</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python学习笔记</title>
+      <link href="/2020/042254657.html"/>
+      <url>/2020/042254657.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 程序设计 </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java学习笔记</title>
+      <link href="/2020/042247896.html"/>
+      <url>/2020/042247896.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 程序设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>html学习笔记</title>
+      <link href="/2020/042250736.html"/>
+      <url>/2020/042250736.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> html </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+            <tag> 网页开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C个人学习笔记</title>
       <link href="/2020/042012132.html"/>
       <url>/2020/042012132.html</url>
@@ -149,87 +280,6 @@
             <tag> VIP </tag>
             
             <tag> 素材库 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>java学习笔记</title>
-      <link href="/2020/042047896.html"/>
-      <url>/2020/042047896.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 程序设计 </tag>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python学习笔记</title>
-      <link href="/2020/042054657.html"/>
-      <url>/2020/042054657.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> 程序设计 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>html学习笔记</title>
-      <link href="/2020/042050736.html"/>
-      <url>/2020/042050736.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> html </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> html </tag>
-            
-            <tag> 网页开发 </tag>
             
         </tags>
       

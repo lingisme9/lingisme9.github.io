@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python学习笔记, Lingisme9">
+    <meta name="keywords" content="python操作数据库, Lingisme9">
     <meta name="description" content="死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python学习笔记 | Lingisme9</title>
+    <title>python操作数据库 | Lingisme9</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -335,7 +335,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python学习笔记</h1>
+                    <h1 class="description center-align post-title">python操作数据库</h1>
                 </div>
             </div>
         </div>
@@ -456,23 +456,14 @@
                                 <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">程序设计</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/python/" class="post-category">
-                                python
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -481,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-23
                 </div>
                 
 
@@ -497,7 +488,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="python操作数据库"><a href="#python操作数据库" class="headerlink" title="python操作数据库"></a>python操作数据库</h1><h2 id="第一章：为什么要数据库-gt-数据量大-方便管理"><a href="#第一章：为什么要数据库-gt-数据量大-方便管理" class="headerlink" title="第一章：为什么要数据库->数据量大,方便管理"></a>第一章：为什么要数据库-&gt;数据量大,方便管理</h2><pre><code>    sqlite:嵌入式数据库,数据库就是一个文件
+    mysql:开源</code></pre><h3 id="第一节-数据库编程接口"><a href="#第一节-数据库编程接口" class="headerlink" title="第一节:数据库编程接口"></a>第一节:数据库编程接口</h3><pre><code>    OB_API:数据库标准规范：PEP249:API规范</code></pre><h4 id="1-连接对象：connect-函数创建"><a href="#1-连接对象：connect-函数创建" class="headerlink" title="1.连接对象：connect()函数创建"></a>1.连接对象：connect()函数创建</h4><pre><code>    参数：
+        dsn：数据源名称
+        user：用户名
+        password：用户密码
+        host：主机名
+        datebase：数据库名</code></pre><h5 id="1-connect的常用方法"><a href="#1-connect的常用方法" class="headerlink" title="1.connect的常用方法"></a>1.connect的常用方法</h5><pre><code>    方法：
+    cursor():获取游标对象
+    commit():提交事务
+    rollback():回滚事务
+    close():关闭数据库连接</code></pre><h5 id="2-事务：转钱失败-回滚"><a href="#2-事务：转钱失败-回滚" class="headerlink" title="2.事务：转钱失败-回滚"></a>2.事务：转钱失败-回滚</h5><h4 id="2-游标对象cursor"><a href="#2-游标对象cursor" class="headerlink" title="2.游标对象cursor"></a>2.游标对象cursor</h4><pre><code>    方法：
+    callproc：调用存储过程
+    close：关闭
+    execute：执行数据库操作
+    executemany：批量执行
+    fechone：获取查询结果下一条
+    fechmany：获取指定数量
+    fechall：获取结构集的所有记录
+    nextset：跳至下一个结果集</code></pre><h4 id="3-先关闭cur再关闭connect"><a href="#3-先关闭cur再关闭connect" class="headerlink" title="3.先关闭cur再关闭connect"></a>3.先关闭cur再关闭connect</h4><h3 id="第二节：创建数据库文件"><a href="#第二节：创建数据库文件" class="headerlink" title="第二节：创建数据库文件"></a>第二节：创建数据库文件</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -540,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lingisme9.club/2020/042054657.html">https://lingisme9.club/2020/042054657.html</a>
+                    <a href="https://lingisme9.club/2020/04233337.html">https://lingisme9.club/2020/04233337.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -582,8 +591,8 @@
                                     <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">程序设计</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
                                 </a>
                             
                         </div>
@@ -1014,50 +1023,49 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/042047896.html">
+                <a href="/2020/04233337.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java学习笔记">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python操作数据库">
                         
-                        <span class="card-title">java学习笔记</span>
+                        <span class="card-title">python操作数据库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人学习java笔记
+                            python操作数据库第一章：为什么要数据库-&gt;数据量大,方便管理    sqlite:嵌入式数据库,数据库就是一个文件
+    mysql:开源第一节:数据库编程接口    OB_API:数据库标准规范：PEP249:API规范1.
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            坏蛋先生
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">程序设计</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
@@ -1071,31 +1079,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/042050736.html">
+                <a href="/2020/042219999.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="html学习笔记">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo框架matery主题+github搭建个人博客">
                         
-                        <span class="card-title">html学习笔记</span>
+                        <span class="card-title">hexo框架matery主题+github搭建个人博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人学习html笔记
+                            hexo个人博客搭建
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/html/" class="post-category">
-                                    html
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
                                 </a>
                             
                             
@@ -1105,12 +1113,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">html</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">网页开发</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
                     </a>
                     
                 </div>
