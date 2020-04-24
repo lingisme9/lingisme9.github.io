@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo文章编辑后台搭建, Lingisme9">
+    <meta name="keywords" content="python爬取网页图片, Lingisme9">
     <meta name="description" content="死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo文章编辑后台搭建 | Lingisme9</title>
+    <title>python爬取网页图片 | Lingisme9</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo文章编辑后台搭建</h1>
+                    <h1 class="description center-align post-title">python爬取网页图片</h1>
                 </div>
             </div>
         </div>
@@ -450,29 +450,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%90%8E%E5%8F%B0/">
-                                <span class="chip bg-color">后台</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/hexo/" class="post-category">
-                                hexo
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -497,39 +480,44 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hexo博客后台搭建"><a href="#Hexo博客后台搭建" class="headerlink" title="Hexo博客后台搭建"></a>Hexo博客后台搭建</h1><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28208212&amp;auto=1&amp;height=66"></iframe>
+                <h1 id="python爬取网页图片源代码"><a href="#python爬取网页图片源代码" class="headerlink" title="python爬取网页图片源代码"></a>python爬取网页图片源代码</h1><pre><code>import requests
+from bs4 import BeautifulSoup
 
-<h2 id="一、插件介绍"><a href="#一、插件介绍" class="headerlink" title="一、插件介绍"></a>一、插件介绍</h2><pre><code> hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。如果你使用的是非静态托管服务器，比如自己买的主机搭建的hexo，那么一定要设置hexo-admin 的密码，否则谁都可以编辑你的文章。</code></pre><h2 id="二、实例"><a href="#二、实例" class="headerlink" title="二、实例"></a>二、实例</h2><p><img src="https://s1.ax1x.com/2020/04/24/JDZBTI.png" alt="JDZBTI.png"></p>
-<p><img src="https://s1.ax1x.com/2020/04/24/JDeicD.png" alt="JDeicD.png"></p>
-<h2 id="三、插件安装"><a href="#三、插件安装" class="headerlink" title="三、插件安装"></a>三、插件安装</h2><p>1.首先进入hexo创建的博客项目的根目录下，执行</p>
-<pre><code>npm install --save hexo-admin</code></pre><p>2.运行下列命令启动hexo-admin </p>
-<pre><code>hexo server -d</code></pre><p>3.打开<code>http://localhost:4000/admin/</code>就可以访问到hexo-admin管理页面了。</p>
-<p><img src="https://s1.ax1x.com/2020/04/24/JDZBTI.png" alt="JDZBTI.png"></p>
-<h2 id="四、密码保护"><a href="#四、密码保护" class="headerlink" title="四、密码保护"></a>四、密码保护</h2><p>打开<code>setting</code>，点击<code>Setup authentification here</code>输入用户名，密码，密钥，<code>设置完后下面会自动生成配置文件</code>，复制加在hexo根目录下的_config.yml中：</p>
-<pre><code>admin:
-  username: myfavoritename
-  password_hash: be121740bf988b2225a313fa1f107ca1
-  secret: a secret something
-</code></pre><p><img src="https://s1.ax1x.com/2020/04/24/JDm9Vs.png" alt="JDm9Vs.png"></p>
-<p>重启<code>hexo</code>，就可以看到登录页面了</p>
-<h2 id="五、发布文章"><a href="#五、发布文章" class="headerlink" title="五、发布文章"></a>五、发布文章</h2><p><img src="https://s1.ax1x.com/2020/04/24/JDQDKK.png" alt="JDQDKK.png"><br>1、进入后台之后点击<code>Deploy</code>，里面的<code>Deploy</code>按钮是用来执行发布脚本的，所以我们先在博客<code>根目录</code>下新建<code>hexo-pubish.bat</code>(名字任意后缀<code>bat</code>)文件</p>
-<p><img src="https://s1.ax1x.com/2020/04/24/JDmuZ9.png" alt="JDmuZ9.png"></p>
-<p>然后填入如下代码</p>
-<pre><code>hexo g -d
-</code></pre><p>然后在_config.yml中的admin下添加<code>deployCommand: 'hexo-pubish.bat'</code>(和之前创建的文件名相同)</p>
-<pre><code>admin:
-  username: myfavoritename
-  password_hash: be121740bf988b2225a313fa1f107ca1
-  secret: a secret something
-  deployCommand: 'hexo-pubish.bat'
-</code></pre><p>设置发布执行的脚本，点击<code>Deploy</code>就会执行这个命令并提交到GitHub上。</p>
-<p><img src="https://s1.ax1x.com/2020/04/24/JDnzAs.png" alt="JDnzAs.png"></p>
-<p>开始提交：<br><img src="https://s1.ax1x.com/2020/04/24/JDKZM8.png" alt="JDKZM8.png"></p>
-<p>成功如下：<br><img src="https://s1.ax1x.com/2020/04/24/JDKDRx.png" alt="JDKDRx.png"></p>
-<h2 id="六、其他建议：添加一键本地运行"><a href="#六、其他建议：添加一键本地运行" class="headerlink" title="六、其他建议：添加一键本地运行"></a>六、其他建议：添加一键本地运行</h2><p>根目录下新建文件<code>hexo-s.bat</code><br><img src="https://s1.ax1x.com/2020/04/24/JDuljO.png" alt="JDuljO.png"></p>
-<p>输入如下代码：</p>
-<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s </code></pre><p>这样双击<code>hexo-s.bat</code>就可以直接本地查看了，很方便<br><img src="https://s1.ax1x.com/2020/04/24/JDuIrF.png" alt="JDuIrF.png"></p>
-<script>
+url = "    "
+
+#发送源代码
+response = requests.get(url)
+#response=200:没毛病
+# print(response)
+
+#指定编码集
+response.encoding = 'utf-8'
+
+#获取源码
+# print(response.text)
+
+#把源代码交给beautiful
+main_page = BeautifulSoup(response.text,"html.parser")
+
+#find：找
+# 1.find(标签，attrs={属性，值})：找一个
+# 2.find_all（标签，attrs={属性，值}）：找一堆
+
+alist = main_page.find("div",attrs={"class":"TypeList"}).find_all("a",attrs={"class":"TypeBigPics"})
+
+for a in alist:
+    href = a.get("href")
+    child_resp = requests.get(href) # 请求到子页面
+    #设置字符集
+    child_resp.encoding = "utf-8"
+    child_page = BeautifulSoup(child_resp.text,"html.parser") # 子页面提取内容
+    img = child_page.find("div",attrs={"id":"ArticleId8"}).find("img")
+    # print(img.get("src")) #拿到路径
+    title = child_page.find('div',attrs={"class":"ArticleTitle"}).text
+    #下载图片
+    f = open("%s.jpg" % title, mode='wb')
+    f.write(requests.get(img.get("src")).content)
+    print(1)</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -572,7 +560,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lingisme9.club/2020/042423408.html">https://lingisme9.club/2020/042423408.html</a>
+                    <a href="https://lingisme9.club/2020/042463275.html">https://lingisme9.club/2020/042463275.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -609,15 +597,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%90%8E%E5%8F%B0/">
-                                    <span class="chip bg-color">后台</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1046,9 +1026,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/042463275.html">
                     <div class="card-image">
@@ -1073,9 +1054,9 @@ response = requests.get(url)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1084,6 +1065,7 @@ response = requests.get(url)
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1094,31 +1076,35 @@ response = requests.get(url)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04233337.html">
+                <a href="/2020/042423408.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python操作数据库">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Hexo文章编辑后台搭建">
                         
-                        <span class="card-title">python操作数据库</span>
+                        <span class="card-title">Hexo文章编辑后台搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python操作数据库
-第一章：为什么要数据库-&gt;数据量大,方便管理    sqlite:嵌入式数据库,数据库就是一个文件
-    mysql:开源第一节:数据库编程接口    OB_API:数据库标准规范：PEP249:API规范1
+                            Hexo博客后台搭建
+
+一、插件介绍 hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            坏蛋先生
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1126,12 +1112,12 @@ response = requests.get(url)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                        <span class="chip bg-color">后台</span>
                     </a>
                     
                 </div>
