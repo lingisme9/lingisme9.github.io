@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lingisme9.club/"/>
-  <updated>2020-04-27T07:58:57.411Z</updated>
+  <updated>2020-04-28T00:30:21.437Z</updated>
   <id>https://lingisme9.club/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title> VIP视频解析网站源码（放到coding就可用）</title>
     <link href="https://lingisme9.club/2020/042718991.html"/>
     <id>https://lingisme9.club/2020/042718991.html</id>
-    <published>2020-04-27T07:50:01.000Z</published>
-    <updated>2020-04-27T07:58:57.411Z</updated>
+    <published>2020-04-27T07:50:00.000Z</published>
+    <updated>2020-04-28T00:30:21.437Z</updated>
     
     <summary type="html">
     
@@ -37,6 +37,10 @@
     
     
     
+      <category term="VIP" scheme="https://lingisme9.club/tags/VIP/"/>
+    
+      <category term="源码" scheme="https://lingisme9.club/tags/%E6%BA%90%E7%A0%81/"/>
+    
   </entry>
   
   <entry>
@@ -44,7 +48,7 @@
     <link href="https://lingisme9.club/2020/042463275.html"/>
     <id>https://lingisme9.club/2020/042463275.html</id>
     <published>2020-04-24T15:42:00.000Z</published>
-    <updated>2020-04-24T15:47:40.408Z</updated>
+    <updated>2020-04-28T00:28:52.646Z</updated>
     
     <summary type="html">
     
@@ -102,7 +106,7 @@
     <link href="https://lingisme9.club/2020/04233337.html"/>
     <id>https://lingisme9.club/2020/04233337.html</id>
     <published>2020-04-23T07:01:00.000Z</published>
-    <updated>2020-04-24T07:53:36.835Z</updated>
+    <updated>2020-04-28T00:28:21.057Z</updated>
     
     <summary type="html">
     
@@ -116,6 +120,8 @@
     
     </summary>
     
+    
+      <category term="python" scheme="https://lingisme9.club/categories/python/"/>
     
     
       <category term="python" scheme="https://lingisme9.club/tags/python/"/>
@@ -336,43 +342,6 @@
   </entry>
   
   <entry>
-    <title>网站导航</title>
-    <link href="https://lingisme9.club/2020/042027176.html"/>
-    <id>https://lingisme9.club/2020/042027176.html</id>
-    <published>2020-04-20T13:53:09.000Z</published>
-    <updated>2020-04-20T14:16:39.154Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-      <category term="软件" scheme="https://lingisme9.club/categories/%E8%BD%AF%E4%BB%B6/"/>
-    
-    
-      <category term="资源" scheme="https://lingisme9.club/tags/%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="网站" scheme="https://lingisme9.club/tags/%E7%BD%91%E7%AB%99/"/>
-    
-      <category term="工具" scheme="https://lingisme9.club/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="破解" scheme="https://lingisme9.club/tags/%E7%A0%B4%E8%A7%A3/"/>
-    
-      <category term="VIP" scheme="https://lingisme9.club/tags/VIP/"/>
-    
-      <category term="素材库" scheme="https://lingisme9.club/tags/%E7%B4%A0%E6%9D%90%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
     <title>软件资源</title>
     <link href="https://lingisme9.club/2020/042027176.html"/>
     <id>https://lingisme9.club/2020/042027176.html</id>
@@ -395,13 +364,50 @@
       <category term="软件" scheme="https://lingisme9.club/categories/%E8%BD%AF%E4%BB%B6/"/>
     
     
+      <category term="软件" scheme="https://lingisme9.club/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="资源" scheme="https://lingisme9.club/tags/%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="网络" scheme="https://lingisme9.club/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="破解" scheme="https://lingisme9.club/tags/%E7%A0%B4%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站导航</title>
+    <link href="https://lingisme9.club/2020/042027176.html"/>
+    <id>https://lingisme9.club/2020/042027176.html</id>
+    <published>2020-04-20T13:53:09.000Z</published>
+    <updated>2020-04-20T14:16:39.154Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="软件" scheme="https://lingisme9.club/categories/%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+      <category term="VIP" scheme="https://lingisme9.club/tags/VIP/"/>
+    
       <category term="资源" scheme="https://lingisme9.club/tags/%E8%B5%84%E6%BA%90/"/>
     
       <category term="破解" scheme="https://lingisme9.club/tags/%E7%A0%B4%E8%A7%A3/"/>
     
-      <category term="软件" scheme="https://lingisme9.club/tags/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="网站" scheme="https://lingisme9.club/tags/%E7%BD%91%E7%AB%99/"/>
     
-      <category term="网络" scheme="https://lingisme9.club/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="工具" scheme="https://lingisme9.club/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="素材库" scheme="https://lingisme9.club/tags/%E7%B4%A0%E6%9D%90%E5%BA%93/"/>
     
   </entry>
   
