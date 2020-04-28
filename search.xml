@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<h1 id="VIP视频解析网站（本地-coding可用）"><a href="#VIP视频解析网站（本地-coding可用）" class="headerlink" title="VIP视频解析网站（本地+coding可用）"></a>VIP视频解析网站（本地+coding可用）</h1><p>体验连接<a href="http://d69stf.coding-pages.com/" target="_blank" rel="noopener">VIP视频解析</a></p><p><img src="https://s1.ax1x.com/2020/04/27/JfKBTI.png" alt="JfKBTI.png"></p><p>链接：<a href="https://pan.baidu.com/s/1H-en7yaGBvnsPZqHISPHlA" target="_blank" rel="noopener">https://pan.baidu.com/s/1H-en7yaGBvnsPZqHISPHlA</a><br>提取码：6h53 </p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      <categories>
+          
+          <category> 源码 </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -56,7 +62,7 @@
       <link href="/2020/042423408.html"/>
       <url>/2020/042423408.html</url>
       
-        <content type="html"><![CDATA[<h1 id="Hexo博客后台搭建"><a href="#Hexo博客后台搭建" class="headerlink" title="Hexo博客后台搭建"></a>Hexo博客后台搭建</h1><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28208212&amp;auto=1&amp;height=66"></iframe><h2 id="一、插件介绍"><a href="#一、插件介绍" class="headerlink" title="一、插件介绍"></a>一、插件介绍</h2><pre><code> hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。如果你使用的是非静态托管服务器，比如自己买的主机搭建的hexo，那么一定要设置hexo-admin 的密码，否则谁都可以编辑你的文章。</code></pre><h2 id="二、实例"><a href="#二、实例" class="headerlink" title="二、实例"></a>二、实例</h2><p><img src="https://s1.ax1x.com/2020/04/24/JDZBTI.png" alt="JDZBTI.png"></p><p><img src="https://s1.ax1x.com/2020/04/24/JDeicD.png" alt="JDeicD.png"></p><h2 id="三、插件安装"><a href="#三、插件安装" class="headerlink" title="三、插件安装"></a>三、插件安装</h2><p>1.首先进入hexo创建的博客项目的根目录下，执行</p><pre><code>npm install --save hexo-admin</code></pre><p>2.运行下列命令启动hexo-admin </p><pre><code>hexo server -d</code></pre><p>3.打开<code>http://localhost:4000/admin/</code>就可以访问到hexo-admin管理页面了。</p><p><img src="https://s1.ax1x.com/2020/04/24/JDZBTI.png" alt="JDZBTI.png"></p><h2 id="四、密码保护"><a href="#四、密码保护" class="headerlink" title="四、密码保护"></a>四、密码保护</h2><p>打开<code>setting</code>，点击<code>Setup authentification here</code>输入用户名，密码，密钥，<code>设置完后下面会自动生成配置文件</code>，复制加在hexo根目录下的_config.yml中：</p><pre><code>admin:  username: myfavoritename  password_hash: be121740bf988b2225a313fa1f107ca1  secret: a secret something</code></pre><p><img src="https://s1.ax1x.com/2020/04/24/JDm9Vs.png" alt="JDm9Vs.png"></p><p>重启<code>hexo</code>，就可以看到登录页面了</p><h2 id="五、发布文章"><a href="#五、发布文章" class="headerlink" title="五、发布文章"></a>五、发布文章</h2><p><img src="https://s1.ax1x.com/2020/04/24/JDQDKK.png" alt="JDQDKK.png"><br>1、进入后台之后点击<code>Deploy</code>，里面的<code>Deploy</code>按钮是用来执行发布脚本的，所以我们先在博客<code>根目录</code>下新建<code>hexo-pubish.bat</code>(名字任意后缀<code>bat</code>)文件</p><p><img src="https://s1.ax1x.com/2020/04/24/JDmuZ9.png" alt="JDmuZ9.png"></p><p>然后填入如下代码</p><pre><code>hexo g -d</code></pre><p>然后在_config.yml中的admin下添加<code>deployCommand: 'hexo-pubish.bat'</code>(和之前创建的文件名相同)</p><pre><code>admin:  username: myfavoritename  password_hash: be121740bf988b2225a313fa1f107ca1  secret: a secret something  deployCommand: 'hexo-pubish.bat'</code></pre><p>设置发布执行的脚本，点击<code>Deploy</code>就会执行这个命令并提交到GitHub上。</p><p><img src="https://s1.ax1x.com/2020/04/24/JDnzAs.png" alt="JDnzAs.png"></p><p>开始提交：<br><img src="https://s1.ax1x.com/2020/04/24/JDKZM8.png" alt="JDKZM8.png"></p><p>成功如下：<br><img src="https://s1.ax1x.com/2020/04/24/JDKDRx.png" alt="JDKDRx.png"></p><h2 id="六、其他建议：添加一键本地运行"><a href="#六、其他建议：添加一键本地运行" class="headerlink" title="六、其他建议：添加一键本地运行"></a>六、其他建议：添加一键本地运行</h2><p>根目录下新建文件<code>hexo-s.bat</code><br><img src="https://s1.ax1x.com/2020/04/24/JDuljO.png" alt="JDuljO.png"></p><p>输入如下代码：</p><pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s </code></pre><p>这样双击<code>hexo-s.bat</code>就可以直接本地查看了，很方便<br><img src="https://s1.ax1x.com/2020/04/24/JDuIrF.png" alt="JDuIrF.png"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1 id="Hexo博客后台搭建"><a href="#Hexo博客后台搭建" class="headerlink" title="Hexo博客后台搭建"></a>Hexo博客后台搭建</h1><iframe frameborder="no" bordered="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28208212&amp;auto=1&amp;height=66"></iframe><h2 id="一、插件介绍"><a href="#一、插件介绍" class="headerlink" title="一、插件介绍"></a>一、插件介绍</h2><pre><code> hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。如果你使用的是非静态托管服务器，比如自己买的主机搭建的hexo，那么一定要设置hexo-admin 的密码，否则谁都可以编辑你的文章。</code></pre><h2 id="二、实例"><a href="#二、实例" class="headerlink" title="二、实例"></a>二、实例</h2><p><img src="https://s1.ax1x.com/2020/04/24/JDZBTI.png" alt="JDZBTI.png"></p><p><img src="https://s1.ax1x.com/2020/04/24/JDeicD.png" alt="JDeicD.png"></p><h2 id="三、插件安装"><a href="#三、插件安装" class="headerlink" title="三、插件安装"></a>三、插件安装</h2><p>1.首先进入hexo创建的博客项目的根目录下，执行</p><pre><code>npm install --save hexo-admin</code></pre><p>2.运行下列命令启动hexo-admin </p><pre><code>hexo server -d</code></pre><p>3.打开<code>http://localhost:4000/admin/</code>就可以访问到hexo-admin管理页面了。</p><p><img src="https://s1.ax1x.com/2020/04/24/JDZBTI.png" alt="JDZBTI.png"></p><h2 id="四、密码保护"><a href="#四、密码保护" class="headerlink" title="四、密码保护"></a>四、密码保护</h2><p>打开<code>setting</code>，点击<code>Setup authentification here</code>输入用户名，密码，密钥，<code>设置完后下面会自动生成配置文件</code>，复制加在hexo根目录下的_config.yml中：</p><pre><code>admin:  username: myfavoritename  password_hash: be121740bf988b2225a313fa1f107ca1  secret: a secret something</code></pre><p><img src="https://s1.ax1x.com/2020/04/24/JDm9Vs.png" alt="JDm9Vs.png"></p><p>重启<code>hexo</code>，就可以看到登录页面了</p><h2 id="五、发布文章"><a href="#五、发布文章" class="headerlink" title="五、发布文章"></a>五、发布文章</h2><p><img src="https://s1.ax1x.com/2020/04/24/JDQDKK.png" alt="JDQDKK.png"><br>1、进入后台之后点击<code>Deploy</code>，里面的<code>Deploy</code>按钮是用来执行发布脚本的，所以我们先在博客<code>根目录</code>下新建<code>hexo-pubish.bat</code>(名字任意后缀<code>bat</code>)文件</p><p><img src="https://s1.ax1x.com/2020/04/24/JDmuZ9.png" alt="JDmuZ9.png"></p><p>然后填入如下代码</p><pre><code>hexo g -d</code></pre><p>然后在_config.yml中的admin下添加<code>deployCommand: 'hexo-pubish.bat'</code>(和之前创建的文件名相同)</p><pre><code>admin:  username: myfavoritename  password_hash: be121740bf988b2225a313fa1f107ca1  secret: a secret something  deployCommand: 'hexo-pubish.bat'</code></pre><p>设置发布执行的脚本，点击<code>Deploy</code>就会执行这个命令并提交到GitHub上。</p><p><img src="https://s1.ax1x.com/2020/04/24/JDnzAs.png" alt="JDnzAs.png"></p><p>开始提交：<br><img src="https://s1.ax1x.com/2020/04/24/JDKZM8.png" alt="JDKZM8.png"></p><p>成功如下：<br><img src="https://s1.ax1x.com/2020/04/24/JDKDRx.png" alt="JDKDRx.png"></p><h2 id="六、其他建议：添加一键本地运行"><a href="#六、其他建议：添加一键本地运行" class="headerlink" title="六、其他建议：添加一键本地运行"></a>六、其他建议：添加一键本地运行</h2><p>根目录下新建文件<code>hexo-s.bat</code><br><img src="https://s1.ax1x.com/2020/04/24/JDuljO.png" alt="JDuljO.png"></p><p>输入如下代码：</p><pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s </code></pre><p>这样双击<code>hexo-s.bat</code>就可以直接本地查看了，很方便<br><img src="https://s1.ax1x.com/2020/04/24/JDuIrF.png" alt="JDuIrF.png"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -303,37 +309,6 @@
     
     
     <entry>
-      <title>软件资源</title>
-      <link href="/2020/042027176.html"/>
-      <url>/2020/042027176.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 软件 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 软件 </tag>
-            
-            <tag> 资源 </tag>
-            
-            <tag> 网络 </tag>
-            
-            <tag> 破解 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>网站导航</title>
       <link href="/2020/042027176.html"/>
       <url>/2020/042027176.html</url>
@@ -354,13 +329,44 @@
             
             <tag> 资源 </tag>
             
-            <tag> 破解 </tag>
-            
             <tag> 网站 </tag>
             
             <tag> 工具 </tag>
             
+            <tag> 破解 </tag>
+            
             <tag> 素材库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>软件资源</title>
+      <link href="/2020/042027176.html"/>
+      <url>/2020/042027176.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 资源 </tag>
+            
+            <tag> 破解 </tag>
+            
+            <tag> 软件 </tag>
+            
+            <tag> 网络 </tag>
             
         </tags>
       
