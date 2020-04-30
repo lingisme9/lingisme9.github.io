@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C个人学习笔记, Lingisme9">
+    <meta name="keywords" content="CSS—布局笔记, Lingisme9">
     <meta name="description" content="死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C个人学习笔记 | Lingisme9</title>
+    <title>CSS—布局笔记 | Lingisme9</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C个人学习笔记</h1>
+                    <h1 class="description center-align post-title">CSS—布局笔记</h1>
                 </div>
             </div>
         </div>
@@ -452,16 +452,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C</span>
-                            </a>
-                        
                             <a href="/tags/%E7%AC%94%E8%AE%B0/">
                                 <span class="chip bg-color">笔记</span>
                             </a>
                         
-                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">软件开发</span>
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
                             </a>
                         
                     </div>
@@ -472,8 +468,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C/" class="post-category">
-                                C
+                            <a href="/categories/css/" class="post-category">
+                                css
                             </a>
                         
                     </div>
@@ -485,7 +481,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-30
                 </div>
                 
 
@@ -501,7 +497,147 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="css布局"><a href="#css布局" class="headerlink" title="css布局"></a>css布局</h1><h2 id="一、文档流"><a href="#一、文档流" class="headerlink" title="一、文档流"></a>一、文档流</h2><pre><code>文档流（normal flow）
+            -网页是层叠的
+            -通过css可以给每一层设置样式
+            -用户只能看到最顶上一层
+            -这些层中最低下一层称为文档流
+            -我们所创建的元素默认都是在文档流中进行排列
+            -对于我们元素有两个状态
+                -在文档流中
+                -脱离文档流中
+            在文档流中有何特点
+                -块元素
+                    -块元素独占一行
+                    -默认宽度：父元素撑满
+                    -默认高度：内容撑满
+                -行内元素
+                    -不会独占一行
+                    -只占自身大小
+                    -一行中不能容纳所有：换行
+                    -行内元素的默认宽度：内容撑开</code></pre><h2 id="二、盒子模型"><a href="#二、盒子模型" class="headerlink" title="二、盒子模型"></a>二、盒子模型</h2><pre><code>    盒子模型
+        -box model
+        怎么摆放元素：
+            -css中将页面中的元素设置成了一个矩形盒子
+            -设置为矩形的盒子：布局就是摆放盒子
+            -怎么设置大小和位置：
+                -组成:
+                    -内容区（content）
+                    -边框（bonder）
+                    -内边距（padding）：内容区和边框的距离
+                    -外边距（margin）：决定位置；两个盒子间的距离</code></pre><h2 id="三、盒子模型-边框"><a href="#三、盒子模型-边框" class="headerlink" title="三、盒子模型-边框"></a>三、盒子模型-边框</h2><pre><code>    边框
+                -boder-width:默认值3px
+                    -四个值：顺时针
+                    -三个：左等于右
+                    -两个值：上下，左右
+                    -boder-top-width
+                        -top，right，left，bottom，
+
+  以下都有：
+
+                -boder-color：边框颜色
+                    -如果不写：默认指定color值
+                -boder-style：边框样式
+                    -soild： 实线
+                    -dotted：点状虚线
+                    -dashed：虚线
+                    -double：双线
+                    -不可不写：默认值是none                     boder简写形式：同时设定，没有顺序要求    
+
+                border: 10px orange solid;</code></pre><h2 id="四、盒子模型-内边距"><a href="#四、盒子模型-内边距" class="headerlink" title="四、盒子模型-内边距"></a>四、盒子模型-内边距</h2><pre><code>  内边距（padding）
+              -内容区和边框间的距离
+              -四个方向都有
+                  padding-top
+          -************************会影响到盒子的大小
+              -背景颜色会延伸到内边距上
+          盒子大小可见框：边框+内容+内边距</code></pre><h2 id="五、盒子模型-外边距"><a href="#五、盒子模型-外边距" class="headerlink" title="五、盒子模型-外边距"></a>五、盒子模型-外边距</h2><pre><code>   外边距（margin）
+            -不会影响可见框大小
+            -会影响盒子位置
+            -有四个方向
+        元素在页面中是按自左向右的顺序排列
+            -左上：会移动元素自身
+            -下右：移别人
+        可以设置负值：像相反方向移动
+        简写：margin：四个外边距
+        margin：影响盒子实际大小       </code></pre><h2 id="六、水平方向的布局"><a href="#六、水平方向的布局" class="headerlink" title="六、水平方向的布局"></a>六、水平方向的布局</h2><pre><code>    水平方向的布局：
+            -元素在其父元素中的水平布局
+               margin-left
+               border-left
+               padding-left
+               width
+               padding-right
+               border-right
+               margin-right
+
+            -一个元素在其父元素中必须满足：
+                从左到右加起来：外边距+内边距+内容+右部分=父元素内容区的宽度
+            不成立：过度约束：自动调整
+                -调整情况
+                    -如果这七个值中没有auto的情况：会调整margin-right满足
+            三个可以设置为auto；
+                -width
+                -margin-left
+                -margin-right
+                调整auto的值
+            水平居中：
+               实例：
+                  width：
+                  margin：auto</code></pre><h2 id="七、垂直方向的布局"><a href="#七、垂直方向的布局" class="headerlink" title="七、垂直方向的布局"></a>七、垂直方向的布局</h2><pre><code>      子元素大于父元素：撑破父元素：溢出
+        子元素在内容区中排列：
+            用overflow：设置处理溢出
+                -visable:显示溢出
+                -hidden：隐藏溢出
+                -scroll:生成滚动条，来查看完整的内容
+                -auto：根据需要生成滚动条
+            overflow-x：水平方向
+            overflow-y：垂直方向     </code></pre><h2 id="八、盒子模型外边距的折叠"><a href="#八、盒子模型外边距的折叠" class="headerlink" title="八、盒子模型外边距的折叠"></a>八、盒子模型外边距的折叠</h2><pre><code>    外边距的重叠：
+        -相邻的垂直外边距重叠：
+        -兄弟元素
+            -两者之间取较大值，两者都是正值
+            -一正一负：和
+            -两个负：两者取绝对值较大的
+        -兄弟元素之间外边距的重叠对于开发有利：不需要处理
+        -父子元素
+            -父子元素间的相邻外边距：子元素会传递给父元素
+            -父子外边距重叠会影响页面布局：必须处理       </code></pre><h2 id="九、行内元素的盒模型"><a href="#九、行内元素的盒模型" class="headerlink" title="九、行内元素的盒模型"></a>九、行内元素的盒模型</h2><pre><code>      行内元素
+            -display：元素显示模式
+                -可选值：
+                    -inline：设置为行内
+                    -block：设置为块元素
+                    -inline-block:行内块元素
+                        -既可以设置宽高，又不会独占一行:有缺点：想文字一样有间隔
+                    -table：设置为表格
+                    -none：不在页面中显示
+        visibility：设置显示状态
+              -visible：正常显示
+              -hidden：隐藏：占位置,none不占    </code></pre><h2 id="十、浏览器的默认样式"><a href="#十、浏览器的默认样式" class="headerlink" title="十、浏览器的默认样式"></a>十、浏览器的默认样式</h2><pre><code> 两个文件：normal，resert</code></pre><h2 id="十一、盒子大小"><a href="#十一、盒子大小" class="headerlink" title="十一、盒子大小"></a>十一、盒子大小</h2><pre><code>     默认情况下：可见框大小：内容+内边距+边框
+                box-sizing：设置盒子计算方式
+                    -可选值：
+                        content-box：高度和宽度设置内容区大小
+                        border-box：宽度高度设置盒子可见框大小
+                            三个加起来的大小</code></pre><h2 id="十二、圆角和轮廓"><a href="#十二、圆角和轮廓" class="headerlink" title="十二、圆角和轮廓"></a>十二、圆角和轮廓</h2><pre><code>  outline用来设置轮廓线
+            -轮廓不会影响可见框的大小，border会影响
+            -设置鼠标移入
+
+
+
+    box-shadow：用来设置元素的阴影效果：不会影响可见框大小
+            -默认和盒子一样大
+            -需要设置偏移量：默认偏移量是0
+            -第一个：左侧偏移值：水平位置
+            -第二个：右侧偏移值：垂直位置
+            -第三个：阴影模糊半径
+            -第四个：颜色
+            -可以设置负值       
+
+    border-radius: ;
+        -设置圆角
+            -值为圆角半径
+            -指定四个角：顺时针：四个值
+            -三个值:对角一样
+            -两个：
+            -一个
+            -百分数：50%：圆形      </code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -544,7 +680,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lingisme9.club/2020/042012132.html">https://lingisme9.club/2020/042012132.html</a>
+                    <a href="https://lingisme9.club/2020/043011415.html">https://lingisme9.club/2020/043011415.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -582,16 +718,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%AC%94%E8%AE%B0/">
                                     <span class="chip bg-color">笔记</span>
                                 </a>
                             
-                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">软件开发</span>
+                                <a href="/tags/css/">
+                                    <span class="chip bg-color">css</span>
                                 </a>
                             
                         </div>
@@ -1022,50 +1154,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/042250736.html">
+                <a href="/2020/043011415.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="html学习笔记">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="CSS—布局笔记">
                         
-                        <span class="card-title">html学习笔记</span>
+                        <span class="card-title">CSS—布局笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人学习html笔记
+                            css布局一、文档流文档流（normal flow）
+            -网页是层叠的
+            -通过css可以给每一层设置样式
+            -用户只能看到最顶上一层
+            -这些层中最低
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/html/" class="post-category">
-                                    html
+                            <a href="/categories/css/" class="post-category">
+                                    css
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">html</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
-                    <a href="/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">网页开发</span>
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>
@@ -1079,31 +1217,37 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/042013214.html">
+                <a href="/2020/043085.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C语言-学生成绩管理系统">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="CSS笔记">
                         
-                        <span class="card-title">C语言-学生成绩管理系统</span>
+                        <span class="card-title">CSS笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人C语言学习笔记
+                            css笔记一、css3介绍    网页分成三个部分：
+        结构：html
+        表现：css
+        行为：js
+    css：
+        -层叠样式表：页面实际上是多层结构
+        -设置网页
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    项目
+                            <a href="/categories/css/" class="post-category">
+                                    css
                                 </a>
                             
                             
@@ -1113,16 +1257,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
                     <a href="/tags/%E7%AC%94%E8%AE%B0/">
                         <span class="chip bg-color">笔记</span>
                     </a>
                     
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">软件开发</span>
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>
