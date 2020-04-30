@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>CSS笔记</title>
+      <link href="/2020/043085.html"/>
+      <url>/2020/043085.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="css笔记"><a href="#css笔记" class="headerlink" title="css笔记"></a>css笔记</h1><h2 id="一、css3介绍"><a href="#一、css3介绍" class="headerlink" title="一、css3介绍"></a>一、css3介绍</h2><pre><code>    网页分成三个部分：        结构：html        表现：css        行为：js    css：        -层叠样式表：页面实际上是多层结构        -设置网页元素样式     -第一种方式（内联样式，行内样式）        -在便签内部通过style来设置元素样式，属性只能在开始标签写        -多以写多个        -font-size:字体大小</code></pre><h2 id="二、编写位置"><a href="#二、编写位置" class="headerlink" title="二、编写位置"></a>二、编写位置</h2><pre><code>    内联样式只能对一个标签产生影响        -当样式发生变化需要一个一个改    注意:开发时绝对不要用内联样式     第三种方式:外部样式(最佳实践)        -可以将css样式编写到一个外部css文件中        -然后通过link标签来引用外部文件,这样意味着只要想用样式网页都可以进行引用            -href:路径     -将样式编写到css文件中可以使用到浏览器的缓存机制从而加快网页加载速度</code></pre><h2 id="三、语法"><a href="#三、语法" class="headerlink" title="三、语法"></a>三、语法</h2><pre><code>    style标签内部不属于html    css基本语法:        -p:选择器:选择元素        {}:声明块:指定要为元素设置的样式;结尾为一个            -一个样式名对应样式值:用:连接</code></pre><h2 id="四、常用选择器"><a href="#四、常用选择器" class="headerlink" title="四、常用选择器"></a>四、常用选择器</h2><pre><code>    将所有的段落设置为红色(字体)        元素选择器            -标签名            h{}        id选择器:根据元素id属性值选中一个元素            -#id属性值{}            -设置两个id也可以但是不能这么做        列子:        class:是一个标签属性,和id类似,可以重复使用            -可以通过class分组            -.为class属性            -可以同时为一个元素指定多个class        通配选择器            -所有元素            语法:*</code></pre><h2 id="五、复合选择器"><a href="#五、复合选择器" class="headerlink" title="五、复合选择器"></a>五、复合选择器</h2><pre><code>  交集选择器:选中同时满足多个条件              -作用:同时选中多个元素              -选择器1.选择器2{}          注意:如果有元素选择器,那么必须元素选择器开头              选择器分组(并集选择器)        -作用:选择多个选择器对应的元素        -语法:选择器1,选择器2{}             #b1.p1,h1,span:选择id加元素          </code></pre><h2 id="六、关系选择器"><a href="#六、关系选择器" class="headerlink" title="六、关系选择器"></a>六、关系选择器</h2><pre><code>  为div直接包含的span这只一个字体颜色红色        （为div直接包含的span设置一个字体颜色）        ******子元素选择器            作用：选中指定父元素的指定子元素            语法：父元素&gt;子元素        ******后代元素选择器                作用：选中元素的后代元素                语法：祖先 后代                 兄弟元素选择器                -先择下一个兄弟                    -语法：前一个 + 下一个：紧挨着的，隔着一个也不行                -选择下边所有的兄弟：                    -语法：兄~弟        </code></pre><h2 id="七、属性选择器"><a href="#七、属性选择器" class="headerlink" title="七、属性选择器"></a>七、属性选择器</h2><pre><code>  属性选择器            -语法【属性名】:选择含有指定属性的元素            【属性名 = 属性值】            【属性名^=属性】：选择属性值以指定值开始的元素            【属性名$= 属性值】：结尾            【属性名*=属性值】：选择含有某值的元素          </code></pre><h2 id="八、伪类选择器"><a href="#八、伪类选择器" class="headerlink" title="八、伪类选择器"></a>八、伪类选择器</h2><pre><code>  伪类：不存在的类        -描述一个元素特殊状态的第一个子元素，被点击的元素，鼠标点击的元素        -伪类一般情况下：号开头            -:first-child第一个子元素            -:last-child最后一个子元素            -:nth-child（3）选中第3个子元素                特殊值：                    n：第n个，范围全部0-&amp;                    2n；偶数个                    2n+1：奇数                    odd：奇数                    even：偶数        -以上这些伪类都是根据所有子元素排序        ：first-of-type        ：last-of-type        ：nth-of-type           -只找相同类型    否定伪类：        ：not（）：            -将符合条件的元素去除          </code></pre><h2 id="九、a元素的伪类选择器"><a href="#九、a元素的伪类选择器" class="headerlink" title="九、a元素的伪类选择器"></a>九、a元素的伪类选择器</h2><pre><code>        link：没访问过的链接        visited:访问过            -隐私问题：visited只能改颜色             -只能超链接用上面两个        hover:鼠标移入        active：鼠标点击            </code></pre><h2 id="十、伪元素选择器"><a href="#十、伪元素选择器" class="headerlink" title="十、伪元素选择器"></a>十、伪元素选择器</h2><pre><code>  伪元素        -特殊不存在的元素（特殊位置）            伪元素：：开头            ::first—letter：第一个字母            ::first-line:第一行            ::selection:表示选中内容            ::before：起始位置            ::after：元素最后                -before/after结合content使用                -套框框           p::first-letter               {                   font-size: 50px;               }               p::first-line               {                   background-color: yellowgreen;               }               p::selection               {                   color: darkmagenta;               }               div::before               {                   content: 'abc';                   color: red;               }               div::after               {                   content: 'abc';                   color:green;               }</code></pre><h2 id="十一、样式继承"><a href="#十一、样式继承" class="headerlink" title="十一、样式继承"></a>十一、样式继承</h2><pre><code>    样式的继承：给一个标签设置的样式会继承给他的后代元素            -只发生在后代里            -为了方便开发，利用继承     注意：并不是所有的样式都会被继承            -比如：背景，布局相关的</code></pre><h2 id="十二、选择器的权重"><a href="#十二、选择器的权重" class="headerlink" title="十二、选择器的权重"></a>十二、选择器的权重</h2><pre><code>     选中同一个元素        -样式的冲突            -当我们通过不同的选择器选中相同的元素，并且为相同的样式设置不同的值，此时发生样式冲突        发生样式冲突:            优先级：                    内联样式                    id选择器                    类和伪类选择器                    元素选择器                    通配选择器：*                    继承:没有优先级        多个时；相加        分组选择器：单独计算，一个“，”一组            选择器的累加不会超过最大数量级：比如：类选择器不会大于id选择器        优先级一样时：自下而上        可以在某一个样式的后边添加：!important：最高优先级            -开发中慎用</code></pre><h2 id="十三、像素和百分比"><a href="#十三、像素和百分比" class="headerlink" title="十三、像素和百分比"></a>十三、像素和百分比</h2><pre><code>     长度单位：                像素                百分比：设置属性相当于父元素使用的百分比：这样父元素变，子元素也变                em:em是相对于元素的字体大小来计算的                    -1em = 1font-size                    -em会根据字体大小而改变                rem：rem相对于字体：root相对于根元素html的字体大小计算的</code></pre><h2 id="十四、RGB值"><a href="#十四、RGB值" class="headerlink" title="十四、RGB值"></a>十四、RGB值</h2><pre><code>    RGB:        -R        -G        —B    每一种颜色的范围0-255之间    也可以用百分数    语法：RGB（红，绿 ，蓝）    RGBA:        -A表示透明            -1表示完全不透明            0.5：半透明    十六进制的RGB值：        -语法:#红绿蓝        -浓度：00-ff        -如果颜色两位两位重复可以简写            #aabbcc--#abc    HSL,HSLA：        H：色相0-360        S：饱和度0-100%        L；亮度0-100%        都是写百分比的：必须写</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>博客已打包成apk</title>
       <link href="/2020/042835377.html"/>
       <url>/2020/042835377.html</url>
@@ -20,9 +33,9 @@
       
         <tags>
             
-            <tag> app </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> app </tag>
             
         </tags>
       
@@ -155,9 +168,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> 博客 </tag>
             
             <tag> 教程 </tag>
             
@@ -249,6 +262,35 @@
     
     
     <entry>
+      <title>C语言-学生成绩管理系统</title>
+      <link href="/2020/042013214.html"/>
+      <url>/2020/042013214.html</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 软件开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C个人学习笔记</title>
       <link href="/2020/042012132.html"/>
       <url>/2020/042012132.html</url>
@@ -299,35 +341,6 @@
             <tag> 软件开发 </tag>
             
             <tag> 项目 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>C语言-学生成绩管理系统</title>
-      <link href="/2020/042013214.html"/>
-      <url>/2020/042013214.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 项目 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C </tag>
-            
-            <tag> 笔记 </tag>
-            
-            <tag> 软件开发 </tag>
             
         </tags>
       
