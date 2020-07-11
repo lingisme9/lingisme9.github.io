@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C个人学习笔记, Lingisme9">
+    <meta name="keywords" content="算法总结, Lingisme9">
     <meta name="description" content="死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C个人学习笔记 | Lingisme9</title>
+    <title>算法总结 | Lingisme9</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C个人学习笔记</h1>
+                    <h1 class="description center-align post-title">算法总结</h1>
                 </div>
             </div>
         </div>
@@ -450,33 +450,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">软件开发</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/C/" class="post-category">
-                                C
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -485,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-06-14
                 </div>
                 
 
@@ -501,7 +480,143 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="算法总结"><a href="#算法总结" class="headerlink" title="算法总结"></a>算法总结</h1><h2 id="二分归并排序"><a href="#二分归并排序" class="headerlink" title="二分归并排序"></a>二分归并排序</h2><h5 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h5><p>使用二分归并排序算法，对n个不同的数构成的数组A[1…n]进行排序，其中n=2^k</p>
+<h5 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h5><p>二分归并排序是一种分治算法。这个算法不断地将一个数组分为两部分，分别对左子数组和右子数组排序，然后将两个数组合并为新的有序数组。<br>算法步骤如下：<br>（1） 分解：分解待排序的n个元素的数组成各具n/2个元素的两个子数组。<br>（2） 解决：使用归并排序递归地排序两个子序列。<br>（3） 合并：合并两个已排序的子序列以产生排序的答案。<br>当待排序的数组长度为1时，递归“开始回升”，在这种情况下不要做任何工作，因为长度为1的每个数组都已排好序。</p>
+<p>下面以绘图方式演示通过二分归并排序算法的过程</p>
+<pre><code>int Merge(int a[],int low, int mid, int high)// 合并函数
+{
+    int j, k, h;
+    j = low;
+    h = mid + 1;
+    k = low;
+    while (j&lt;=mid&amp;&amp;h&lt;=high)    // 将左右两端数据进行比较，放入辅助数组中
+    {
+        if (a[j] &lt; a[h])
+            b[k++] = a[j++];
+        else
+            b[k++] = a[h++];
+    }
+    // 将剩余的数据加入到辅助数组中
+    while (j &lt;= mid)
+    {
+        b[k++] = a[j++];
+    }
+    while (h&lt;=high)
+    {
+        b[k++] = a[h++];
+    }
+    for (k = low; k &lt;= high; k++)// 将辅助数组的数据复制到原数组的对应位置上
+    {
+        a[k] = b[k];
+    }
+}
+
+int MergeSort(int a[],int low,int high)    // 递归分组函数
+{
+    if (low &lt; high)
+    {
+        int mid = (low + high) / 2;
+        MergeSort(a,low, mid);
+        MergeSort(a,mid + 1, high);
+        Merge(a,low, mid, high);// 调用Merge函数，合并两组数据 
+    }
+}
+</code></pre><h5 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h5><p>二分归并排序算法是一种稳定的排序，其时间复杂度是O(logn) 。<br>Merge算法比较次数：</p>
+<pre><code>最差情况下，比较次数为n-1，时间复杂度为O(nlogn)，例如：2,4,6;1,3,5 比较次数为5
+最优情况下，比较次数为n/2，时间复杂度为O(nlogn)，例如：1,2,3;4,5,6 比较次数为3
+平均复杂度为O(nlogn)</code></pre><p>递归方程如下：<br><img src="https://s1.ax1x.com/2020/06/14/tzENQK.png" alt="tzENQK.png"></p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>它是一种稳定的排序方法。快速排序利用分治思想，将待排序数组分成左右两个部分，然后对其分别递归调用快速排序算法</p>
+<pre><code>下面通过一个例子介绍快速排序算法的思想，假设要对数组a[10]={6，1，2，7，9，3，4，5，10，8}进行排序，首先要在数组中选择一个数作为基准值，这个数可以随意选择，在这里，我们选择数组的第一个元素a[0]=6作为基准值，接下来，我们需要把数组中小于6的数放在左边，大于6的数放在右边</code></pre><p>我们设置两个“哨兵”，记为“哨兵i”和“哨兵j”，他们分别指向数组的第一个元素和最后一个元素，即i=0，j=9。首先哨兵j开始出动，哨兵j一步一步地向左挪动（即j–），直到找到一个小于6的数停下来。接下来哨兵i再一步一步向右挪动（即i++），直到找到一个数大于6的数停下来。</p>
+<p>最后哨兵j停在了数字5面前，哨兵i停在了数字7面前。此时就需要交换i和j指向的元素的值。<br><img src="https://s1.ax1x.com/2020/06/14/tzthiq.png" alt="tzthiq.png"><br>交换之后的数组变为a[10]={6，1，2，5，9，3，4，7，10，8}：</p>
+<p>第一次交换至此结束。接下来，由于哨兵i和哨兵j还没有相遇，于是哨兵j继续向前，发现比6小的4之后停下；哨兵i继续向前，发现比6大的9之后停下，两者再进行交换。交换之后的数组变为a[10]={6，1，2，5，4，3，9，7，10，8}。</p>
+<p><img src="https://s1.ax1x.com/2020/06/14/tztxW6.png" alt="tztxW6.png"></p>
+<p>第二次交换至此结束。接下来，哨兵j继续向前，发小比6小的3停下来；哨兵i继续向前，发现i==j了！！！于是，这一轮的探测就要结束了，此时交换a[i]与基准的值，数组a就以6为分界线，分成了小于6和大于6的左右两部分：a[10]={3，1，2，5，4，6，9，7，10，8}。</p>
+<p><img src="https://s1.ax1x.com/2020/06/14/tzNkTA.png" alt="tzNkTA.png"><br><img src="https://s1.ax1x.com/2020/06/14/tzNlwj.png" alt="tzNlwj.png"></p>
+<p>至此，第一轮快速排序完全结束，接下来，对于6左边的半部分3，1，2，5，4，执行以上过程；对于6右边的半部分9，7，10，8，执行以上过程，直到不可拆分出新的子序列为止。最终将会得到这样的序列：1 2 3 4 5 6 7 8 9 10，到此，排序完全结束。</p>
+<pre><code>#include &lt;stdio.h&gt;
+int a[101],n;//定义全局变量，这两个变量需要在子函数中使用
+void quicksort(int left, int right) {
+    int i, j, t, temp;
+    if(left &gt; right)
+        return;
+    temp = a[left]; //temp中存的就是基准数
+    i = left;
+    j = right;
+    while(i != j) { //顺序很重要，要先从右边开始找
+        while(a[j] &gt;= temp &amp;&amp; i &lt; j)
+            j--;
+        while(a[i] &lt;= temp &amp;&amp; i &lt; j)//再找右边的
+            i++;       
+        if(i &lt; j)//交换两个数在数组中的位置
+        {
+            t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+        }
+    }
+    //最终将基准数归位
+    a[left] = a[i];
+    a[i] = temp;
+    quicksort(left, i-1);//继续处理左边的，这里是一个递归的过程
+    quicksort(i+1, right);//继续处理右边的 ，这里是一个递归的过程
+}
+int main() {
+    int i;
+    //读入数据
+    printf("请输入数组元素个数："); 
+    scanf("%d", &amp;n);
+    for(i = 1; i &lt;= n; i++)
+        scanf("%d", &amp;a[i]);
+    quicksort(1, n); //快速排序调用
+    //输出排序后的结果
+    for(i = 1; i &lt; n; i++)
+        printf("%d ", a[i]);
+    printf("%d\n", a[n]);
+    return 0;
+}</code></pre><h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><pre><code>二分査找就是折半查找，其基本思想是：首先选取表中间位置的记录，将其关键字与给定关键字 key 进行比较，若相等，则査找成功；若 key 值比该关键字值大，则要找的元素一定在右子表中，则继续对右子表进行折半查找：若 key 值比该关键宇值小，则要找的元素一定在左子表中，继续对左子表进行折半査找。如此递推，直到査找成功或査找失败（或査找范围为 0）。
+
+
+
+#include &lt;stdio.h&gt;
+int binary_search(int key,int a[],int n) //自定义函数binary_search()
+{
+    int low,high,mid,count=0,count1=0;
+    low=0;
+    high=n-1;
+    while(low&lt;high)    //査找范围不为0时执行循环体语句
+    {
+        count++;    //count记录査找次数
+        mid=(low+high)/2;    //求中间位置
+        if(key&lt;a[mid])    //key小于中间值时
+            high=mid-1;    //确定左子表范围
+        else if(key&gt;a[mid])    //key 大于中间值时
+            low=mid+1;    //确定右子表范围
+        else if(key==a[mid])    //当key等于中间值时，证明查找成功
+        {
+            printf("查找成功!\n 查找 %d 次!a[%d]=%d",count,mid,key);    //输出査找次数及所査找元素在数组中的位置
+            count1++;    //count1记录查找成功次数
+            break;
+        }
+    }
+    if(count1==0)    //判断是否查找失敗
+        printf("查找失敗!");    //査找失敗输出no found
+    return 0;
+}
+
+int main()
+{
+    int i,key,a[100],n;
+    printf("请输入数组的长度：\n");
+    scanf("%d",&amp;n);    //输入数组元素个数
+    printf("请输入数组元素：\n");
+    for(i=0;i&lt;n;i++)
+        scanf("%d",&amp;a[i]);    //输入有序数列到数组a中
+    printf("请输入你想查找的元素：\n");
+    scanf("%d",&amp;key);    //输入要^找的关键字
+    binary_search(key,a,n);    //调用自定义函数
+    printf("\n");
+    return 0;
+}</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -544,7 +659,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lingisme9.club/2020/042012132.html">https://lingisme9.club/2020/042012132.html</a>
+                    <a href="https://lingisme9.club/2020/061457899.html">https://lingisme9.club/2020/061457899.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -581,19 +696,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">软件开发</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1026,48 +1129,48 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/042250736.html">
+                <a href="/2020/06141769.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="html学习笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python+mysql项目">
                         
-                        <span class="card-title">html学习笔记</span>
+                        <span class="card-title">Python+mysql项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人学习html笔记
+                            一起旅游项目
+一、会员注册页面
+1、从网站找到路径regester
+
+分析regester函数
+找到RegesterFrom类定义的位置
+
+分析regester函数
+转到被渲染的html
+
+
+转到被渲染的html
+
+
+表单规则
+
+逻辑判断：
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/html/" class="post-category">
-                                    html
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            坏蛋先生
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">html</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">网页开发</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1079,52 +1182,33 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/042013214.html">
+                <a href="/2020/060911574.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C语言-学生成绩管理系统">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PHP">
                         
-                        <span class="card-title">C语言-学生成绩管理系统</span>
+                        <span class="card-title">PHP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人C语言学习笔记
+                            PHP学习笔记1、环境安装：apache+PHP+MySQL2、直接安装wampserver集成开发环境1.访问自己：访问到的这些界面放在那里目录树结构：访问某个文件夹，默认访问index.php或者index.html
+3、编辑器的安装z
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    项目
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            坏蛋先生
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">软件开发</span>
-                    </a>
-                    
                 </div>
                 
             </div>
