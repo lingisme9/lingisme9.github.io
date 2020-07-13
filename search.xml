@@ -83,6 +83,32 @@
     
     
     <entry>
+      <title>js</title>
+      <link href="/2020/043017775.html"/>
+      <url>/2020/043017775.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="js"><a href="#js" class="headerlink" title="js"></a>js</h1><h2 id="一、helloWorld"><a href="#一、helloWorld" class="headerlink" title="一、helloWorld"></a>一、helloWorld</h2><pre><code>//从上到下执行// alert("这是我的第一行js代码");// 控制浏览器弹出一个警告框//在页面中输出一个内容// 可以在body中写一个内容// document.write("看我出不出来");// 向控制台输出一个内容// console.log("你猜我在那出来");// alert("这是我的第一行js代码");// document.write("看我出不出来");// console.log("你猜我在那出来");</code></pre><h2 id="二、js代码编写位置"><a href="#二、js代码编写位置" class="headerlink" title="二、js代码编写位置"></a>二、js代码编写位置</h2> <!-- 写到外部js文件中 --><pre><code>&lt;!-- 好处：在不同的页面中同时应用：也可以利用浏览器缓存机制          用于外部引入，就不能继续编写代码了          如果需要再新建一个script--&gt;</code></pre> <!-- 虽然可以写在标签属性中，但是他们属于结构与行为耦合，不方便维护 --><pre><code>&lt;!-- 可以将js代码编写到标签onclick属性中 --&gt;&lt;button onclick="alert('讨厌，dsafds');"&gt;点我一下&lt;/button&gt;&lt;!-- 可以将js下载超链接href属性中 --&gt;&lt;a href="javascript:alert('让你点你就点');"&gt;点&lt;/a&gt;&lt;!-- 占位符 --&gt;&lt;a href="javascript:;"&gt;点&lt;/a&gt;</code></pre><h2 id="三、基本语法"><a href="#三、基本语法" class="headerlink" title="三、基本语法"></a>三、基本语法</h2><pre><code>// js注释：单行    // 多行：/**/    /*    *   1、严格区分大小写    *   2、每一条语句分号结尾，不写自动添加：会消耗资源，会加错分号    *   3、会忽略多个空格和换行，利用空格，换行，格式化代码    */</code></pre><h2 id="四、字面量和变量"><a href="#四、字面量和变量" class="headerlink" title="四、字面量和变量"></a>四、字面量和变量</h2><pre><code> /*    *   字面量：都是不可改变的值，可直接使用但一般不会直接使用：比如：阿拉伯数字    *    *   变量：保存字面量    */    // 声明变量    // 在var关键字来声明变量    var a;    // 为变量赋值    a = 123;    var b = 567;    console.log(b);    console.log(a);</code></pre><h2 id="五、标识符"><a href="#五、标识符" class="headerlink" title="五、标识符"></a>五、标识符</h2><pre><code>// 所有可以自主命名的// 规则：字母、数字、下划线、$、// 不能数字开头// 不能是关键字或保留字// 驼峰命名：首字母小写，单词字母开头大写// utf-8保存</code></pre><h2 id="六、字符串"><a href="#六、字符串" class="headerlink" title="六、字符串"></a>六、字符串</h2><pre><code>// 数据类型：    // js：六种：String、Number、Boolean、Null、Undefined：未定义,Object:对象    // String：引号        // - 单双都可        // 不能嵌套：        //     // 转义字符    //  " \"    var str = "hello";</code></pre><h2 id="七、数值类型"><a href="#七、数值类型" class="headerlink" title="七、数值类型"></a>七、数值类型</h2><pre><code>// 所有数值都是Number类型：整数。浮点        // 可以使用运算符typeof 变量：检查变量类型        // 表示数字的最大值：Number.MAX_VALUE：表示的数字超过最大值:返回infinity（无穷）        // infinity:字面量        // typeof检查infinity：也会返回Number        // abc*bdc=NAN：不是数字        // Number.MIN_VALUE:0以上的最小值        // 浮点数：可能得到不精确的结果        // 布尔值：真假        // false,true逻辑判断    // Null:只有一个值    // 空的对象，typeof返回：object    // Undefined：未定义    // 当声明一个变量但未赋值时，就是这个</code></pre><h2 id="八、强制类型转换和运算符"><a href="#八、强制类型转换和运算符" class="headerlink" title="八、强制类型转换和运算符"></a>八、强制类型转换和运算符</h2><pre><code> // 强制类型转换：    // 主要是将其他的转成字符、数字、布尔    // 转换成String    // 方式1：调用被转换类型的ToString()方法:会有局限，            // null和Undefined没有ToString方法            // XXX.tostring()    // var a = 123;    // var b = a.toString();    // a = a.toString();    // 方式二：调用String函数，并将转换数据做参数:没局限            // 对于Number、Boolean就是调用ToString            // 另外两个直接转换成它的值null，undefined    // var a = 123;    // a = String(a);     // 强制转换成Number    // 方式1：使用Number()函数:有局限    //      字符串转数字：直接转成数字    //          非数字：NAN    //      空格：0    //      布尔转数字:0,1    //      Null转数字：0    //      Undefined：NAN    // 方式二：用于字符串：parseInt()：字符串中有效整数内容去出来然后转换成Number    //                    123dpf：123    // parseFloat()：整数+小数:132.332dsaf-&gt;132.332    // 如果对非字符：先转换成String再转成数字  // 16进制：0x123-&gt;123      // 8进制：0开头      // 2进制：0b开头：不是所有浏览器都支持      // parseIn两个参数：第二个指定进制parseIn(a,10)     // Boolean()；    // 除了0和NAN其余都是true    // 字符串：除了空串：其余都是true    // Null:false    // Undefined:false    // 对象：true      typeof就是运算符：获得值得类型是字符串    算数运算符：5    +：转换成数字计算：NAN+1=NAN：任何值：都是NAN     字符串：连接     还可声明时候连接起来换行写     任何值和字符串做加法都会先转成字符串：再连接     利用这一特点将：+""转换成字符    -：除了和字符串相加：其他都是转换成Number    -*/：都是转换成数字    可以用-0 *1 /1来转换成Number    %：     自增自减：一样一样     与运算：两个值都为true。返回后面的           两个值有false：返回前面那的false           第一个true：返回第二个值           如果第一个false：直接false、    或||：一样</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css字体和背景</title>
+      <link href="/2020/043011637.html"/>
+      <url>/2020/043011637.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="CSS-字体和背景"><a href="#CSS-字体和背景" class="headerlink" title="CSS-字体和背景"></a>CSS-字体和背景</h1><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><pre><code>    color: 颜色        font-size:字体大小        em：相当于当前元素的font-size        rm：相对于根元素的font-size        font-family：字体族            -serif：            -sans-size            -monospace；等宽                -指定字体类别                -可以设置多个：从第一个开始</code></pre><h2 id="图标字体"><a href="#图标字体" class="headerlink" title="图标字体"></a>图标字体</h2><pre><code>    用法：        - &lt;i class = "fas fa-bell"&gt;&lt;/i&gt;        后面fa-bell为图标名字；可以改颜色，大小，            -style=""里面设置  其他用法：    通过实体使用图标字体：&amp;#x图标的编码                        class = fas x        &lt;i class = "fas fa-bell"&gt;&lt;/i&gt;</code></pre><h2 id="iconfont"><a href="#iconfont" class="headerlink" title="iconfont"></a>iconfont</h2><h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2><pre><code>行高：line.height        字体框：就是字体存在格子：设置font-size就是设置字体框大小        行高会在字体框的上下平均分配        设置行高和高一样，就是垂直居中        行间距等于行高-字体大小</code></pre><h2 id="字体的简写属性"><a href="#字体的简写属性" class="headerlink" title="字体的简写属性"></a>字体的简写属性</h2><pre><code>    font:设置所有属性                语法：字体大小/行高，字体族：必须写，最后两个                行高可以省略不写，默认值：            font-weight：字重：加粗                -可选值：                    -normal                    -bold            font-size：                -italic：斜体                -normal            font：时会覆盖上面的设置</code></pre><h2 id="文本的水平和垂直对齐"><a href="#文本的水平和垂直对齐" class="headerlink" title="文本的水平和垂直对齐"></a>文本的水平和垂直对齐</h2><pre><code>    text-align:文本的水平对齐                -可选值                   -left                   -right                   -center                   -justify:两端对齐            vertical:垂直对齐                -baseline:基线对齐                -top:顶部对齐                -bottom                -middle</code></pre><h2 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h2><pre><code>    text-decortion:        -none        -underline        -line-throught        -overline    white-space:设置空白处理        -normal        -nowrap:不换行        -pre：保留换行        -    text-overflow    overflow：        -elispsis：设置溢出省略号</code></pre><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><pre><code>设置背景图片            -可以同时设置背景图片和背景颜色            -如果背景图片大于元素：一部分无法显示            -如果背景图小：平铺            background-repead：用来设置背景重复方式                repead：默认值:xy方向重复                repead-x：                repead-y：                no-repead：不重复            background-position:设置背景图片的位置                -top，left，right，bottom，center九宫格            background-clip:设置边框范围                -border-box:默认背景出现在边框下面                -padding-box：背景不会出现在边框下面                -content-box：只出现在内容区            background-origin：背景图偏移位置                -padding-box：内边距上                -content-box：背景图片的偏移量从内容区计算                -border-box：边框上开始计算            background-size：设置背景图片大小                -两个值：只写一个自动                --cover：图片比例不变：铺满元素                -contain：比例不变，完整显示            background-attachment：设置图片移动                -srcoll：随元素移动                -fixed：不会随元素移动            注意：                -：size必须卸载position构面并用/隔开                -：origin要在clip的前面</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS-定位</title>
       <link href="/2020/043013442.html"/>
       <url>/2020/043013442.html</url>
@@ -178,9 +204,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
-            
             <tag> app </tag>
+            
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -380,16 +406,16 @@
     
     
     <entry>
-      <title>C个人学习笔记</title>
-      <link href="/2020/042012132.html"/>
-      <url>/2020/042012132.html</url>
+      <title>C语言-学生成绩管理系统</title>
+      <link href="/2020/042013214.html"/>
+      <url>/2020/042013214.html</url>
       
         <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> C </category>
+          <category> 项目 </category>
           
       </categories>
       
@@ -409,16 +435,16 @@
     
     
     <entry>
-      <title>C语言-学生成绩管理系统</title>
-      <link href="/2020/042013214.html"/>
-      <url>/2020/042013214.html</url>
+      <title>C个人学习笔记</title>
+      <link href="/2020/042012132.html"/>
+      <url>/2020/042012132.html</url>
       
         <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> 项目 </category>
+          <category> C </category>
           
       </categories>
       

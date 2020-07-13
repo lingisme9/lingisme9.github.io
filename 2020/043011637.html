@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="html学习笔记, Lingisme9">
+    <meta name="keywords" content="css字体和背景, Lingisme9">
     <meta name="description" content="死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>html学习笔记 | Lingisme9</title>
+    <title>css字体和背景 | Lingisme9</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">html学习笔记</h1>
+                    <h1 class="description center-align post-title">css字体和背景</h1>
                 </div>
             </div>
         </div>
@@ -450,29 +450,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/html/">
-                                <span class="chip bg-color">html</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">网页开发</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/html/" class="post-category">
-                                html
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -481,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-22
+                    2020-04-30
                 </div>
                 
 
@@ -497,189 +480,87 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="html学习笔记"><a href="#html学习笔记" class="headerlink" title="html学习笔记"></a>html学习笔记</h1><h2 id="一、实体"><a href="#一、实体" class="headerlink" title="一、实体"></a>一、实体</h2><pre><code>1.使用实体的原因：多个空格只认一个空格只认一个
-        2.在html中不能书写特殊符号：空格，大于小于
-        3.如果需要书写特殊符号那么就需要特殊符号：实体
-        4.实体的语法
-            &amp;实体的没名字
-                &amp;nbsp；：表示空格
-                &amp;gt；：大于号
-                &amp;lt：小于号
-                &amp;copy；：版权符号
-        5.怎样查询实体：w3school实体</code></pre><h2 id="二、meta标签"><a href="#二、meta标签" class="headerlink" title="二、meta标签"></a>二、meta标签</h2><pre><code>    1.meta主要用于表示元数据，元数据不给用户看
-    2.charset 指定网页字符集
-    3.name 指定数据名字
-    4.content 指定数据内容
-        keywords:表示网页关键字，可以设置多个关键字，用“，”隔开
-        description：网站描述会显示在搜索描述里面
-    5.title标签的内容：超链接上的标签显示
-  *********************将页面重定义到另一个网站</code></pre><h2 id="三、语义化标签"><a href="#三、语义化标签" class="headerlink" title="三、语义化标签"></a>三、语义化标签</h2><p>网页中html负责网页结构，<br>            在使用时应该关注语义而不是样式</p>
-<pre><code>        标题标签
-            h1~h6
-            h1只有一个
-            一般情况下标题只用到h1~h3
-
-        块元素：在页面中独占一行block element
-            hgtoup:用来给标签分组
-           &lt;hgroup&gt;
-                    &lt;h1&gt;一级标题&lt;/h1&gt;
-                    &lt;h2&gt;二级标题&lt;/h2&gt;
-                 &lt;/hgroup&gt;
-
-        em标签：用于语音语调加重 
-                 行内元素：不会独占一行:inline element
-            &lt;!-- strong :表示强调重要内容--&gt;
-            &lt;p&gt;你今天不需要&lt;strong&gt;完成作业&lt;/strong&gt;&lt;/p&gt;
-
-
-
-      blockquote:表示长引用，换行
-      鲁迅说：
-      &lt;blockquote&gt;
-          这句话我没说过
-      &lt;/blockquote&gt;
-      &lt;!-- 不换行：行标签 --&gt;
-      鲁迅说：
-      &lt;q&gt;
-          这句话我没说过
-      &lt;/q&gt;
-      &lt;!-- br --&gt;
-      &lt;br&gt;
-      这句话我没说过
-      &lt;!-- 乱码处理，点击utf-8 --&gt;
-
-
-    块元素 block element
-        --对页面进行布局，一块一块的
-    行内元素 inline element
-        --行内元素主要用来包裹文字
-        --一般情况下在块元素中放行内元素
-        --块元素中基本什么都能放
-        --p元素中不能放任何块元素
-    浏览器在解析网站时会修正不符合规范的内容
-    比如：
-        -标签写在外部
-        -p元素中嵌套了块元素
-        -根元素中出现了除了head，body以外的子元素
-    浏览器开发工具：element右键查看：内存中的代码存在
-
- &lt;!-- 
-    布局标签（结构化语义）
-    header:头部
-    main:主体,一个页面只有一个
-    footer:尾部
-    nav:导航：一堆分类那块
-    aside：主体相关的不属于主体的内容
-    article：独立文章
-    section：独立区块：上面的标签都不能表示时
-
-    *div：没有语义，表示区块：目前来讲的主要布局元素
-    *span:行内元素,没有语义，主要用于选中文字
- --&gt;</code></pre><h2 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h2><pre><code> &lt;!-- 
-    列表:list
-        -铅笔
-        -尺子
-        -橡皮
-    在html中也可以创建列表：
-        -有序列表
-        -无序列表
-        -定义列表
-        ul：无序列表
-            -使用li来表示列表项
-        ol：有序列表
-            -li
-        dl：定义序列
-            dt来表示定义内容
-            dd来解释说明
-        列表之间可以互相嵌套
-            ul中套ul
- --&gt;</code></pre><h2 id="五、超链接"><a href="#五、超链接" class="headerlink" title="五、超链接"></a>五、超链接</h2><pre><code>超链接：
-a标签：（行内标签）
-    -属性：href：指定跳转路径
-        -值可以是外部网站地址
-        -可以是内部页面地址：同一目录下就可以
-超链接a标签是行内标签，在a标签中可以嵌套除它自生外的任何元素</code></pre><h2 id="六、相对路径"><a href="#六、相对路径" class="headerlink" title="六、相对路径"></a>六、相对路径</h2><pre><code>    跳转服务器内部页面时要相对路径：
-       ./或../开头
-       可以省略
-       ./:表示当前文件所在目录
-            09.相对路径.html
-            在同一目录下可以不写
-       ../：上一级目录中查找
-       读当前，读下一级，读上一级;</code></pre><h2 id="七、超链接的其他应用"><a href="#七、超链接的其他应用" class="headerlink" title="七、超链接的其他应用"></a>七、超链接的其他应用</h2><pre><code> a标签的属性值：
-        target:指定超链接打开的位置:新标签
-            -_self 默认值:当前标签页
-            -_blank 新的页面中打开标签页
-
- &lt;a href="#bottom"&gt;去底部&lt;/a&gt;
-
- &lt;a href="09.相对路径.html" target="_blank"&gt;超链接&lt;/a&gt; 
- 回到顶部：
-        id属性:唯一不重复的
-            -每一个标签都可以添加id属性,唯一标识,同一个页面中不能相同出现id属性
-            -字母开头
-        可以跳转到指定位置:#标签
-
- 在开发中可以用：
-        -#去代表一个占位符会刷新页面
-        -javascript:;占位符,不会发生任何反应</code></pre><h2 id="八、图片标签"><a href="#八、图片标签" class="headerlink" title="八、图片标签"></a>八、图片标签</h2><pre><code>    图片标签:当前页面引入图片
-        img:自结束标签
-            属性
-                src：指定路径
-                img属于替换元素：img所引用的外部元素替换img
-                alt：图片属性,默认不会显示，无法加载时可能会显示
-                搜索引擎会按alt来识别图片
-                width：宽度
-                hight：高度
-                只修改一个：等比缩放
-                通常指定一个就行
-            注意：不建议修改图片大小
-                 移动端经常修改
-    图片的格式：
-        jpg:颜色多，不支持透明，不支持动图
-            -表示照片
-        gif:支持颜色少，支持简单透明，支持动图
-            -颜色单一的图片，动图
-        png:支持颜色丰富，支持复杂透明，不支持动图
-            -颜色丰富，复杂透明
-        webp:
-            谷歌新推出网页的图片格式
-            具备其他格式的所有有点，文件还小
-            效果一样用小的，效果不同用好的
-            兼容不好
-
-也可以复制图片代码直接等号后面 
-      base64
-        -将图片用base64编码，这样可以将字符转换为字符，通过字符形式引入图片
-        -一般都是和网页一起加载的图片才会使用，不会出现延迟，加载速度快</code></pre><h2 id="九、内敛样式"><a href="#九、内敛样式" class="headerlink" title="九、内敛样式"></a>九、内敛样式</h2><pre><code>    iframe
-    内联框架：用于当前页面中引入别的网站
-        -src：网页路径
-        -frameborder：指定内联框架的边框：不好看
-            -会产生凹下去的外框，不好看
-                -1：打开
-                -0：关闭</code></pre><h2 id="十、音视频"><a href="#十、音视频" class="headerlink" title="十、音视频"></a>十、音视频</h2><pre><code>    audio:像页面中引入音频文件
-    属性：
-        -controls：是否允许用户控制
-        -autoplay：自动播放
-            -如果设置，打开页面时会自动播放，目前大部分浏览器不会自动播放
-            -先播放一次之后就可以自动播放了，IE可以
-        loop:循环播放
-    除了scr指定文件之外;还可以用scorce来指定文件
-        -指定多个文件，不会全部执行，找一个支持的
-    embed:老版本的播放，自动播放，第二次会变很小：指定宽高
-        -type：指定类型
-
-
-
-
-    video：引入视频文件
-    属性：
-        -autoplay
-        -loop
-        -音频通常用source，这样兼容性好
-
- 一般不用这种绝对路径的方法
-         allowFullScreen="true"：全屏
-         一般引入：和之前一样：</code></pre><script>
+                <h1 id="CSS-字体和背景"><a href="#CSS-字体和背景" class="headerlink" title="CSS-字体和背景"></a>CSS-字体和背景</h1><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><pre><code>    color: 颜色
+        font-size:字体大小
+        em：相当于当前元素的font-size
+        rm：相对于根元素的font-size
+        font-family：字体族
+            -serif：
+            -sans-size
+            -monospace；等宽
+                -指定字体类别
+                -可以设置多个：从第一个开始</code></pre><h2 id="图标字体"><a href="#图标字体" class="headerlink" title="图标字体"></a>图标字体</h2><pre><code>    用法：
+        - &lt;i class = "fas fa-bell"&gt;&lt;/i&gt;
+        后面fa-bell为图标名字；可以改颜色，大小，
+            -style=""里面设置
+  其他用法：
+    通过实体使用图标字体：&amp;#x图标的编码
+                        class = fas x   
+     &lt;i class = "fas fa-bell"&gt;&lt;/i&gt;</code></pre><h2 id="iconfont"><a href="#iconfont" class="headerlink" title="iconfont"></a>iconfont</h2><h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2><pre><code>行高：line.height
+        字体框：就是字体存在格子：设置font-size就是设置字体框大小
+        行高会在字体框的上下平均分配
+        设置行高和高一样，就是垂直居中
+        行间距等于行高-字体大小</code></pre><h2 id="字体的简写属性"><a href="#字体的简写属性" class="headerlink" title="字体的简写属性"></a>字体的简写属性</h2><pre><code>    font:设置所有属性
+                语法：字体大小/行高，字体族：必须写，最后两个
+                行高可以省略不写，默认值：
+            font-weight：字重：加粗
+                -可选值：
+                    -normal
+                    -bold
+            font-size：
+                -italic：斜体
+                -normal
+            font：时会覆盖上面的设置</code></pre><h2 id="文本的水平和垂直对齐"><a href="#文本的水平和垂直对齐" class="headerlink" title="文本的水平和垂直对齐"></a>文本的水平和垂直对齐</h2><pre><code>    text-align:文本的水平对齐
+                -可选值
+                   -left
+                   -right
+                   -center
+                   -justify:两端对齐
+            vertical:垂直对齐
+                -baseline:基线对齐
+                -top:顶部对齐
+                -bottom
+                -middle</code></pre><h2 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h2><pre><code>    text-decortion:
+        -none
+        -underline
+        -line-throught
+        -overline
+    white-space:设置空白处理
+        -normal
+        -nowrap:不换行
+        -pre：保留换行
+        -
+    text-overflow
+    overflow：
+        -elispsis：设置溢出省略号</code></pre><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><pre><code>设置背景图片
+            -可以同时设置背景图片和背景颜色
+            -如果背景图片大于元素：一部分无法显示
+            -如果背景图小：平铺
+            background-repead：用来设置背景重复方式
+                repead：默认值:xy方向重复
+                repead-x：
+                repead-y：
+                no-repead：不重复
+            background-position:设置背景图片的位置
+                -top，left，right，bottom，center九宫格
+            background-clip:设置边框范围
+                -border-box:默认背景出现在边框下面
+                -padding-box：背景不会出现在边框下面
+                -content-box：只出现在内容区
+            background-origin：背景图偏移位置
+                -padding-box：内边距上
+                -content-box：背景图片的偏移量从内容区计算
+                -border-box：边框上开始计算
+            background-size：设置背景图片大小
+                -两个值：只写一个自动
+                --cover：图片比例不变：铺满元素
+                -contain：比例不变，完整显示
+            background-attachment：设置图片移动
+                -srcoll：随元素移动
+                -fixed：不会随元素移动
+            注意：
+                -：size必须卸载position构面并用/隔开
+                -：origin要在clip的前面</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -722,7 +603,7 @@ a标签：（行内标签）
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lingisme9.club/2020/042250736.html">https://lingisme9.club/2020/042250736.html</a>
+                    <a href="https://lingisme9.club/2020/043011637.html">https://lingisme9.club/2020/043011637.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,15 +640,7 @@ a标签：（行内标签）
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/html/">
-                                    <span class="chip bg-color">html</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">网页开发</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1200,48 +1073,42 @@ a标签：（行内标签）
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/042247896.html">
+                <a href="/2020/043017775.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java学习笔记">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js">
                         
-                        <span class="card-title">java学习笔记</span>
+                        <span class="card-title">js</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人学习java笔记
+                            js一、helloWorld//从上到下执行
+
+
+// alert("这是我的第一行js代码");
+// 控制浏览器弹出一个警告框
+
+
+
+//在页面中输出一个内容
+// 可以在body中写一个内容
+// document.write("看我
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            坏蛋先生
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">程序设计</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1253,31 +1120,36 @@ a标签：（行内标签）
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/042013214.html">
+                <a href="/2020/043013442.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="C语言-学生成绩管理系统">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CSS-定位">
                         
-                        <span class="card-title">C语言-学生成绩管理系统</span>
+                        <span class="card-title">CSS-定位</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人C语言学习笔记
+                            CSS定位一、定位简介定位：
+            -更加高级的布局手段
+            -通过定位可以将元素任意定位
+            -position属性设置定位
+                -可选值
+      
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    项目
+                            <a href="/categories/css/" class="post-category">
+                                    css
                                 </a>
                             
                             
@@ -1287,16 +1159,8 @@ a标签：（行内标签）
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">软件开发</span>
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>
