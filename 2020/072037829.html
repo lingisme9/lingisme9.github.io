@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="html学习笔记, Lingisme9">
+    <meta name="keywords" content="辽大自动疫情打卡, Lingisme9">
     <meta name="description" content="死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>html学习笔记 | Lingisme9</title>
+    <title>辽大自动疫情打卡 | Lingisme9</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">html学习笔记</h1>
+                    <h1 class="description center-align post-title">辽大自动疫情打卡</h1>
                 </div>
             </div>
         </div>
@@ -450,29 +450,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/html/">
-                                <span class="chip bg-color">html</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">网页开发</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/html/" class="post-category">
-                                html
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -481,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-22
+                    2020-07-20
                 </div>
                 
 
@@ -497,189 +480,73 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="html学习笔记"><a href="#html学习笔记" class="headerlink" title="html学习笔记"></a>html学习笔记</h1><h2 id="一、实体"><a href="#一、实体" class="headerlink" title="一、实体"></a>一、实体</h2><pre><code>1.使用实体的原因：多个空格只认一个空格只认一个
-        2.在html中不能书写特殊符号：空格，大于小于
-        3.如果需要书写特殊符号那么就需要特殊符号：实体
-        4.实体的语法
-            &amp;实体的没名字
-                &amp;nbsp；：表示空格
-                &amp;gt；：大于号
-                &amp;lt：小于号
-                &amp;copy；：版权符号
-        5.怎样查询实体：w3school实体</code></pre><h2 id="二、meta标签"><a href="#二、meta标签" class="headerlink" title="二、meta标签"></a>二、meta标签</h2><pre><code>    1.meta主要用于表示元数据，元数据不给用户看
-    2.charset 指定网页字符集
-    3.name 指定数据名字
-    4.content 指定数据内容
-        keywords:表示网页关键字，可以设置多个关键字，用“，”隔开
-        description：网站描述会显示在搜索描述里面
-    5.title标签的内容：超链接上的标签显示
-  *********************将页面重定义到另一个网站</code></pre><h2 id="三、语义化标签"><a href="#三、语义化标签" class="headerlink" title="三、语义化标签"></a>三、语义化标签</h2><p>网页中html负责网页结构，<br>            在使用时应该关注语义而不是样式</p>
-<pre><code>        标题标签
-            h1~h6
-            h1只有一个
-            一般情况下标题只用到h1~h3
+                <pre><code># 实现浏览器打开搜索
+# 引入webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+from openpyxl import load_workbook
+import schedule
 
-        块元素：在页面中独占一行block element
-            hgtoup:用来给标签分组
-           &lt;hgroup&gt;
-                    &lt;h1&gt;一级标题&lt;/h1&gt;
-                    &lt;h2&gt;二级标题&lt;/h2&gt;
-                 &lt;/hgroup&gt;
+def job():
+        # 打开excel文件，获取处于活跃状态的表格
+        workbook = load_workbook(filename='num.xlsx')
+        sheet = workbook.active
+        for i in [2, 3, 4, 5 ,6 ,7 ,8 ,9]:
+                # 实列化对象，选择启用谷歌，打开浏览器
+                driver = webdriver.Chrome()
+                driver.implicitly_wait(10)
 
-        em标签：用于语音语调加重 
-                 行内元素：不会独占一行:inline element
-            &lt;!-- strong :表示强调重要内容--&gt;
-            &lt;p&gt;你今天不需要&lt;strong&gt;完成作业&lt;/strong&gt;&lt;/p&gt;
+                # 访问网页
+                driver.get("http://tjxx.lnu.edu.cn/login.asp")
 
+                # 输入账号
+                cell1 = sheet.cell(row=i, column=1).value
+                ele = driver.find_element_by_name("userid")
+                ele.send_keys(cell1)
 
+                # 输入密码
+                paw = sheet.cell(row=i, column=2).value
+                ele1 = driver.find_element_by_name("userpwd")
+                ele1.send_keys(paw)
 
-      blockquote:表示长引用，换行
-      鲁迅说：
-      &lt;blockquote&gt;
-          这句话我没说过
-      &lt;/blockquote&gt;
-      &lt;!-- 不换行：行标签 --&gt;
-      鲁迅说：
-      &lt;q&gt;
-          这句话我没说过
-      &lt;/q&gt;
-      &lt;!-- br --&gt;
-      &lt;br&gt;
-      这句话我没说过
-      &lt;!-- 乱码处理，点击utf-8 --&gt;
+                # 点击登录
+                driver.find_element_by_id("formSubmitBtn").click()
 
+                # 选中第一个无
+                ele4 = driver.find_element_by_xpath("/html/body/div[1]/form/div[3]/div[2]/label[1]/div[2]/input")
+                driver.execute_script("arguments[0].click();", ele4)
 
-    块元素 block element
-        --对页面进行布局，一块一块的
-    行内元素 inline element
-        --行内元素主要用来包裹文字
-        --一般情况下在块元素中放行内元素
-        --块元素中基本什么都能放
-        --p元素中不能放任何块元素
-    浏览器在解析网站时会修正不符合规范的内容
-    比如：
-        -标签写在外部
-        -p元素中嵌套了块元素
-        -根元素中出现了除了head，body以外的子元素
-    浏览器开发工具：element右键查看：内存中的代码存在
+                # 选中第二个无
+                ele5 = driver.find_element_by_xpath("/html/body/div[1]/form/div[4]/div[2]/label[1]/div[2]/input")
+                driver.execute_script("arguments[0].click();", ele5)
 
- &lt;!-- 
-    布局标签（结构化语义）
-    header:头部
-    main:主体,一个页面只有一个
-    footer:尾部
-    nav:导航：一堆分类那块
-    aside：主体相关的不属于主体的内容
-    article：独立文章
-    section：独立区块：上面的标签都不能表示时
+                # 选中健康
+                ele6 = driver.find_element_by_xpath("/html/body/div[1]/form/div[5]/div[2]/label[1]/div[2]/input")
+                driver.execute_script("arguments[0].click();", ele6)
 
-    *div：没有语义，表示区块：目前来讲的主要布局元素
-    *span:行内元素,没有语义，主要用于选中文字
- --&gt;</code></pre><h2 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h2><pre><code> &lt;!-- 
-    列表:list
-        -铅笔
-        -尺子
-        -橡皮
-    在html中也可以创建列表：
-        -有序列表
-        -无序列表
-        -定义列表
-        ul：无序列表
-            -使用li来表示列表项
-        ol：有序列表
-            -li
-        dl：定义序列
-            dt来表示定义内容
-            dd来解释说明
-        列表之间可以互相嵌套
-            ul中套ul
- --&gt;</code></pre><h2 id="五、超链接"><a href="#五、超链接" class="headerlink" title="五、超链接"></a>五、超链接</h2><pre><code>超链接：
-a标签：（行内标签）
-    -属性：href：指定跳转路径
-        -值可以是外部网站地址
-        -可以是内部页面地址：同一目录下就可以
-超链接a标签是行内标签，在a标签中可以嵌套除它自生外的任何元素</code></pre><h2 id="六、相对路径"><a href="#六、相对路径" class="headerlink" title="六、相对路径"></a>六、相对路径</h2><pre><code>    跳转服务器内部页面时要相对路径：
-       ./或../开头
-       可以省略
-       ./:表示当前文件所在目录
-            09.相对路径.html
-            在同一目录下可以不写
-       ../：上一级目录中查找
-       读当前，读下一级，读上一级;</code></pre><h2 id="七、超链接的其他应用"><a href="#七、超链接的其他应用" class="headerlink" title="七、超链接的其他应用"></a>七、超链接的其他应用</h2><pre><code> a标签的属性值：
-        target:指定超链接打开的位置:新标签
-            -_self 默认值:当前标签页
-            -_blank 新的页面中打开标签页
+                # 选中隔离
+                ele7 = driver.find_element_by_xpath("/html/body/div[1]/form/div[6]/div[2]/label[1]/div[2]/input")
+                driver.execute_script("arguments[0].click();", ele7)
 
- &lt;a href="#bottom"&gt;去底部&lt;/a&gt;
+                # 是否在校
+                ele8 = driver.find_element_by_xpath("/html/body/div[1]/form/div[7]/div[2]/label[1]/div[2]/input")
+                driver.execute_script("arguments[0].click();", ele8)
+                # # 提交
+                # driver.find_element_by_xpath("/html/body/div[1]/form/div[8]/a").click()
+                # # 确认提交
+                # driver.find_element_by_xpath("/html/body/div[3]/div[2]/div[2]/a[2]").click()
+                # 退出
+                # driver.find_element_by_xpath("/html/body/div/div[2]/div[3]/a").click()
+                driver.quit()
+                print("提交成功")
 
- &lt;a href="09.相对路径.html" target="_blank"&gt;超链接&lt;/a&gt; 
- 回到顶部：
-        id属性:唯一不重复的
-            -每一个标签都可以添加id属性,唯一标识,同一个页面中不能相同出现id属性
-            -字母开头
-        可以跳转到指定位置:#标签
+schedule.every().day.at("21:48").do(job)
 
- 在开发中可以用：
-        -#去代表一个占位符会刷新页面
-        -javascript:;占位符,不会发生任何反应</code></pre><h2 id="八、图片标签"><a href="#八、图片标签" class="headerlink" title="八、图片标签"></a>八、图片标签</h2><pre><code>    图片标签:当前页面引入图片
-        img:自结束标签
-            属性
-                src：指定路径
-                img属于替换元素：img所引用的外部元素替换img
-                alt：图片属性,默认不会显示，无法加载时可能会显示
-                搜索引擎会按alt来识别图片
-                width：宽度
-                hight：高度
-                只修改一个：等比缩放
-                通常指定一个就行
-            注意：不建议修改图片大小
-                 移动端经常修改
-    图片的格式：
-        jpg:颜色多，不支持透明，不支持动图
-            -表示照片
-        gif:支持颜色少，支持简单透明，支持动图
-            -颜色单一的图片，动图
-        png:支持颜色丰富，支持复杂透明，不支持动图
-            -颜色丰富，复杂透明
-        webp:
-            谷歌新推出网页的图片格式
-            具备其他格式的所有有点，文件还小
-            效果一样用小的，效果不同用好的
-            兼容不好
+while True:
+    schedule.run_pending()
+time.sleep(3)
 
-也可以复制图片代码直接等号后面 
-      base64
-        -将图片用base64编码，这样可以将字符转换为字符，通过字符形式引入图片
-        -一般都是和网页一起加载的图片才会使用，不会出现延迟，加载速度快</code></pre><h2 id="九、内敛样式"><a href="#九、内敛样式" class="headerlink" title="九、内敛样式"></a>九、内敛样式</h2><pre><code>    iframe
-    内联框架：用于当前页面中引入别的网站
-        -src：网页路径
-        -frameborder：指定内联框架的边框：不好看
-            -会产生凹下去的外框，不好看
-                -1：打开
-                -0：关闭</code></pre><h2 id="十、音视频"><a href="#十、音视频" class="headerlink" title="十、音视频"></a>十、音视频</h2><pre><code>    audio:像页面中引入音频文件
-    属性：
-        -controls：是否允许用户控制
-        -autoplay：自动播放
-            -如果设置，打开页面时会自动播放，目前大部分浏览器不会自动播放
-            -先播放一次之后就可以自动播放了，IE可以
-        loop:循环播放
-    除了scr指定文件之外;还可以用scorce来指定文件
-        -指定多个文件，不会全部执行，找一个支持的
-    embed:老版本的播放，自动播放，第二次会变很小：指定宽高
-        -type：指定类型
-
-
-
-
-    video：引入视频文件
-    属性：
-        -autoplay
-        -loop
-        -音频通常用source，这样兼容性好
-
- 一般不用这种绝对路径的方法
-         allowFullScreen="true"：全屏
-         一般引入：和之前一样：</code></pre><script>
+</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -722,7 +589,7 @@ a标签：（行内标签）
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lingisme9.club/2020/042250736.html">https://lingisme9.club/2020/042250736.html</a>
+                    <a href="https://lingisme9.club/2020/072037829.html">https://lingisme9.club/2020/072037829.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,15 +626,7 @@ a标签：（行内标签）
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/html/">
-                                    <span class="chip bg-color">html</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">网页开发</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1196,53 +1055,43 @@ a标签：（行内标签）
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/042247896.html">
+                <a href="/2020/072037829.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java学习笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="辽大自动疫情打卡">
                         
-                        <span class="card-title">java学习笔记</span>
+                        <span class="card-title">辽大自动疫情打卡</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人学习java笔记
+                            # 实现浏览器打开搜索
+# 引入webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+from openpyxl i
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-20
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            坏蛋先生
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">程序设计</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1253,52 +1102,48 @@ a标签：（行内标签）
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/042012132.html">
+                <a href="/2020/06141769.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C个人学习笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python+mysql项目">
                         
-                        <span class="card-title">C个人学习笔记</span>
+                        <span class="card-title">Python+mysql项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人C语言学习笔记
+                            一起旅游项目
+一、会员注册页面
+1、从网站找到路径regester
+
+分析regester函数
+找到RegesterFrom类定义的位置
+
+分析regester函数
+转到被渲染的html
+
+
+转到被渲染的html
+
+
+表单规则
+
+逻辑判断：
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/C/" class="post-category">
-                                    C
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            坏蛋先生
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">软件开发</span>
-                    </a>
-                    
                 </div>
                 
             </div>

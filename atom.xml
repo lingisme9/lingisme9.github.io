@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lingisme9.club/"/>
-  <updated>2020-06-14T08:18:34.941Z</updated>
+  <updated>2020-07-20T14:19:50.087Z</updated>
   <id>https://lingisme9.club/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>辽大自动疫情打卡</title>
+    <link href="https://lingisme9.club/2020/072037829.html"/>
+    <id>https://lingisme9.club/2020/072037829.html</id>
+    <published>2020-07-20T14:18:53.000Z</published>
+    <updated>2020-07-20T14:19:50.087Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python+mysql项目</title>
@@ -142,7 +165,7 @@
     <link href="https://lingisme9.club/2020/043017775.html"/>
     <id>https://lingisme9.club/2020/043017775.html</id>
     <published>2020-04-30T03:57:22.000Z</published>
-    <updated>2020-07-13T05:36:45.095Z</updated>
+    <updated>2020-07-18T02:38:42.188Z</updated>
     
     <summary type="html">
     
@@ -291,9 +314,9 @@
       <category term="博客" scheme="https://lingisme9.club/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="app" scheme="https://lingisme9.club/tags/app/"/>
-    
       <category term="博客" scheme="https://lingisme9.club/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="app" scheme="https://lingisme9.club/tags/app/"/>
     
   </entry>
   
@@ -499,37 +522,6 @@
       <category term="html" scheme="https://lingisme9.club/tags/html/"/>
     
       <category term="网页开发" scheme="https://lingisme9.club/tags/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言-学生成绩管理系统</title>
-    <link href="https://lingisme9.club/2020/042013214.html"/>
-    <id>https://lingisme9.club/2020/042013214.html</id>
-    <published>2020-04-20T13:53:09.000Z</published>
-    <updated>2020-04-20T14:24:16.646Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-      <category term="项目" scheme="https://lingisme9.club/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-      <category term="笔记" scheme="https://lingisme9.club/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="C" scheme="https://lingisme9.club/tags/C/"/>
-    
-      <category term="软件开发" scheme="https://lingisme9.club/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   

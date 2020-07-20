@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>辽大自动疫情打卡</title>
+      <link href="/2020/072037829.html"/>
+      <url>/2020/072037829.html</url>
+      
+        <content type="html"><![CDATA[<pre><code># 实现浏览器打开搜索# 引入webdriverfrom selenium.webdriver.common.keys import Keysfrom selenium import webdriverfrom openpyxl import load_workbookimport scheduledef job():        # 打开excel文件，获取处于活跃状态的表格        workbook = load_workbook(filename='num.xlsx')        sheet = workbook.active        for i in [2, 3, 4, 5 ,6 ,7 ,8 ,9]:                # 实列化对象，选择启用谷歌，打开浏览器                driver = webdriver.Chrome()                driver.implicitly_wait(10)                # 访问网页                driver.get("http://tjxx.lnu.edu.cn/login.asp")                # 输入账号                cell1 = sheet.cell(row=i, column=1).value                ele = driver.find_element_by_name("userid")                ele.send_keys(cell1)                # 输入密码                paw = sheet.cell(row=i, column=2).value                ele1 = driver.find_element_by_name("userpwd")                ele1.send_keys(paw)                # 点击登录                driver.find_element_by_id("formSubmitBtn").click()                # 选中第一个无                ele4 = driver.find_element_by_xpath("/html/body/div[1]/form/div[3]/div[2]/label[1]/div[2]/input")                driver.execute_script("arguments[0].click();", ele4)                # 选中第二个无                ele5 = driver.find_element_by_xpath("/html/body/div[1]/form/div[4]/div[2]/label[1]/div[2]/input")                driver.execute_script("arguments[0].click();", ele5)                # 选中健康                ele6 = driver.find_element_by_xpath("/html/body/div[1]/form/div[5]/div[2]/label[1]/div[2]/input")                driver.execute_script("arguments[0].click();", ele6)                # 选中隔离                ele7 = driver.find_element_by_xpath("/html/body/div[1]/form/div[6]/div[2]/label[1]/div[2]/input")                driver.execute_script("arguments[0].click();", ele7)                # 是否在校                ele8 = driver.find_element_by_xpath("/html/body/div[1]/form/div[7]/div[2]/label[1]/div[2]/input")                driver.execute_script("arguments[0].click();", ele8)                # # 提交                # driver.find_element_by_xpath("/html/body/div[1]/form/div[8]/a").click()                # # 确认提交                # driver.find_element_by_xpath("/html/body/div[3]/div[2]/div[2]/a[2]").click()                # 退出                # driver.find_element_by_xpath("/html/body/div/div[2]/div[3]/a").click()                driver.quit()                print("提交成功")schedule.every().day.at("21:48").do(job)while True:    schedule.run_pending()time.sleep(3)</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python+mysql项目</title>
       <link href="/2020/06141769.html"/>
       <url>/2020/06141769.html</url>
@@ -87,7 +100,7 @@
       <link href="/2020/043017775.html"/>
       <url>/2020/043017775.html</url>
       
-        <content type="html"><![CDATA[<h1 id="js"><a href="#js" class="headerlink" title="js"></a>js</h1><h2 id="一、helloWorld"><a href="#一、helloWorld" class="headerlink" title="一、helloWorld"></a>一、helloWorld</h2><pre><code>//从上到下执行// alert("这是我的第一行js代码");// 控制浏览器弹出一个警告框//在页面中输出一个内容// 可以在body中写一个内容// document.write("看我出不出来");// 向控制台输出一个内容// console.log("你猜我在那出来");// alert("这是我的第一行js代码");// document.write("看我出不出来");// console.log("你猜我在那出来");</code></pre><h2 id="二、js代码编写位置"><a href="#二、js代码编写位置" class="headerlink" title="二、js代码编写位置"></a>二、js代码编写位置</h2> <!-- 写到外部js文件中 --><pre><code>&lt;!-- 好处：在不同的页面中同时应用：也可以利用浏览器缓存机制          用于外部引入，就不能继续编写代码了          如果需要再新建一个script--&gt;</code></pre> <!-- 虽然可以写在标签属性中，但是他们属于结构与行为耦合，不方便维护 --><pre><code>&lt;!-- 可以将js代码编写到标签onclick属性中 --&gt;&lt;button onclick="alert('讨厌，dsafds');"&gt;点我一下&lt;/button&gt;&lt;!-- 可以将js下载超链接href属性中 --&gt;&lt;a href="javascript:alert('让你点你就点');"&gt;点&lt;/a&gt;&lt;!-- 占位符 --&gt;&lt;a href="javascript:;"&gt;点&lt;/a&gt;</code></pre><h2 id="三、基本语法"><a href="#三、基本语法" class="headerlink" title="三、基本语法"></a>三、基本语法</h2><pre><code>// js注释：单行    // 多行：/**/    /*    *   1、严格区分大小写    *   2、每一条语句分号结尾，不写自动添加：会消耗资源，会加错分号    *   3、会忽略多个空格和换行，利用空格，换行，格式化代码    */</code></pre><h2 id="四、字面量和变量"><a href="#四、字面量和变量" class="headerlink" title="四、字面量和变量"></a>四、字面量和变量</h2><pre><code> /*    *   字面量：都是不可改变的值，可直接使用但一般不会直接使用：比如：阿拉伯数字    *    *   变量：保存字面量    */    // 声明变量    // 在var关键字来声明变量    var a;    // 为变量赋值    a = 123;    var b = 567;    console.log(b);    console.log(a);</code></pre><h2 id="五、标识符"><a href="#五、标识符" class="headerlink" title="五、标识符"></a>五、标识符</h2><pre><code>// 所有可以自主命名的// 规则：字母、数字、下划线、$、// 不能数字开头// 不能是关键字或保留字// 驼峰命名：首字母小写，单词字母开头大写// utf-8保存</code></pre><h2 id="六、字符串"><a href="#六、字符串" class="headerlink" title="六、字符串"></a>六、字符串</h2><pre><code>// 数据类型：    // js：六种：String、Number、Boolean、Null、Undefined：未定义,Object:对象    // String：引号        // - 单双都可        // 不能嵌套：        //     // 转义字符    //  " \"    var str = "hello";</code></pre><h2 id="七、数值类型"><a href="#七、数值类型" class="headerlink" title="七、数值类型"></a>七、数值类型</h2><pre><code>// 所有数值都是Number类型：整数。浮点        // 可以使用运算符typeof 变量：检查变量类型        // 表示数字的最大值：Number.MAX_VALUE：表示的数字超过最大值:返回infinity（无穷）        // infinity:字面量        // typeof检查infinity：也会返回Number        // abc*bdc=NAN：不是数字        // Number.MIN_VALUE:0以上的最小值        // 浮点数：可能得到不精确的结果        // 布尔值：真假        // false,true逻辑判断    // Null:只有一个值    // 空的对象，typeof返回：object    // Undefined：未定义    // 当声明一个变量但未赋值时，就是这个</code></pre><h2 id="八、强制类型转换和运算符"><a href="#八、强制类型转换和运算符" class="headerlink" title="八、强制类型转换和运算符"></a>八、强制类型转换和运算符</h2><pre><code> // 强制类型转换：    // 主要是将其他的转成字符、数字、布尔    // 转换成String    // 方式1：调用被转换类型的ToString()方法:会有局限，            // null和Undefined没有ToString方法            // XXX.tostring()    // var a = 123;    // var b = a.toString();    // a = a.toString();    // 方式二：调用String函数，并将转换数据做参数:没局限            // 对于Number、Boolean就是调用ToString            // 另外两个直接转换成它的值null，undefined    // var a = 123;    // a = String(a);     // 强制转换成Number    // 方式1：使用Number()函数:有局限    //      字符串转数字：直接转成数字    //          非数字：NAN    //      空格：0    //      布尔转数字:0,1    //      Null转数字：0    //      Undefined：NAN    // 方式二：用于字符串：parseInt()：字符串中有效整数内容去出来然后转换成Number    //                    123dpf：123    // parseFloat()：整数+小数:132.332dsaf-&gt;132.332    // 如果对非字符：先转换成String再转成数字  // 16进制：0x123-&gt;123      // 8进制：0开头      // 2进制：0b开头：不是所有浏览器都支持      // parseIn两个参数：第二个指定进制parseIn(a,10)     // Boolean()；    // 除了0和NAN其余都是true    // 字符串：除了空串：其余都是true    // Null:false    // Undefined:false    // 对象：true      typeof就是运算符：获得值得类型是字符串    算数运算符：5    +：转换成数字计算：NAN+1=NAN：任何值：都是NAN     字符串：连接     还可声明时候连接起来换行写     任何值和字符串做加法都会先转成字符串：再连接     利用这一特点将：+""转换成字符    -：除了和字符串相加：其他都是转换成Number    -*/：都是转换成数字    可以用-0 *1 /1来转换成Number    %：     自增自减：一样一样     与运算：两个值都为true。返回后面的           两个值有false：返回前面那的false           第一个true：返回第二个值           如果第一个false：直接false、    或||：一样</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1 id="js"><a href="#js" class="headerlink" title="js"></a>js</h1><h2 id="一、helloWorld"><a href="#一、helloWorld" class="headerlink" title="一、helloWorld"></a>一、helloWorld</h2><pre><code>//从上到下执行// alert("这是我的第一行js代码");// 控制浏览器弹出一个警告框//在页面中输出一个内容// 可以在body中写一个内容// document.write("看我出不出来");// 向控制台输出一个内容// console.log("你猜我在那出来");// alert("这是我的第一行js代码");// document.write("看我出不出来");// console.log("你猜我在那出来");</code></pre><h2 id="二、js代码编写位置"><a href="#二、js代码编写位置" class="headerlink" title="二、js代码编写位置"></a>二、js代码编写位置</h2> <!-- 写到外部js文件中 --><pre><code>&lt;!-- 好处：在不同的页面中同时应用：也可以利用浏览器缓存机制          用于外部引入，就不能继续编写代码了          如果需要再新建一个script--&gt;</code></pre> <!-- 虽然可以写在标签属性中，但是他们属于结构与行为耦合，不方便维护 --><pre><code>&lt;!-- 可以将js代码编写到标签onclick属性中 --&gt;&lt;button onclick="alert('讨厌，dsafds');"&gt;点我一下&lt;/button&gt;&lt;!-- 可以将js下载超链接href属性中 --&gt;&lt;a href="javascript:alert('让你点你就点');"&gt;点&lt;/a&gt;&lt;!-- 占位符 --&gt;&lt;a href="javascript:;"&gt;点&lt;/a&gt;</code></pre><h2 id="三、基本语法"><a href="#三、基本语法" class="headerlink" title="三、基本语法"></a>三、基本语法</h2><pre><code>// js注释：单行    // 多行：/**/    /*    *   1、严格区分大小写    *   2、每一条语句分号结尾，不写自动添加：会消耗资源，会加错分号    *   3、会忽略多个空格和换行，利用空格，换行，格式化代码    */</code></pre><h2 id="四、字面量和变量"><a href="#四、字面量和变量" class="headerlink" title="四、字面量和变量"></a>四、字面量和变量</h2><pre><code> /*    *   字面量：都是不可改变的值，可直接使用但一般不会直接使用：比如：阿拉伯数字    *    *   变量：保存字面量    */    // 声明变量    // 在var关键字来声明变量    var a;    // 为变量赋值    a = 123;    var b = 567;    console.log(b);    console.log(a);</code></pre><h2 id="五、标识符"><a href="#五、标识符" class="headerlink" title="五、标识符"></a>五、标识符</h2><pre><code>// 所有可以自主命名的// 规则：字母、数字、下划线、$、// 不能数字开头// 不能是关键字或保留字// 驼峰命名：首字母小写，单词字母开头大写// utf-8保存</code></pre><h2 id="六、字符串"><a href="#六、字符串" class="headerlink" title="六、字符串"></a>六、字符串</h2><pre><code>// 数据类型：    // js：六种：String、Number、Boolean、Null、Undefined：未定义,Object:对象    // String：引号        // - 单双都可        // 不能嵌套：        //     // 转义字符    //  " \"    var str = "hello";</code></pre><h2 id="七、数值类型"><a href="#七、数值类型" class="headerlink" title="七、数值类型"></a>七、数值类型</h2><pre><code>// 所有数值都是Number类型：整数。浮点        // 可以使用运算符typeof 变量：检查变量类型        // 表示数字的最大值：Number.MAX_VALUE：表示的数字超过最大值:返回infinity（无穷）        // infinity:字面量        // typeof检查infinity：也会返回Number        // abc*bdc=NAN：不是数字        // Number.MIN_VALUE:0以上的最小值        // 浮点数：可能得到不精确的结果        // 布尔值：真假        // false,true逻辑判断    // Null:只有一个值    // 空的对象，typeof返回：object    // Undefined：未定义    // 当声明一个变量但未赋值时，就是这个</code></pre><h2 id="八、强制类型转换和运算符"><a href="#八、强制类型转换和运算符" class="headerlink" title="八、强制类型转换和运算符"></a>八、强制类型转换和运算符</h2><pre><code> // 强制类型转换：    // 主要是将其他的转成字符、数字、布尔    // 转换成String    // 方式1：调用被转换类型的ToString()方法:会有局限，            // null和Undefined没有ToString方法            // XXX.tostring()    // var a = 123;    // var b = a.toString();    // a = a.toString();    // 方式二：调用String函数，并将转换数据做参数:没局限            // 对于Number、Boolean就是调用ToString            // 另外两个直接转换成它的值null，undefined    // var a = 123;    // a = String(a);     // 强制转换成Number    // 方式1：使用Number()函数:有局限    //      字符串转数字：直接转成数字    //          非数字：NAN    //      空格：0    //      布尔转数字:0,1    //      Null转数字：0    //      Undefined：NAN    // 方式二：用于字符串：parseInt()：字符串中有效整数内容去出来然后转换成Number    //                    123dpf：123    // parseFloat()：整数+小数:132.332dsaf-&gt;132.332    // 如果对非字符：先转换成String再转成数字  // 16进制：0x123-&gt;123      // 8进制：0开头      // 2进制：0b开头：不是所有浏览器都支持      // parseIn两个参数：第二个指定进制parseIn(a,10)     // Boolean()；    // 除了0和NAN其余都是true    // 字符串：除了空串：其余都是true    // Null:false    // Undefined:false    // 对象：true      typeof就是运算符：获得值得类型是字符串    算数运算符：5    +：转换成数字计算：NAN+1=NAN：任何值：都是NAN     字符串：连接     还可声明时候连接起来换行写     任何值和字符串做加法都会先转成字符串：再连接     利用这一特点将：+""转换成字符    -：除了和字符串相加：其他都是转换成Number    -*/：都是转换成数字    可以用-0 *1 /1来转换成Number    %：     自增自减：一样一样     与运算：两个值都为true。返回后面的           两个值有false：返回前面那的false           第一个true：返回第二个值           如果第一个false：直接false、     或||：一样     非！：一样</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       
@@ -204,9 +217,9 @@
       
         <tags>
             
-            <tag> app </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> app </tag>
             
         </tags>
       
@@ -406,16 +419,16 @@
     
     
     <entry>
-      <title>C语言-学生成绩管理系统</title>
-      <link href="/2020/042013214.html"/>
-      <url>/2020/042013214.html</url>
+      <title>C个人学习笔记</title>
+      <link href="/2020/042012132.html"/>
+      <url>/2020/042012132.html</url>
       
         <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> 项目 </category>
+          <category> C </category>
           
       </categories>
       
@@ -435,16 +448,16 @@
     
     
     <entry>
-      <title>C个人学习笔记</title>
-      <link href="/2020/042012132.html"/>
-      <url>/2020/042012132.html</url>
+      <title>C语言-学生成绩管理系统</title>
+      <link href="/2020/042013214.html"/>
+      <url>/2020/042013214.html</url>
       
         <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> C </category>
+          <category> 项目 </category>
           
       </categories>
       
