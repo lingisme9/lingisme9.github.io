@@ -480,104 +480,298 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="算法总结"><a href="#算法总结" class="headerlink" title="算法总结"></a>算法总结</h1><h2 id="二分归并排序"><a href="#二分归并排序" class="headerlink" title="二分归并排序"></a>二分归并排序</h2><h5 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h5><p>使用二分归并排序算法，对n个不同的数构成的数组A[1…n]进行排序，其中n=2^k</p>
-<h5 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h5><p>二分归并排序是一种分治算法。这个算法不断地将一个数组分为两部分，分别对左子数组和右子数组排序，然后将两个数组合并为新的有序数组。<br>算法步骤如下：<br>（1） 分解：分解待排序的n个元素的数组成各具n/2个元素的两个子数组。<br>（2） 解决：使用归并排序递归地排序两个子序列。<br>（3） 合并：合并两个已排序的子序列以产生排序的答案。<br>当待排序的数组长度为1时，递归“开始回升”，在这种情况下不要做任何工作，因为长度为1的每个数组都已排好序。</p>
-<p>下面以绘图方式演示通过二分归并排序算法的过程</p>
-<pre><code>int Merge(int a[],int low, int mid, int high)// 合并函数
-{
-    int j, k, h;
-    j = low;
-    h = mid + 1;
-    k = low;
-    while (j&lt;=mid&amp;&amp;h&lt;=high)    // 将左右两端数据进行比较，放入辅助数组中
+                <h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="第一章-算法基础"><a href="#第一章-算法基础" class="headerlink" title="第一章 算法基础"></a>第一章 算法基础</h2><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908100814508.png" alt="image-20200908100814508"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908100858146.png" alt="image-20200908100858146"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101112389.png" alt="image-20200908101112389"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101127343.png" alt="image-20200908101127343"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101157015.png" alt="image-20200908101157015"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101212417.png" alt="image-20200908101212417"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101303053.png" alt="image-20200908101303053"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101325077.png" alt="image-20200908101325077"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101436362.png" alt="image-20200908101436362"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908101451351.png" alt="image-20200908101451351"></p>
+<pre><code>一、选择题
+1、衡量一个算法好坏的标准是（C ）。
+A 运行速度快   B 占用空间少   C 时间复杂度低   D 代码短</code></pre><pre><code>1、什么是算法？算法的特征有哪些？
+答：1）算法：指在解决问题时，按照某种机械步骤一定可以得到问题结果的处理过程。
+通俗讲，算法：就是解决问题的方法或过程。
+2）特征：1)算法有零个或多个输入；２)算法有一个或多个输出； 3)确定性 ； ４)有穷性</code></pre><pre><code>2、算法分析的目的？
+答：
+1)为了对算法的某些特定输入，估算该算法所需的内存空间和运行时间；
+2)是为了建立衡量算法优劣的标准，用以比较同一类问题的不同算法。</code></pre><pre><code>3、算法设计常用的技术？（写4-５种）
+  答： ①分治法;  ②回溯法；      ③贪心法；     ④动态规划法
+    ⑤分治限界法 ； ⑥蛮力法； </code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908102803152.png" alt="image-20200908102803152"></p>
+<pre><code>2、给出算法的定义？何谓算法的复杂性？
+计算下例在最坏情况下的时间复杂性？
+for(j=1;j&lt;=n;j++)                        (1)
+for(i=1;i&lt;=n;i++)                         (2)                                       
+    {c[i][j]=0;                           (3)                       
+     for(k=1;k&lt;=n;k++)                   (4)                 
+    c[i][j]= c[i][j]+a[i][k]*b[k][j];         }  (5)
+答：1）定义：指在解决问题时，按照某种机械步骤一定可以得到问题结果的处理过程。
+     2）算法的复杂性：指的是算法在运行过程中所需要的资源（时间、空间）多少。
+    所需资源越多，表明算法的复杂性越高
+    3）该算法的主要元操作是语句5，其执行次数是n3次。    故该算法的时间复杂度记为O(n3). </code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901154901839.png" alt="image-20200901154901839"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901154924227.png" alt="image-20200901154924227"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908103152614.png" alt="image-20200908103152614"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908103211499.png" alt="image-20200908103211499"></p>
+<pre><code>#include&lt;stdio.h&gt;
+int main(){
+    int k = 0;
+    printf("输入一个正整数2的次方:");
+    int n;
+    scanf("%d",&amp;n);
+    while(n &gt;= 1)
     {
-        if (a[j] &lt; a[h])
-            b[k++] = a[j++];
-        else
-            b[k++] = a[h++];
-    }
-    // 将剩余的数据加入到辅助数组中
-    while (j &lt;= mid)
-    {
-        b[k++] = a[j++];
-    }
-    while (h&lt;=high)
-    {
-        b[k++] = a[h++];
-    }
-    for (k = low; k &lt;= high; k++)// 将辅助数组的数据复制到原数组的对应位置上
-    {
-        a[k] = b[k];
-    }
-}
-
-int MergeSort(int a[],int low,int high)    // 递归分组函数
-{
-    if (low &lt; high)
-    {
-        int mid = (low + high) / 2;
-        MergeSort(a,low, mid);
-        MergeSort(a,mid + 1, high);
-        Merge(a,low, mid, high);// 调用Merge函数，合并两组数据 
-    }
-}
-</code></pre><h5 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h5><p>二分归并排序算法是一种稳定的排序，其时间复杂度是O(logn) 。<br>Merge算法比较次数：</p>
-<pre><code>最差情况下，比较次数为n-1，时间复杂度为O(nlogn)，例如：2,4,6;1,3,5 比较次数为5
-最优情况下，比较次数为n/2，时间复杂度为O(nlogn)，例如：1,2,3;4,5,6 比较次数为3
-平均复杂度为O(nlogn)</code></pre><p>递归方程如下：<br><img src="https://s1.ax1x.com/2020/06/14/tzENQK.png" alt="tzENQK.png"></p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>它是一种稳定的排序方法。快速排序利用分治思想，将待排序数组分成左右两个部分，然后对其分别递归调用快速排序算法</p>
-<pre><code>下面通过一个例子介绍快速排序算法的思想，假设要对数组a[10]={6，1，2，7，9，3，4，5，10，8}进行排序，首先要在数组中选择一个数作为基准值，这个数可以随意选择，在这里，我们选择数组的第一个元素a[0]=6作为基准值，接下来，我们需要把数组中小于6的数放在左边，大于6的数放在右边</code></pre><p>我们设置两个“哨兵”，记为“哨兵i”和“哨兵j”，他们分别指向数组的第一个元素和最后一个元素，即i=0，j=9。首先哨兵j开始出动，哨兵j一步一步地向左挪动（即j–），直到找到一个小于6的数停下来。接下来哨兵i再一步一步向右挪动（即i++），直到找到一个数大于6的数停下来。</p>
-<p>最后哨兵j停在了数字5面前，哨兵i停在了数字7面前。此时就需要交换i和j指向的元素的值。<br><img src="https://s1.ax1x.com/2020/06/14/tzthiq.png" alt="tzthiq.png"><br>交换之后的数组变为a[10]={6，1，2，5，9，3，4，7，10，8}：</p>
-<p>第一次交换至此结束。接下来，由于哨兵i和哨兵j还没有相遇，于是哨兵j继续向前，发现比6小的4之后停下；哨兵i继续向前，发现比6大的9之后停下，两者再进行交换。交换之后的数组变为a[10]={6，1，2，5，4，3，9，7，10，8}。</p>
-<p><img src="https://s1.ax1x.com/2020/06/14/tztxW6.png" alt="tztxW6.png"></p>
-<p>第二次交换至此结束。接下来，哨兵j继续向前，发小比6小的3停下来；哨兵i继续向前，发现i==j了！！！于是，这一轮的探测就要结束了，此时交换a[i]与基准的值，数组a就以6为分界线，分成了小于6和大于6的左右两部分：a[10]={3，1，2，5，4，6，9，7，10，8}。</p>
-<p><img src="https://s1.ax1x.com/2020/06/14/tzNkTA.png" alt="tzNkTA.png"><br><img src="https://s1.ax1x.com/2020/06/14/tzNlwj.png" alt="tzNlwj.png"></p>
-<p>至此，第一轮快速排序完全结束，接下来，对于6左边的半部分3，1，2，5，4，执行以上过程；对于6右边的半部分9，7，10，8，执行以上过程，直到不可拆分出新的子序列为止。最终将会得到这样的序列：1 2 3 4 5 6 7 8 9 10，到此，排序完全结束。</p>
-<pre><code>#include &lt;stdio.h&gt;
-int a[101],n;//定义全局变量，这两个变量需要在子函数中使用
-void quicksort(int left, int right) {
-    int i, j, t, temp;
-    if(left &gt; right)
-        return;
-    temp = a[left]; //temp中存的就是基准数
-    i = left;
-    j = right;
-    while(i != j) { //顺序很重要，要先从右边开始找
-        while(a[j] &gt;= temp &amp;&amp; i &lt; j)
-            j--;
-        while(a[i] &lt;= temp &amp;&amp; i &lt; j)//再找右边的
-            i++;       
-        if(i &lt; j)//交换两个数在数组中的位置
+        for(int j=1;j&lt;=n;j++)
         {
-            t = a[i];
-            a[i] = a[j];
-            a[j] = t;
+                k = k + 1;
+                printf("%d",k);
         }
-    }
-    //最终将基准数归位
-    a[left] = a[i];
-    a[i] = temp;
-    quicksort(left, i-1);//继续处理左边的，这里是一个递归的过程
-    quicksort(i+1, right);//继续处理右边的 ，这里是一个递归的过程
-}
-int main() {
-    int i;
-    //读入数据
-    printf("请输入数组元素个数："); 
-    scanf("%d", &amp;n);
-    for(i = 1; i &lt;= n; i++)
-        scanf("%d", &amp;a[i]);
-    quicksort(1, n); //快速排序调用
-    //输出排序后的结果
-    for(i = 1; i &lt; n; i++)
-        printf("%d ", a[i]);
-    printf("%d\n", a[n]);
+        n = n/2;    
+    } 
     return 0;
-}</code></pre><h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><pre><code>二分査找就是折半查找，其基本思想是：首先选取表中间位置的记录，将其关键字与给定关键字 key 进行比较，若相等，则査找成功；若 key 值比该关键字值大，则要找的元素一定在右子表中，则继续对右子表进行折半查找：若 key 值比该关键宇值小，则要找的元素一定在左子表中，继续对左子表进行折半査找。如此递推，直到査找成功或査找失败（或査找范围为 0）。
+}
+</code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901155253939.png" alt="image-20200901155253939"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901155317657.png" alt="image-20200901155317657"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901155522897.png" alt="image-20200901155522897"></p>
+<h2 id="第二章-分治算法"><a href="#第二章-分治算法" class="headerlink" title="第二章 分治算法"></a>第二章 分治算法</h2><h3 id="0-0-题目"><a href="#0-0-题目" class="headerlink" title="0.0 题目"></a>0.0 题目</h3><pre><code>1、二分搜索算法是利用（   A  ）实现的算法。
+A、分治策略   B、动态规划法   C、贪心法    D、回溯法
+2. 实现循环赛日程表利用的算法是（    A      ）。
+A、分治策略            B、动态规划法            C、贪心法            D、回溯法</code></pre><pre><code>1、什么是递归算法？递归算法的特点？
+答：1 )递归算法:是一个模块（函数、过程）除了可调用其它模块（函数、过程）外，还可以直接或间接地调用自身的算法。
+2) 递归算法特点：
+①每个递归函数都必须有非递归定义的初值；否则，递归函数无法计算；（递归终止条件）
+②递归中用较小自变量函数值来表达较大自变量函数值；（递归方程式）</code></pre><pre><code>2、比较循环与递归的异同？
+答：
+1)    相同：
+递归与循环都是解决“重复操作”的机制。
+2)    不同：
+就效率而言，递归算法的实现往往要比迭代算法耗费更多的时间（调用和返回均需要额外的时间）与存贮空间（用来保存不同次调用情况下变量的当前值的栈栈空间），也限制了递归的深度。
+每个迭代算法原则上总可以转换成与它等价的递归算法；反之不然 。
+递归的层次是可以控制的，而循环嵌套的层次只能是固定的，因此递归是比循环更灵活的重复操作的机制。</code></pre><pre><code>3、适合用分治算法求解的问题具有的基本特征？
+答：
+1)该问题的规模缩小到一定的程度就可以容易解决;
+2)该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质；
+3）该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。 
+4）利用该问题分解出子问题解可以合并为该问题解;</code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908105235090.png" alt="image-20200908105235090"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908105258561.png" alt="image-20200908105258561"></p>
+<pre><code>四、算法设计题：（大题）课后习题2.5,2.9
+1、楼梯上有n个台阶，上楼时可以上1步，也可以上2步，设计一递归算法求出共有多少种上楼方法F(n)。
+①写出F(n)的递归表达式        
+②并写出其相应的递归算法
+③并分析其算法复杂度
 
 
+解：①写出F(n)的递归表达式
+分析：到n阶有两种走法：
+                   1）n-1阶到n阶；
+                   2）n-2阶到n阶；
 
-#include &lt;stdio.h&gt;
+            1                           n=1           
+ F(n) ＝    2                           n=2
+            F(n-1) + F(n-2)     n&gt;2
+②写出其相应的递归算法？
+Int F(int n)
+{
+   if(n=1)    return   1;
+   else if(n=2)   
+     return   2;
+   else
+      return  F(n-1)+ F(n-2);
+}
+
+
+2、改写二分查找算法：
+设a[1…n]是一个已经排好序的数组，改写二分查找算法，使得当搜索元素x不在数组中时，返回小于x的最大元素位置i，和大于x的最小元素位置j；当搜索元素x在数组中时，i和j相同，均为x在数组中的位置。
+    并分析其时间复杂度？        
+解：int  binsearch( int a[n],  int  x ,)     //x待查数据
+    {int  mid, i ,  j;          low=1;
+     int  high=n;
+    while(low&lt;=high)
+        {mid=(low+high)/2;
+        if(a[mid]=x)     return  i=j=mid;
+        if(a[mid]&gt;x)    high=mid-1;       //继续在左边查找
+        else                                // (a[mid]&lt;x) 
+            low=mid+1;        //继续在右边查找
+          }    
+     i=right;    j=left;  
+     return   0；//low大于high查找区间为空，查找失败
+    }
+
+计算时间复杂性为O(logn)</code></pre><h3 id="0-基本思想"><a href="#0-基本思想" class="headerlink" title="0.基本思想"></a>0.基本思想</h3><h3 id="1-合并排序"><a href="#1-合并排序" class="headerlink" title="1.合并排序"></a>1.合并排序</h3><h4 id="1-0-合并排序"><a href="#1-0-合并排序" class="headerlink" title="1.0 合并排序"></a>1.0 合并排序</h4><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908104139568.png" alt="image-20200908104139568"></p>
+<h4 id="1-0-1-时间复杂度"><a href="#1-0-1-时间复杂度" class="headerlink" title="1.0.1 时间复杂度"></a>1.0.1 时间复杂度</h4><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908104219467.png" alt="image-20200908104219467"></p>
+<h4 id="1-1-合并排序与快速排序的比较："><a href="#1-1-合并排序与快速排序的比较：" class="headerlink" title="1.1 合并排序与快速排序的比较："></a>1.1 <strong>合并排序与快速排序的比较</strong>：</h4><pre><code>四．合并排序与快速排序的比较：
+1.分解过程：
+合并排序：将序列一分为二即可（简单）
+快速排序：需调用Paitition函数将一个序列划分为子序列。（分解方法相对较困难）
+2.子问题解合并得到原问题解的过程：
+合并排序——需要调用Merge函数（时间复杂度为O（n））来实现。
+快速排序——一旦左右两个子序列都已分别排序，整个序列便自然成为有序序列。（异常简单，几乎无须额外的工作，省去了从子问题解合并得到原问题解的过程）
+3.掌握合并排序和快速排序的具体排序方法（数据结构内容）。（图5-2，图5-4快速排序的划分操作）</code></pre><pre><code>非递归方式合并排序/二路归并排序/归并排序
+方法：
+1 先分解成两个数组
+2 分别给两个数组排序
+3 合并两个排好序得数组</code></pre><pre class=" language-C"><code class="language-C">#include <malloc.h>
+#include <stdlib.h>
+#include<stdio.h>
+
+//合并排序的递归主体
+void mergesort(int A[],int n)  
+{
+    //声明merge函数
+    // A 整个数组  L 左边数组  R 右边数组  
+    // 将排好序得两个数组比较好后放入新数组 
+
+    // 
+    void merge(int A[], int L[], int R[], int l, int r); 
+    //多于一个元素才需要排序 
+    if(n>1)    
+    {
+
+        int mid=n/2;
+        int *left=(int*)malloc(sizeof(int)*mid);
+        int *right=(int*)malloc(sizeof(int)*(n-mid));
+
+        // 0-mid 
+        // 1 2 3 4 5 6 7 
+        for(int i=0;i<mid;i++)
+            //建立临时数组存储左半部分序列
+            left[i]=A[i]; 
+        // mid-n-1      
+        for(int j=mid;j<n;j++)
+            //建立临时数组存储右半部分序列
+            // 3 4 5 6 7
+            // 0 1 2 3 4 
+            right[j-mid]=A[j]; 
+
+         //调用自身对左半部分进行合并排序
+        mergesort(left,mid);
+        //调用自身对右半部分进行合并排序    
+        mergesort(right,n-mid);
+
+
+        //两个有序序列的合并操作，封装为函数 
+        merge(A,left,right,mid,n-mid);   
+        free(left);
+        free(right);
+    }
+
+}
+
+
+//两个有序序列L、R合并为A，l,r分别为L,R的长度
+void merge(int A[],int L[],int R[],int l,int r)  
+{
+    int i=0,j=0,k=0;
+    //两个子序列首元素做比较，小者取出置入父序列
+    while(i<l&&j<r)  
+    {
+        if(L[i]<=R[j])
+            A[k++]=L[i++];
+        else
+            A[k++]=R[j++];
+    }
+
+    //将左半部分剩余元素置入父序列
+    while(i<l)       
+    {
+        A[k++]=L[i++];
+    }
+
+    //将右半部分剩余元素置入父序列
+    while(j<r)       
+    {
+        A[k++]=R[j++];
+    }
+}
+int main(){
+    int n = 5;
+    int a[100] = {1,3,2,5,4};
+    mergesort(a,n);
+    for(int i = 0; i < n; i++)
+        printf("%d ",a[i]);
+    return 0;
+} 
+</code></pre>
+<h3 id="2-快速排序"><a href="#2-快速排序" class="headerlink" title="2.快速排序"></a>2.快速排序</h3><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831190834443.png" alt="image-20200831190834443"></p>
+<p>它是一种稳定的排序方法。快速排序利用分治思想，将待排序数组分成左右两个部分，然后对其分别递归调用快速排序算法</p>
+<h4 id="1-时间复杂度"><a href="#1-时间复杂度" class="headerlink" title="1.时间复杂度"></a>1.时间复杂度</h4><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908104652262.png" alt="image-20200908104652262"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908104708048.png" alt="image-20200908104708048"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908104721736.png" alt="image-20200908104721736"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908104742070.png" alt="image-20200908104742070"></p>
+<h4 id="2-流程"><a href="#2-流程" class="headerlink" title="2.流程"></a>2.流程</h4><p>快速排序算法通过多次比较和交换来实现排序，其排序流程如下： [2] </p>
+<p>(1)首先设定一个分界值，通过该分界值将数组分成左右两部分。 [2] </p>
+<p>(2)将大于或等于分界值的数据集中到数组右边，小于分界值的数据集中到数组的左边。此时，左边部分中各元素都小于或等于分界值，而右边部分中各元素都大于或等于分界值。 [2] </p>
+<p>(3)然后，左边和右边的数据可以独立排序。对于左侧的数组数据，又可以取一个分界值，将该部分数据分成左右两部分，同样在左边放置较小值，右边放置较大值。右侧的数组数据也可以做类似处理。 [2] </p>
+<p>(4)重复上述过程，可以看出，这是一个递归定义。通过递归将左侧部分排好序后，再递归排好右侧部分的顺序。当左、右两个部分各数据排序完成后，整个数组的排序也就完成了。 [2]</p>
+<h4 id="3-例子"><a href="#3-例子" class="headerlink" title="3.例子"></a>3.例子</h4><pre><code>下面通过一个例子介绍快速排序算法的思想，假设要对数组a[10]={6，1，2，7，9，3，4，5，10，8}进行排序，首先要在数组中选择一个数作为基准值，这个数可以随意选择，在这里，我们选择数组的第一个元素a[0]=6作为基准值，接下来，我们需要把数组中小于6的数放在左边，大于6的数放在右边</code></pre><p>我们设置两个“哨兵”，记为“哨兵i”和“哨兵j”，他们分别指向数组的第一个元素和最后一个元素，即i=0，j=9。首先哨兵j开始出动，哨兵j一步一步地向左挪动（即j–），直到找到一个小于6的数停下来。接下来哨兵i再一步一步向右挪动（即i++），直到找到一个数大于6的数停下来。</p>
+<p>最后哨兵j停在了数字5面前，哨兵i停在了数字7面前。此时就需要交换i和j指向的元素的值。</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831191403920.png" alt="image-20200831191403920"></p>
+<p>交换之后的数组变为a[10]={6，1，2，5，9，3，4，7，10，8}：</p>
+<p>第一次交换至此结束。接下来，由于哨兵i和哨兵j还没有相遇，于是哨兵j继续向前，发现比6小的4之后停下；哨兵i继续向前，发现比6大的9之后停下，两者再进行交换。交换之后的数组变为a[10]={6，1，2，5，4，3，9，7，10，8}。</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831191548012.png" alt="image-20200831191548012"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831191643506.png" alt="image-20200831191643506"></p>
+<p>第二次交换至此结束。接下来，哨兵j继续向前，发小比6小的3停下来；哨兵i继续向前，发现i==j了！！！于是，这一轮的探测就要结束了，此时交换a[i]与基准的值，数组a就以6为分界线，分成了小于6和大于6的左右两部分：a[10]={3，1，2，5，4，6，9，7，10，8}。</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831191749810.png" alt="image-20200831191749810"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831191809372.png" alt="image-20200831191809372"></p>
+<p>至此，第一轮快速排序完全结束，接下来，对于6左边的半部分3，1，2，5，4，执行以上过程；对于6右边的半部分9，7，10，8，执行以上过程，直到不可拆分出新的子序列为止。最终将会得到这样的序列：1 2 3 4 5 6 7 8 9 10，到此，排序完全结束。</p>
+<pre><code>算法思路
+    1 选择基准线
+    2 右边选择一个比基准线小的
+    3 左边选择一个比基准线大的
+    4 交换两个数
+    5 i=j时，基准线和ai交换</code></pre><pre><code>算法分析：</code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831194043592.png" alt="image-20200831194043592">、</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token comment" spellcheck="true">//定义全局变量，这两个变量需要在子函数中使用</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">,</span>n<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">quicksort</span><span class="token punctuation">(</span><span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> t<span class="token punctuation">,</span> temp<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>left <span class="token operator">></span> right<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    temp <span class="token operator">=</span> a<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//temp中存的就是基准数</span>
+    i <span class="token operator">=</span> left<span class="token punctuation">;</span>
+    j <span class="token operator">=</span> right<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">!=</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment" spellcheck="true">//顺序很重要，要先从右边开始找</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">>=</span> temp <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span>
+            j<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> temp <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">//再找右边的</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>       
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">//交换两个数在数组中的位置</span>
+        <span class="token punctuation">{</span>
+            t <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//最后i=j时，ai和基准交换 </span>
+    a<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token function">quicksort</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> i<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//继续处理左边的，这里是一个递归的过程</span>
+    <span class="token function">quicksort</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//继续处理右边的 ，这里是一个递归的过程</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//读入数据</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"请输入数组元素个数："</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"输入数组元素%d个"</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">quicksort</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//快速排序调用</span>
+    <span class="token comment" spellcheck="true">//输出排序后的结果</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="3-二分查找-有序"><a href="#3-二分查找-有序" class="headerlink" title="3.二分查找(有序)"></a>3.二分查找(有序)</h3><p>​        二分査找就是折半查找，其基本思想是：首先选取表中间位置的记录，将其关键字与给定关键字 key 进行比较，若相等，则査找成功；若 key 值比该关键字值大，则要找的元素一定在右子表中，则继续对右子表进行折半查找：若 key 值比该关键宇值小，则要找的元素一定在左子表中，继续对左子表进行折半査找。如此递推，直到査找成功或査找失败（或査找范围为 0）。</p>
+<p>为了方便理解，我们以数组<code>1, 2, 4, 5, 6, 7, 9, 12, 15, 19, 23, 26, 29, 34, 39</code>，在数组中查找<code>26</code>为例，制作了一张查找过程图，其中<code>low</code>标示左下标，<code>high</code>标示右下标，<code>mid</code>标示中间值下标</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831195803814.png" alt="image-20200831195803814"></p>
+<pre><code>#include &lt;stdio.h&gt;
 int binary_search(int key,int a[],int n) //自定义函数binary_search()
 {
     int low,high,mid,count=0,count1=0;
@@ -616,7 +810,441 @@ int main()
     binary_search(key,a,n);    //调用自定义函数
     printf("\n");
     return 0;
-}</code></pre><script>
+}</code></pre><h4 id="3-时间复杂度"><a href="#3-时间复杂度" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h4><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901160714373.png" alt="image-20200901160714373"></p>
+<h3 id="4-冒泡排序"><a href="#4-冒泡排序" class="headerlink" title="4.冒泡排序"></a>4.冒泡排序</h3><p>冒泡排序分<strong>从大到小</strong>和<strong>从小到大</strong>两种排序方式。它们的唯一区别就是两个数交换的条件不同，从大到小排序是前面的数比后面的小的时候交换，而从小到大排序是前面的数比后面的数大的时候交换。我这里只说 从小到大的排序方式。</p>
+<p><strong>冒泡排序的原理</strong>：从第一个数开始，依次往后比较，如果前面的数比后面的数大就<strong>交换</strong>，否则不作处理。这就类似烧开水时，壶底的水泡往上冒的过程。</p>
+<p>现以数组[8,7,6,4,5]为例，我们通过将这个数组按<strong>从小到大</strong>的方式排序，来说明冒泡排序的过程。</p>
+<p><strong>第一次循环</strong>：此次循环的多次比较交换，使最大的数字8冒到最上面。</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831200820165.png" alt="image-20200831200820165"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831200848163.png" alt="image-20200831200848163"></p>
+<p>你会发现，这次循环比前面少一次循环比较。</p>
+<p>这是因为第一次循环时已经把最大的8排到最上面的位置了，这次排序肯定不会去占用最上面的位置的，所以此时比较次数可以比前面少一次。</p>
+<p><strong>第三次循环</strong>：同理，此时6会往上冒。比较次数同理又会比前面少一次</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831200912351.png" alt="image-20200831200912351"></p>
+<p>此时看着最后的结果已经是从小到大了，这是因为在原始数组中，5就在4的上面。</p>
+<p>但实际我们不知道5是在4的上面，我们就得继续完成最后一次循环比较。</p>
+<p><strong>第四次循环</strong>： 5已经排在4的上面了，比较后不交换。</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831200936953.png" alt="image-20200831200936953"></p>
+<pre><code>#include&lt;stdio.h&gt;
+
+int main(void)
+{
+    int a[10],n=5;
+    int i,j,m;
+    for(i=0;i&lt;n;i++){
+        scanf("%d",&amp;a[i]);
+    }
+    for(i=n-1;i&gt;0;i--){
+        for(j=0;j&lt;i;j++){
+            if(a[j]&lt;a[j+1]){
+                m=a[j+1];
+                a[j+1]=a[j];
+                a[j]=m;
+            }
+        }
+    }
+    for(i=0;i&lt;5;i++){
+        printf("%d ",a[i]);
+    }
+    printf("\n");
+    return 0;
+}//从大到小
+</code></pre><h4 id="3-时间复杂度-1"><a href="#3-时间复杂度-1" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h4><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200831202155811.png" alt="image-20200831202155811"></p>
+<h3 id="5-选择排序"><a href="#5-选择排序" class="headerlink" title="5.选择排序"></a>5.选择排序</h3><p>选择排序法<br>选择排序法的主要思想是将一组数（n个）中的最大值（或最小值）先挑出来，放在首（或尾），然后在剩下的n-1个数中再次挑出最大值（或最小值），放在前一个最大值（或最小值）的前面（或后面），以此类推。所以安排两层循环，一层固定一个数的时候，另一层逐次比较。</p>
+<pre><code>#include&lt;stdio.h&gt;
+
+int main(void)
+{
+    int a[10],n=10;
+    int i,j,m;
+    for(i=0;i&lt;n;i++){
+        scanf("%d",&amp;a[i]);
+    }
+    for(i=0;i&lt;n;i++){
+        for(j=i+1;j&lt;n;j++){
+            if(a[i]&gt;a[j]){
+                m=a[i];//注意，此处的位置对调需要中间变量来辅助 
+                a[i]=a[j];
+                a[j]=m;
+            }
+        }
+    }
+    for(i=0;i&lt;10;i++){
+        printf("%d ",a[i]);
+    }
+    printf("\n");
+    return 0;
+} //从小到大</code></pre><p> -1)次<br>综合起来，直接选择排序的时间复杂度也是O(n^2)                                                                                                                                                                                                                                                                                                                                          </p>
+<p>大题:</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901160226483.png" alt="image-20200901160226483"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901160830094.png" alt="image-20200901160830094"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901161507890.png" alt="image-20200901161507890"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901161534846.png" alt="image-20200901161534846"></p>
+<pre><code>Int F(int n)
+{
+   if(n=1)    return   1;
+   else if(n=2)   
+     return   2;
+   else
+      return  F(n-1)+ F(n-2);
+}
+</code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901161608291.png" alt="image-20200901161608291"></p>
+<pre><code>解：int  binsearch( int a[n],  int  x ,)     //x待查数据
+    {int  mid, i ,  j;          low=1;
+     int  high=n;
+    while(low&lt;=high)
+        {mid=(low+high)/2;
+        if(a[mid]=x)     return  i=j=mid;
+        if(a[mid]&gt;x)    high=mid-1;       //继续在左边查找
+        else                                // (a[mid]&lt;x) 
+            low=mid+1;        //继续在右边查找
+          }    
+     i=right;    j=left;  
+     return   0；//low大于high查找区间为空，查找失败
+    }
+
+计算时间复杂性为O(logn)
+</code></pre><h2 id="第三章-动态规划"><a href="#第三章-动态规划" class="headerlink" title="第三章 动态规划"></a>第三章 动态规划</h2><h3 id="0-题目"><a href="#0-题目" class="headerlink" title="0.题目"></a>0.题目</h3><p><strong>名词解释：</strong></p>
+<p>最优解：使<a href="https://baike.baidu.com/item/目标函数" target="_blank" rel="noopener">目标函数</a>取最小值或最大值的可行解</p>
+<p>优化原则：</p>
+<p>1： 在能应付当前性能需求的情况下，不建议进行性能优化。</p>
+<p>2： 仅仅优化性能瓶颈</p>
+<p>3： 编码时必须进行压力测试</p>
+<p>4： 优化时，考虑现实生活中遇到的问题，现实如何处理，代码也如何处理。</p>
+<p>5： 优化的唯一方法：去掉没有必要的操作 和 采取高效的算法。可以看到所有的优化方法都离不开这条原则，而最常用、也最容易发现的方案就是去掉没必要的操作。</p>
+<p>最优子结构：1．<strong>最优子结构特性</strong>：一个问题的最优解包含其子问题的最优解；</p>
+<p>线性规划：研究线性<a href="https://baike.baidu.com/item/约束条件/1046571" target="_blank" rel="noopener">约束条件</a>下线性目标函数的<a href="https://baike.baidu.com/item/极值/5330918" target="_blank" rel="noopener">极值</a>问题的方法</p>
+<p>整数规划：整数规划是指规划中的变量（全部或部分）限制为<a href="https://baike.baidu.com/item/整数/1293937" target="_blank" rel="noopener">整数</a>，若在线性模型中，变量限制为整数，则称为整数线性规划</p>
+<p>0-1背包：<strong>0/1背包问题</strong>：如果每一件物品不能分割，只能作为整体或者装入背包，或者不装入；</p>
+<p>公共子序列：一个给定序列的子序列是在该序列中删去若干元素后得到的序列</p>
+<p><strong>重叠子问题</strong>：递归算法求解问题时，每次产生的子问题并不总是新问题，有些问题被反复计算多次。</p>
+<pre><code>1、下列不是动态规划算法基本步骤的是（  A   ）。
+A、找出最优解的性质   B、构造最优解   C、算出最优解   D、定义最优解
+2．最长公共子序列算法利用的算法是（    B       ）。
+A、分支界限法        B、动态规划法            C、贪心法                D、回溯法</code></pre><pre><code>1、动态规划算法基本思想？
+答：
+　动态规划算法通常用于求解具有某种最优性质的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。动态规划算法与分治法类似，其基本思想也是将待求解问题分解成若干个子问题，先求解子问题，然后从这些子问题的解得到原问题的解。与分治法不同的是，适合于用动态规划求解的问题，经分解得到子问题往往不是互相独立的。若用分治法来解这类问题，则分解得到的子问题数目太多，有些子问题被重复计算了很多次。如果我们能够保存已解决的子问题的答案，而在需要时再找出已求得的答案，这样就可以避免大量的重复计算，节省时间。我们可以用一个表来记录所有已解的子问题的答案。不管该子问题以后是否被用到，只要它被计算过，就将其结果填入表中。这就是动态规划法的基本思路。具体的动态规划算法多种多样，但它们具有相同的填表格式。
+
+2、动态规划与分治算法异同点？
+动态规划算法与分治法类似，其基本思想也是将待求解问题分解成若干个子问题；
+但是经分解得到的子问题往往不是互相独立的。不同子问题的数目常常只有多项式量级。在用分治法求解时，有些子问题被重复计算了许多次；
+如果能够保存已解决的子问题的答案，而在需要时再找出已求得的答案，就可以避免大量重复计算，从而得到多项式时间算法。
+
+
+
+3、动态规划算法的基本要素？   
+最优子结构
+当问题的最优解包含了其子问题的最优解时，称该问题具有最优子结构性质。问题的最优子结构性质提供了该问题可用动态规划算法求解的重要线索。
+
+在动态规划算法中，利用问题的最优子结构性质，以自底向上的方式递归地从子问题的最优解逐步构造出整个问题的最优解。
+
+重叠子问题
+可用动态规划算法求解的问题应具备的另一个基本要素是子问题的重叠性质。在用递归算法自顶向下求解问题时，每次产生的子问题并不总是新问题，有些子问题被反复计算多次。动态规划算法正是利用了这种子问题的重叠性质，对每一个子问题只解一次，而后将其解保存在一个表格中，当再次需要此子问题时，只要简单地用常数时间查看一下结果。通常，不同的子问题个数随问题的大小呈多项式增长。因此，用动态规划算法通常只需要多项式时间，从而获得较高的解题效率。
+
+备忘录方法
+
+就可以在递归处理问题的基础上，将需要后来多次计算的问题进行缓存，减少了重复子问题的计算。但是书中所记的备忘录方法没有真正的将自上而下的精髓体现出来，若是将自上而下的思想结合最优子结构的思想，则可以对问题进行修剪枝条，在宏观出即可去掉一大部分的不需计算的方面，比如一个问题的划分可以有两种，选择了最优的一种，就可以将另一种非最优情况下的所有计算均省去，然后再对第一次的划分再次进行划分，其结构是树由根向叶，不断的择取最优的树干，最终至叶子，非最优树干直接不计算。
+
+</code></pre><pre><code>四、算法设计题（大题）：课后题3.4 3.6
+
+1、用动态规划策略求解最长公共子序列问题：
+（1）给出计算最优值的递归方程。
+（2）给定两个序列 X={B,C,D,A} ，Y={A,B,C,B} ，请采用动态规划策略求出
+其最长公共子序列，要求给出过程。
+</code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908110900505.png" alt="image-20200908110900505"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908110921932.png" alt="image-20200908110921932"></p>
+<pre><code>②计算最优值算法
+public static void matrixChain(int [] p, int [][] m, int [][] s)
+   {
+      int n=p.length-1;
+      for (int i = 1; i &lt;= n; i++) 　　m[i][i] = 0;  　//1个站
+      for (int r = 2; r &lt;= n; r++)
+         for (int i = 1; i &lt;= n - r+1; i++)
+         { int j=i+r-1;
+            m[ i][ j] = m[i][i]  +  m[i+1][ j];
+            s[ i][ j] = i;　　　　 //断点位置在i处
+
+            for (int k = i+1; k &lt; j; k++)
+             {int　 t  = m[ i][ k]  + m[k+1][ j];
+               if (t &lt; m[i][j])
+             {       m[ i][ j] = t;           s[ i][ j] = k;}
+                  } } }
+构造最优解算法
+public void  traceback( int s[][],int I,int j)
+{
+if(i=j)   return;
+traceback( s,  i,  s[ i][ j] );
+traceback( s,  s[ i][ j]+1,  j );
+System.out.println(“A”+ i +“，”+ s[ i][ j] + “A”+ s[ i][ j]+1 +“,”+ j )
+}         //(m[ i, s[ i][ j] ] ) (m[ s[ i][ j]+1,  j ] )
+
+③时间复杂度：O(n3)</code></pre><h3 id="1-步骤"><a href="#1-步骤" class="headerlink" title="1.步骤"></a>1.步骤</h3><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901161721764.png" alt="image-20200901161721764"></p>
+<p>二．<strong>动态规划法的基本要素</strong>：</p>
+<p>1．<strong>最优子结构特性</strong>：一个问题的最优解包含其子问题的最优解；</p>
+<p>1．<strong>重叠子问题</strong>：递归算法求解问题时，每次产生的子问题并不总是新问题，有些问题被反复计算多次。</p>
+<p>三．<strong>动态规划法与分治法的比较</strong>：</p>
+<p><strong>共同点</strong>：将待求解的问题分解成若干个子问题，先求子问题，然后再从这些子问题的解得到原问题的解；</p>
+<p><strong>不同点</strong>：1.适合于用动态规划法求解的问题，分解得到的各子问题往往<strong>不是相互独立</strong>的；而分治法中的子问题是相互独立的；</p>
+<p>2.动态规划法<strong>用表</strong>保存已求解过的子问题的解，再次碰到同样的子问题时不必重新求解，而只需查询答案，<strong>故可获得多项式级时间复杂度</strong>，效率较高；而分治法中对于每次出现的子问均求解，导致同样的子问题被反复求解，故产生指数增长的时间复杂度，效率较低。</p>
+<p>四．<strong>动态规划法与贪心法的比较</strong>：</p>
+<p><strong>共同点</strong>：都是求解最优化问题；都要求问题具有最优子结构性质；</p>
+<p><strong>不同点</strong>：</p>
+<p>1.<strong>求解方式</strong>不同：</p>
+<p>动态规划法是：<strong>自底向上</strong>；</p>
+<p>贪心法是：<strong>自顶向下</strong>；以迭代的方式作出相继的贪心选择，每作一次贪心选择就将所求问题简化为一个规模更小的子问题；</p>
+<p>2.<strong>对子问题的依赖不同</strong>：</p>
+<p>动态规划法：依赖各子问题的解，所以只有在解出相关子问题后，才能作出选择；应使各子问题最优，才能保证整体最优；</p>
+<p>贪心法：不依赖于子问题的解；仅在当前状态下作出最好选择，即局部最优选择，然后再去解作出这个选择后产生的相应的子问题。</p>
+<p>五．<strong>两类背包问题</strong>：</p>
+<p>1.<strong>0/1背包问题</strong>：如果每一件物品不能分割，只能作为整体或者装入背包，或者不装入；</p>
+<p>2.<strong>一般背包问题或简称背包问题</strong>：如果物品时可以分割的，也就是允许将其中的一部分装入背包。</p>
+<p><strong>六．动态规划法的典型应用：多段图问题</strong></p>
+<p>多段图问题是求从源点s到汇点t的一条长度最短的路径（用从后逐步向前递推的方法）</p>
+<h3 id="3、动态规划算法的基本要素？"><a href="#3、动态规划算法的基本要素？" class="headerlink" title="3、动态规划算法的基本要素？"></a>3、动态规划算法的基本要素？</h3><p>最优子结构</p>
+<p>当问题的最优解包含了其子问题的最优解时，称该问题具有最优子结构性质。问题的最优子结构性质提供了该问题可用动态规划算法求解的重要线索。</p>
+<p>在动态规划算法中，利用问题的最优子结构性质，以自底向上的方式递归地从子问题的最优解逐步构造出整个问题的最优解。</p>
+<p>重叠子问题</p>
+<p>可用动态规划算法求解的问题应具备的另一个基本要素是子问题的重叠性质。在用递归算法自顶向下求解问题时，每次产生的子问题并不总是新问题，有些子问题被反复计算多次。动态规划算法正是利用了这种子问题的重叠性质，对每一个子问题只解一次，而后将其解保存在一个表格中，当再次需要此子问题时，只要简单地用常数时间查看一下结果。通常，不同的子问题个数随问题的大小呈多项式增长。因此，用动态规划算法通常只需要多项式时间，从而获得较高的解题效率。</p>
+<p>备忘录方法</p>
+<p>就可以在递归处理问题的基础上，将需要后来多次计算的问题进行缓存，减少了重复子问题的计算。但是书中所记的备忘录方法没有真正的将自上而下的精髓体现出来，若是将自上而下的思想结合最优子结构的思想，则可以对问题进行修剪枝条，在宏观出即可去掉一大部分的不需计算的方面，比如一个问题的划分可以有两种，选择了最优的一种，就可以将另一种非最优情况下的所有计算均省去，然后再对第一次的划分再次进行划分，其结构是树由根向叶，不断的择取最优的树干，最终至叶子，非最优树干直接不计算。</p>
+<h3 id="4-最长公共子序列"><a href="#4-最长公共子序列" class="headerlink" title="4.最长公共子序列"></a>4.最长公共子序列</h3><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901170216310.png" alt="image-20200901170216310"></p>
+<h4 id="1-什么是子序列"><a href="#1-什么是子序列" class="headerlink" title="1.什么是子序列"></a>1.什么是子序列</h4><p>在数学中，某个序列的<strong>子序列</strong>是从最初序列通过去除某些元素但不破坏余下元素的相对位置（在前或在后）而形成的新序列。详情请查看<a href="https://links.jianshu.com/go?to=%5Bhttps%3A%2F%2Fzh.wikipedia.org%2Fwiki%2F%E5%AD%90%E5%BA%8F%E5%88%97%5D(https%3A%2F%2Fzh.wikipedia.org%2Fwiki%2F%E5%AD%90%E5%BA%8F%E5%88%97)" target="_blank" rel="noopener">wike百科</a>。<br> 举个例子：[a,b,c,d,e]，如果找一个子序列，可以是[a,b,c],[a,c,e],[b,e],但不可以是[c,a,e],这个例子举得比较特殊，下标越大，字母越靠后，而如果原本下标比较小得字母排到下标大的后面，这就不符合子序列的定义了。</p>
+<h4 id="2-什么是最长公共子序列"><a href="#2-什么是最长公共子序列" class="headerlink" title="2.什么是最长公共子序列"></a>2.什么是最长公共子序列</h4><p>这个不需要多说，如果是求数组A和B的最长公共子序列，就是说既是A的子序列又是B的子序列，而且要保证最长。</p>
+<pre><code>1、用动态规划策略求解最长公共子序列问题：
+（1）给出计算最优值的递归方程。
+（2）给定两个序列 X={B,C,D,A} ，Y={A,B,C,B} ，请采用动态规划策略求出
+其最长公共子序列，要求给出过程。</code></pre><p><strong>相等为前一个的最大+1，不相等，左上最大取，倒回去</strong></p>
+<p> <img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901164518181.png" alt="image-20200901164518181"></p>
+<h4 id="3-特征分析"><a href="#3-特征分析" class="headerlink" title="3.特征分析"></a>3.特征分析</h4><p>​    解决LCS问题，需要把原问题分解成若干个子问题，所以需要刻画LCS的特征。</p>
+<p>​    设A=“a0，a1，…，am”，B=“b0，b1，…，bn”，且Z=“z0，z1，…，zk”为它们的最长公共子序列。不难证明有以下性质：</p>
+<p>​    如果am=bn，则zk=am=bn，且“z0，z1，…，z(k-1)”是“a0，a1，…，a(m-1)”和“b0，b1，…，b(n-1)”的一个最长公共子序列；</p>
+<p>​    如果am!=bn，则若zk!=am，蕴涵“z0，z1，…，zk”是“a0，a1，…，a(m-1)”和“b0，b1，…，bn”的一个最长公共子序列；</p>
+<p>​    如果am!=bn，则若zk!=bn，蕴涵“z0，z1，…，zk”是“a0，a1，…，am”和“b0，b1，…，b(n-1)”的一个最长公共子序列。</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901165003604.png" alt="image-20200901165003604"></p>
+<p>以我在第1小节举的例子（S1={1,3,4,5,6,7,7,8}和S2={3,5,7,4,8,6,7,8,2}），并结合上图来说：</p>
+<p>​    假如S1的最后一个元素 与 S2的最后一个元素相等，那么S1和S2的LCS就等于 {S1减去最后一个元素} 与 {S2减去最后一个元素} 的 LCS  再加上 S1和S2相等的最后一个元素。</p>
+<p>​    假如S1的最后一个元素 与 S2的最后一个元素不等（本例子就是属于这种情况），那么S1和S2的LCS就等于 ： {S1减去最后一个元素} 与 S2 的LCS， {S2减去最后一个元素} 与 S1 的LCS 中的最大的那个序列。</p>
+<h4 id="4-递归公式"><a href="#4-递归公式" class="headerlink" title="4.递归公式"></a>4.递归公式</h4><p>​    第3节说了LCS的特征，我们可以发现，假设我需要求 a1 … am 和 b1 .. b(n-1)的LCS 和 a1 … a(m-1) 和 b1 .. bn的LCS，一定会递归地并且重复地把如a1… a(m-1) 与 b1 … b(n-1) 的 LCS 计算几次。所以我们需要一个数据结构来记录中间结果，避免重复计算。</p>
+<p>​    假设我们用c[i,j]表示Xi 和 Yj 的LCS的长度（直接保存最长公共子序列的中间结果不现实，需要先借助LCS的长度）。其中X = {x1 … xm}，Y ={y1…yn}，Xi = {x1 … xi}，Yj={y1… yj}。可得递归公式如下：</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200901165428404.png" alt="image-20200901165428404"></p>
+<h4 id="5-计算LCS的长度"><a href="#5-计算LCS的长度" class="headerlink" title="5.计算LCS的长度"></a>5.计算LCS的长度</h4><p><strong>云盘视频</strong></p>
+<pre><code>2、长江游艇俱乐部在长江上设置了n个游艇出租站1,2…n.游客可在这些游艇出租站租用游艇，并在下游的任何一个游艇出租站归还游艇。
+游艇出租站i到游艇出租站j之间的租金为r(i，j)，其中1&lt;=i&lt;j&lt;=n；
+求：①用动态规划法求解时,计算最优值（最少租金）的递归公式？
+②设计计算最优值（最少租金）的算法？
+　　③并分析其时间复杂度？</code></pre><pre><code>解：
+①
+②计算最优值算法
+public static void matrixChain(int [] p, int [][] m, int [][] s)
+   {
+      int n=p.length-1;
+      for (int i = 1; i &lt;= n; i++) 　　m[i][i] = 0;  　//1个站
+      for (int r = 2; r &lt;= n; r++)
+         for (int i = 1; i &lt;= n - r+1; i++)
+         { int j=i+r-1;
+            m[ i][ j] = m[i][i]  +  m[i+1][ j];
+            s[ i][ j] = i;　　　　 //断点位置在i处
+
+            for (int k = i+1; k &lt; j; k++)
+             {int　 t  = m[ i][ k]  + m[k+1][ j];
+               if (t &lt; m[i][j])
+             {       m[ i][ j] = t;           s[ i][ j] = k;}
+                  } } }
+构造最优解算法
+public void  traceback( int s[][],int I,int j)
+{
+if(i=j)   return;
+traceback( s,  i,  s[ i][ j] );
+traceback( s,  s[ i][ j]+1,  j );
+System.out.println(“A”+ i +“，”+ s[ i][ j] + “A”+ s[ i][ j]+1 +“,”+ j )
+}         //(m[ i, s[ i][ j] ] ) (m[ s[ i][ j]+1,  j ] )
+
+③时间复杂度：O(n3)
+
+</code></pre><h2 id="第四章-贪心法"><a href="#第四章-贪心法" class="headerlink" title="第四章 贪心法"></a>第四章 贪心法</h2><p>名词解释：</p>
+<p><strong>二元前缀码</strong>：</p>
+<p>定义14.1 设A = {a1,a2,…,am}是一个符号串集合，若对任意ai,aj∈A，ai≠aj，ai不是aj的前缀，aj也不是ai的前缀，则称A为前缀码（Prefixed Code）。若符号串ai（i = 1,2…,m）中，只出现0和1两个符号，则称A为二元前缀码（Binary Prefixed Code）。</p>
+<pre><code>前缀码
+在计算机及通信中，常用二进制bai编码来表示字符。例如，可用00、01、10、11分别表示字母A、B、C、D。如果字母A、B、C、D出现的频率是一样的，传输100个字母用200个二进制位。但实际上字母出现的频率很不一样，如A出现的频率为50％，B出现的频率为25％，C出现的频率为20％，D出现的频率为5％。能否用不等长的二进制序列表示字母A、B、C、D，使传输的信息的二进制位尽可能少呢？事实上，可用000表示字母D，用001表示字母C，01表示B，1表示A。这样表示，传输100个字母所用的二进制位为
+3×5 + 3×20 + 2×25 + 1×50 = 175
+
+这种表示比用等长的二进制序列表示法好，节省了二进制位。但当我们用1表示A，用00表示B，用001表示C，用000表示D时，如果接收到的信息为001000，则无法辨别它是CD还是BAD。因而，不能用这种二进制序列表示A、B、C、D。要寻找另外的表示法。
+
+设a1a2…an-1an为长度为n的符号串，称其子串a1，a1a2，…,a1a2…an-1分别为a1a2…an-1an的长度为1，2，…，n-1的前缀（Prefix）。
+
+定义14.1 设A = {a1,a2,…,am}是一个符号串集合，若对任意ai,aj∈A，ai≠aj，ai不是aj的前缀，aj也不是ai的前缀，则称A为前缀码（Prefixed Code）。若符号串ai（i = 1,2…,m）中，只出现0和1两个符号，则称A为二元前缀码（Binary Prefixed Code）。
+
+例如{1,01,001,000}是前缀码，而{1,11,001,0011}不是前缀码。那么如何产生前缀码呢？
+可用一棵二元树来产生一个二元前缀码。给定一棵二元树T，假设它有t片树叶。设v是T任意一个分支点，则v至少有一个儿子至多有两个儿子。若v有两个儿子，则在由v引出的两条边上，左边的标上0，右边的标上1；若v只有一个儿子，在v引出的边上可标0也可标1。设vi为T的任意一片树叶，从树根到vi的通路上各边的标号组成的符号串放在vi处，t片树叶处的t个符号串组成的集合为一个二元前缀码。由上述作法可知，vi中的符号串的前缀均在vi所在的通路上，因而所得集合为二元（0和1组成）前缀码。由此法可知，若T存在带一个儿子的分支点，则由T产生的前缀码不惟一，但T若为完全二元树，则T产生的前缀码就是惟一的了。
+图14-6中所示的二元树产生的前缀码为：{1,00,010,011}。
+当知道了传输的符号出现的频率时，如何选择前缀码，使传输的二进制位尽可能地少呢？
+这就要先产生一棵最优二元树T，然后用T产生二元前缀码，能使传输的二进制位最少。下面通过一个例子来说明最优前缀码的产生过程。
+已知字母A、B、C、D、E、F出现的频率如下：
+A——30％，B——25％，C——20％，
+D——10％，E——10％，F——5％。
+（1）求带权30，25，20，10，10，5的最优二元树T
+（2）在T上求一个前缀码。
+（3）设树叶vi带权为w％×100 = w，则vi处的符号串表示出现频率为w％的字母。
+A = {01,10,11,001,0001,0000}
+为一前缀码，其中
+0000表示F，0001表示E，001表示D，
+01表示C，10表示B，11表示A。
+传输100个这样的字母所用的二进制位为
+4×(5 + 10) + 3×10 + 2×(20 + 25 + 30) = 240</code></pre><p><strong>最小生成树</strong>：一个有 n 个结点的<a href="https://baike.baidu.com/item/连通图/6460995" target="_blank" rel="noopener">连通图</a>的生成树是原图的极小连通子图，且包含原图中的所有 n 个结点，并且有保持图连通的最少的边。</p>
+<h3 id="0-题目-1"><a href="#0-题目-1" class="headerlink" title="0.题目"></a>0.题目</h3><pre><code>四．Prim算法和Kruskal算法的比较：
+1. Prim算法：保证S所代表的子图是一棵树的前提下，选择一条最小代价的边e=(u,v);
+2. Kruskal算法：构造生成树的过程中，边集S代表的子图不一定是连通的；按边代价的非减次序考察E中的边，从中选择一条代价最小的边e=(u,v)；
+3. Prim算法：由于Prim算法中每次选取的边两端总是一个已连通顶点和一个未连通顶点，故这个边选取后一定能将该未连通点连通而又保证不会形成回路；因此没选择一条边后，无须再判断边集S Ue是否包含回路；
+4. Kruskal算法：为了确保最终得到生成树，每选择一条边时，都需要判定边集S Ue是否包含回路。
+</code></pre><pre><code>一、选择题：
+1．哈弗曼编码的贪心算法所需的计算时间为（   B     ）。
+A、O（n2n）        B、O（nlogn）        C、O（2n）        D、O（n）
+2 .下面是贪心算法的基本要素的是（      C     ）。
+A、重叠子问题        B、构造最优解        C、贪心选择性质        D、定义最优解</code></pre><h3 id="0-1-哈夫曼编码"><a href="#0-1-哈夫曼编码" class="headerlink" title="0.1 哈夫曼编码"></a>0.1 哈夫曼编码</h3><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908113613290.png" alt="image-20200908113613290"></p>
+<h3 id="一．基础"><a href="#一．基础" class="headerlink" title="一．基础"></a>一．基础</h3><p>1.<strong>可行解</strong>：满足约束条件的解；</p>
+<p>2.<strong>最优解</strong>：使目标函数取得最大（或最小）值的可行解，它用来衡量可行解的好坏；</p>
+<p>3.<strong>贪心法</strong>是一种求解最优化问题的算法设计策略。</p>
+<p>4.<strong>贪心法的应用领域</strong>有：背包问题、最小代价生成树（Kruskal算法和Prim算法）、哈夫曼树、文件的最佳合并树等；</p>
+<p>5.贪心法是通过<strong>分步决策</strong>的方法来求解问题的，贪心法每一步上用作决策依据的选择准则被称为最优量度标准（局部最优解）；</p>
+<h3 id="二、可以用贪心法求解的问题一般具有两个重要性质"><a href="#二、可以用贪心法求解的问题一般具有两个重要性质" class="headerlink" title="二、可以用贪心法求解的问题一般具有两个重要性质"></a>二、<strong>可以用贪心法求解的问题一般具有两个重要性质</strong></h3><p>1.<strong>贪心选择性质</strong>：所求问题的整体最优解可以通过一系列局部最优的选择，即贪心选择来达到；（这是贪心法和动态规划法的主要区别）</p>
+<p>2.<strong>最优子结构性质</strong>：一个问题的最优解包含其子问题的最优解（这是贪心法和动态规划算法的共同特征）</p>
+<h3 id="三、贪心法的经典应用背包问题"><a href="#三、贪心法的经典应用背包问题" class="headerlink" title="三、贪心法的经典应用背包问题"></a>三、贪心法的经典应用背包问题</h3><p>1.首先计算每种物品单位重量的价值pi/wi并按非增次序进行排序；</p>
+<p>2.然后依贪心选择策略，选择单位重量价值最高的物品装入背包；依此策略一直地进行下去，将尽可能多的物品全部装入背包，直到将背包装满；</p>
+<p>3.若装入某件物品时，不能全部装下，而背包内的物品总重量仍未达到w，则根据背包的剩余载重，选择单位重量价值次高的物品并尽可能多地装入背包。（参考例题）</p>
+<h3 id="四．Prim算法和Kruskal算法"><a href="#四．Prim算法和Kruskal算法" class="headerlink" title="四．Prim算法和Kruskal算法"></a>四．Prim算法和Kruskal算法</h3><p><strong>云盘视频</strong></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902174429146.png" alt="image-20200902174429146"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902174531466.png" alt="image-20200902174531466"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902174716034.png" alt="image-20200902174716034"></p>
+<h3 id="五．贪心法的基本要素"><a href="#五．贪心法的基本要素" class="headerlink" title="五．贪心法的基本要素"></a>五．<strong>贪心法的基本要素</strong></h3><p>1.<strong>最优量度标准</strong>：</p>
+<p>（1）选择最优量度标准是使用贪心法求解问题的核心问题；</p>
+<p>（2）贪心算法每一步作出的选择可以依赖以前作出的选择，但不依赖将来的选择，也不依赖一子问题的解；</p>
+<p>（3）对于一个贪心算法，必须证明所采用的量度标准能够导致一个整体最优解；</p>
+<p>2.<strong>最优子结构特性</strong>：见本章</p>
+<h3 id="六．一个问题能够使用贪心策略的条件"><a href="#六．一个问题能够使用贪心策略的条件" class="headerlink" title="六．一个问题能够使用贪心策略的条件"></a>六．<strong>一个问题能够使用贪心策略的条件</strong></h3><p>1.问题的解是向量结构（n元组形式）；</p>
+<p>2.具有最优子结构特性；</p>
+<p>3.能够获取最优量度标准；</p>
+<p>4.能证明是最优解。</p>
+<pre><code>1、对下图所示的连通网络 G，用克鲁斯卡尔 (Kruskal) 算法求 G 的最小生成树
+T, 请写出在算法执行过程中，依次加入 T 的边集 TE 中的边。说明该算法的贪心
+策略和算法的基本思想，并简要分析算法的时间复杂度。
+</code></pre><p> <img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902170210796.png" alt="image-20200902170210796"></p>
+<p>先把边都列出来，然后按权值排序小到大,然后回进去n-1条就行，环不行</p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902170243081.png" alt="image-20200902170243081"></p>
+<pre><code>2、给定下图G＝(V, E)是一个无向连通图，对每一条边(v, w),其权值为c( v, w)；
+
+
+求：①利用prim算法构造其最小生成树，画出其选边的过程？
+　　　并构造其算法？并分析其时间复杂度？
+②利用kruskal算法构造其最小生成树，画出其选边的过程？
+　　　并构造其算法？并分析其时间复杂度？
+</code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902170305915.png" alt="image-20200902170305915"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902170340427.png" alt="image-20200902170340427"></p>
+<p>Prim算法：按顺序，从0-n，选权值最小的，不能有环，顶点一个一个加进去</p>
+<p> <img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200902170420915.png" alt="image-20200902170420915"></p>
+<h2 id="第五章-回溯法"><a href="#第五章-回溯法" class="headerlink" title="第五章 回溯法"></a>第五章 回溯法</h2><h3 id="0-题目-2"><a href="#0-题目-2" class="headerlink" title="0.题目"></a>0.题目</h3><pre><code>一、选择题：
+1．下列算法中通常以深度优先方式系统搜索问题解的是（  D   ）。
+A、备忘录法        B、动态规划法        C、贪心法         D、回溯法
+2. 回溯法的效率不依赖于下列哪些因素（   D     ）
+A. 满足约束的值的个数                 B. 计算约束函数的时间  
+C. 计算限界函数的时间                 D. 确定解空间的时间
+3.下面哪种函数是回溯法中为避免无效搜索采取的策略（    B    ）
+A．递归函数        B.剪枝函数            C。随机数函数            D.搜索函数</code></pre><pre><code>二、简答题
+1、简述回溯法和分支限界法的相同点和不同点？
+共同点：1.都是在问题的状态空间树上搜索问题解的算法；
+2.都用活结点表实现，都可用约束函数剪去不含答案结点的分枝，都可用限界函数剪去不含最优解的分枝。
+不同点：
+1.求解目标不同：回溯法的求解目标是找出解空间树中满足约束条件的所有可行解；
+而分枝限界法的求解目标则是找出满足约束条件的一个可行解，或某种意义下的最优解。
+2.搜索方式不同：回溯法以深度优先的方式搜索解空间，
+而分枝限界法则以广度优先或最小耗费优先的方式搜索解空间树。
+3.对当前扩展结点的扩展方式不同：回溯法中的每个活结点可能多次成为当前扩展结点，纵深方向扩其一个孩子，然后再回溯后扩展其他孩子；
+而分枝限界法中每一个活结点只有一次机会成为扩展结点，一次产生所有孩子结点，自身成为死结点，之后无需再返回该结点处。
+</code></pre><pre><code>2、什么是子集树？ 什么是排列树？什么叫完全m叉树？
+
+子集树是一个数学学科词汇，属于函数类，当所给问题是从n个元素的集合S中找出S满足某种性质的子集时，相应的解空间称为子集树。
+排列树是一种用来解决组合数学问题特殊的图。
+完全m叉树是数据结构的专业术语，在根树中（外向树），如果任何结点的出度最多为m则称为m叉树；进一步如果他的叶都在同一层那么称为正则m叉树，也叫满m次树。</code></pre><pre><code>3、回溯算法的基本思想？　
+回溯法又称试探bai法。回溯法的基du本做法是深度优先zhi搜索，是一种组织得井井有条的、能避dao免不必要重复搜索的穷举式搜索算法。
+
+回溯算法的基本思想是：从一条路往前走，能进则进，不能进则退回来，换一条路再试。
+
+当我们遇到某一类问题时，它的问题可以分解，但是又不能得出明确的动态规划或是递归解法，此时可以考虑用回溯法解决此类问题。回溯法的优点在于其程序结构明确，可读性强，易于理解，而且通过对问题的分析可以大大提高运行效率。但是，对于可以得出明显的递推公式迭代求解的问题，还是不要用回溯法，因为它花费的时间比较长。
+
+对于用回溯法求解的问题，首先要将问题进行适当的转化，得出状态空间树。这棵树的每条完整路径都代表了一种解的可能。通过深度优先搜索这棵树，枚举每种可能的解的情况；从而得出结果。但是，回溯法中通过构造约束函数，可以大大提升程序效率，因为在深度优先搜索的过程中，不断的将每个解（并不一定是完整的，事实上这也就是构造约束函数的意义所在）与约束函数进行对照从而删除一些不可能的解，这样就不必继续把解的剩余部分列出从而节省部分时间。
+
+回溯法中，首先需要明确下面三个概念：
+（一）约束函数：约束函数是根据题意定出的。通过描述合法解的一般特征用于去除不合法的解，从而避免继续搜索出这个不合法解的剩余部分。因此，约束函数是对于任何状态空间树上的节点都有效、等价的。
+（二）状态空间树：刚刚已经提到，状态空间树是一个对所有解的图形描述。树上的每个子节点的解都只有一个部分与父节点不同。
+（三）扩展节点、活结点、死结点：
+所谓扩展节点，就是当前正在求出它的子节点的节点，在深度优先搜索中，只允许有一个扩展节点。
+活结点就是通过与约束函数的对照，节点本身和其父节点均满足约束函数要求的节点；
+死结点反之。由此很容易知道死结点是不必求出其子节点的（没有意义）。</code></pre><pre><code>1、n皇后问题
+在4×4格的棋盘上放置彼此不受攻击的4个皇后。按照国际象棋的规则，皇后可以攻击与之处在同一行或同一列或同一斜线上的棋子。
+用回溯算法解决4皇后问题：        
+    ①构造求解该问题的解空间树？         
+②设计该4皇后问题的回溯算法？     
+解：①解空间树  
+</code></pre><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114629232.png" alt="image-20200908114629232"></p>
+<p>②回溯算法</p>
+<h2 id="第六章-线性规划"><a href="#第六章-线性规划" class="headerlink" title="第六章 线性规划"></a>第六章 线性规划</h2><h3 id="1-基本要求"><a href="#1-基本要求" class="headerlink" title="1.基本要求"></a>1.基本要求</h3><p>㈠基本要求 理解线性规划算法模型，网络与网络流的基本概念；掌握线性规划的单纯形算法， 网络最大流的增广路算法、预流推进算法，网络最小费用流的消圈算法、最小费用路算法、网络单纯形算法。</p>
+<h3 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2.基本概念"></a>2.基本概念</h3><p>㈡教学重点线性规划的基本概念；单纯形算法；最大网络流和最小费用流问题的解法。</p>
+<h3 id="3-最大网络流和最小费用流"><a href="#3-最大网络流和最小费用流" class="headerlink" title="3.最大网络流和最小费用流"></a>3.最大网络流和最小费用流</h3><p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114846329.png" alt="image-20200908114846329"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114859818.png" alt="image-20200908114859818"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114913325.png" alt="image-20200908114913325"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114924558.png" alt="image-20200908114924558"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114932886.png" alt="image-20200908114932886"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114946387.png" alt="image-20200908114946387"></p>
+<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200908114957810.png" alt="image-20200908114957810"></p>
+<h2 id="第七八九章"><a href="#第七八九章" class="headerlink" title="第七八九章"></a>第七八九章</h2><pre><code>一．选择题
+1、下面关于NP问题说法正确的是（B ）
+A NP问题都是不可能解决的问题    B P类问题包含在NP类问题中
+C NP完全问题是P类问题的子集     D NP类问题包含在P类问题中
+2、蒙特卡罗算法是（   B      ）的一种。    
+A、分支界限算法      B、概率算法    C、贪心算法    D、回溯算法
+3.下列哪一种算法不是随机化算法（    C     ）
+A. 蒙特卡罗算法B. 拉斯维加斯算法C.动态规划算法D.舍伍德算法
+4、下列随机算法中运行时有时候成功有时候失败的是（C ）
+A 数值概率算法 B 舍伍德算法 C 拉斯维加斯算法 D 蒙特卡罗算法
+5、在下列算法中得到的解未必正确的是（  B      ）。
+A、蒙特卡罗算法    B、拉斯维加斯算法   C、舍伍德算法   D、数值概率算法
+6、舍伍德算法是（    B     ）的一种。
+A、分支界限算法      B、概率算法    C、贪心算法    D、回溯算法
+7、在下列算法中有时找不到问题解的是（  B      ）。
+A、蒙特卡罗算法    B、拉斯维加斯算法   C、舍伍德算法   D、数值概率算法
+
+1、什么是易解问题？什么是难解问题？难解问题分为哪两类？
+答：1）易解问题：人们将存在多项式时间 算法的问题称为易解问题;
+2）难解问题：将需要在指数时间内解决的问题称为难解问题；
+3）难解问题有两类：  1）不可判定问题  　 2）非决定的难处理问题 。
+2、什么是不可判定问题？什么是非决定的难处理问题？
+答：1）不可判定问题 ：该类问题是不能解问题，它们太难了，以至于根本就不存在能求解它们的任何算法。
+2）非决定的难处理问题：  这类问题是可判定的（即可解的）。 但是，这类问题即使使用非决定的计算机，也不能在多项式时间内求解它们。
+3、什么是P类问题？什么是NP完全问题？
+答：1）P类问题：是一类能够用确定性算法在多项式时间内求解的判断问题。事实上，所有易解问题都属于P类问题。
+2）NP完全问题：对于某问题，很难找到其多项式时间的算法(或许根本不存在)，但是如果给了该问题的一个答案，则可以在多项式时间内判定或验证这个答案是否正确。 这种可以在多项式时间内验证一个解是否正确的问题称为NP问题。
+4、列出几个典型的NP完全问题？
+答：（1）图着色问题COLORING
+（2）路径问题LONG-PATH 
+（3）顶点覆盖问题VERTEX-COVER
+（4）子集和问题SUBSET-SUM
+（5）哈密尔顿回路问题HAM-CYCLE
+（6）旅行商问题TSP
+（7）装箱问题BIN-PACKING ，   能否用k个箱子来装n个物品；
+
+1、    所有NP完全问题都还没有多项式时间的算法，然而许多NP完全问题都具有很重要的意义，对于这类问题通常可以采取以下几种解题策略？
+答：１）只对问题的特殊实例求解； 
+　  ２）用动态规划或分支限界法求解。
+    ３）启发式方法求解
+    ４）只求近似解
+
+2、什么是问题的计算复杂度？它与时间复杂度的关系是什么？
+一、计算复杂度
+
+我们知道，计算机中的算法复杂度，定义为只和问题规模N有关，即计算复杂度是N的一个函数 f(N)。
+
+如果计算复杂度只相差一个常数因子，则认为复杂度是同一数量级的，是相同的，即 f(N) = Nlog(N) 和 g(N) = 100Nlog(N) 的复杂度是相同的。
+
+所以我们干脆引进算子O()来描述算法复杂度。上述 f(N) 和 g(N) 均表示为 O(N logN)</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
