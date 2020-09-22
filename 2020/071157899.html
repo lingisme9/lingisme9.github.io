@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="人工智能, Lingisme9">
+    <meta name="keywords" content="算法总结, Lingisme9">
     <meta name="description" content="死亡不是生命的终点，而是生命另一个轮回的开始 FOR KOBE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>人工智能 | Lingisme9</title>
+    <title>算法总结 | Lingisme9</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">人工智能</h1>
+                    <h1 class="description center-align post-title">算法总结</h1>
                 </div>
             </div>
         </div>
@@ -464,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-22
+                    2020-07-11
                 </div>
                 
 
@@ -480,355 +480,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="人工智能作业"><a href="#人工智能作业" class="headerlink" title="人工智能作业"></a>人工智能作业</h1><h2 id="1-第一章："><a href="#1-第一章：" class="headerlink" title="1.第一章："></a>1.第一章：</h2><pre><code>1.为什么神经网络在人工智能第一次浪潮中并没有获得成功，而如今却获得突飞猛进的进展？
-答：
-    50年代末，F·Rosenblatt设计制作了“感知机”，它是一种多层的神经网络。这项工作首次把人工神经网络的研究从理论探讨付诸工程实践。当时，世界上许多实验室仿效制作感知机，分别应用于文字识别、声音识别、声纳信号识别以及学习记忆问题的研究。然而，这次人工神经网络的研究高潮未能持续很久，许多人陆续放弃了这方面的研究工作，这是因为当时数字计算机的发展处于全盛时期，许多人误以为数字计算机可以解决人工智能、模式识别、专家系统等方面的一切问题，使感知机的工作得不到重视；其次，当时的电子技术工艺水平比较落后，主要的元件是电子管或晶体管，利用它们制作的神经网络体积庞大，价格昂贵，要制作在规模上与真实的神经网络相似是完全不可能的；另外，在1968年一本名为《感知机》的著作中指出线性感知机功能是有限的，它不能解决如异或这样的基本问题，而且多层网络还不能找到有效的计算方法，这些论点促使大批研究人员对于人工神经网络的前景失去信心。60年代末期，人工神经网络的研究进入了低潮。
-另外，在60年代初期，Widrow提出了自适应线性元件网络，这是一种连续取值的线性加权求和阈值网络。后来，在此基础上发展了非线性多层自适应网络。当时，这些工作虽未标出神经网络的名称，而实际上就是一种人工神经网络模型。
-随着人们对感知机兴趣的衰退，神经网络的研究沉寂了相当长的时间。80年代初期，模拟与数字混合的超大规模集成电路制作技术提高到新的水平，完全付诸实用化，此外，数字计算机的发展在若干应用领域遇到困难。这一背景预示，向人工神经网络寻求出路的时机已经成熟。美国的物理学家Hopfield于1982年和1984年在美国科学院院刊上发表了两篇关于人工神经网络研究的论文，引起了巨大的反响。人们重新认识到神经网络的威力以及付诸应用的现实性。随即，一大批学者和研究人员围绕着 Hopfield提出的方法展开了进一步的工作，形成了80年代中期以来人工神经网络的研究热潮。
-</code></pre><h2 id="2-8数码问题"><a href="#2-8数码问题" class="headerlink" title="2.8数码问题"></a>2.8数码问题</h2><pre><code>在3×3的棋盘上，摆有八个棋子，每个棋子上标有1至8的某一数字。棋盘中留有一个空格，空格用0来表示。空格周围的棋子可以移到空格中。要求解的问题是：给出一种初始布局（初始状态）和目标布局（为了使题目简单,设目标状态为123804765），找到一种最少步骤的移动方法，实现从初始布局到目标布局的转变。</code></pre><p><strong>分析】</strong></p>
-<p>题目读完第一感觉是和求解最短路径问题类似，考虑使用BFS，状态很好找，每次移动空格就会形成一种新的状态，例如：</p>
-<p><img src="https://img-blog.csdn.net/20180116201941897?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjI4MzQ2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
-<p><img src="https://p-blog.csdn.net/images/p_blog_csdn_net/zuzubo/239856/o_Snap1.gif" alt="img"></p>
-<p><img src="https://img-blog.csdn.net/20180428120116514?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyNDQ1MDE1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>八数码问题是个典型的状态图搜索问题。搜索方式有两种基本的方式，即树式搜索和线式搜索。搜索策略大体有盲目搜索和启发式搜索两大类。盲目搜索就是无“向导”的搜索，（例如深度优先搜索，广度优先搜索），其效率极其低下。启发式搜索就是有“向导”的搜索，有更好的效率</p>
-<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200922174650256.png" alt="image-20200922174650256"></p>
-<p><strong>一、状态如何表示？</strong></p>
-<p>1.每个状态都用3*3的数组表示，但是BFS中需要入队出队，比较麻烦而且空间占用较大</p>
-<p>2.状态压缩，采用一个整数保存状态的数字序列，例如状态1表示为283104765,状态2表示为203184765</p>
-<p><strong>二、如何判重？</strong></p>
-<p>1.如果空间允许，开一个876543210大小的bool数组，某个序列出现就将数组值置为1；但是竞赛中一般都是限制128M(大约10000000)，这个数组开不下来。</p>
-<p>2.虽然状态范围是012345678–876543210，但是中间真正有效的只有9！=362800，因为数字不可能出现重复；因此可以考虑开一个数组大小为9！整型数组A和bool数组B，然后生成0-8这9个数码的全排列并按照升序或者降序存入数组中，要判断某个状态（一种排列方式）是否出现过，直接通过二分查找的方式找到该排列在A中的下标i，然后查看数组B[i]为true还是false；如果为true则出现过，如果为false则将状态入队，并设置B[i]=true;</p>
-<p>3.其实从方案2中我们已经看到，判重的实质就是建立状态数字串（一个int数据）和是否出现（一个bool数据）之间的联系，而STL中刚好提供了map&lt;key,value&gt;这样一种容器，我们可以将状态数字串作为key，是否出现作为value直接建立起状态–是否出现的联系。</p>
-<p>4.使用hash判重，将状态数字串通过某种映射f(x)从012345678–876543210这样一个大集合，映射到128M范围之内；这里采用简单的hash，取模一个大质数，只要这个质数大于9！即可；当然这里可能出现冲突，也就是key1!=key2但是f(key1)==f(key2),hash算法只能减少冲突不能避免冲突。这里如何减少冲突呢？挂链表，当key1!=key2但是f(key1)==f(key2),则将key2挂到key1后面；当然这里如果使用康托展开可以完美一一映射而不冲突，但是我不会(<del>^</del>)。</p>
-<p><strong>三、搜索方法的选择</strong></p>
-<p><strong>1.BFS（广度优先搜索）</strong></p>
-<p>广度优先遍历，指的是从图的一个未遍历的节点出发，先遍历这个节点的相邻节点，再依次遍历每个相邻节点的相邻节点。</p>
-<p>上文所述树的广度优先遍历动图如下，每个节点的值即为它们的遍历顺序。所以广度优先遍历也叫层序遍历，先遍历第一层(节点 1)，再遍历第二层(节点 2，3，4)，第三层(5，6，7，8)，第四层(9，10)。</p>
-<p><img src="https://s2.51cto.com/oss/202004/16/29dc30c1546cc73846153359b0fad8fb.gif" alt="img"></p>
-<p>深度优先遍历用的是栈，而广度优先遍历要用队列来实现，我们以下图二叉树为例来看看如何用队列来实现广度优先遍历。</p>
-<p><img src="https://s4.51cto.com/oss/202004/16/1ba485c575477d00a51b44640671245e.png" alt="img"></p>
-<p>动图如下：</p>
-<p><img src="https://s4.51cto.com/oss/202004/16/a2c7c61edcadffeed85c10f53f1c988c.gif" alt="img"></p>
-<pre><code>/** 
- * 使用队列实现 bfs 
- * @param root 
- */ 
-private static void bfs(Node root) { 
-    if (root == null) { 
-        return; 
-    } 
-    Queue&lt;Node&gt; stack = new LinkedList&lt;&gt;(); 
-    stack.add(root); 
-
-    while (!stack.isEmpty()) { 
-        Node node = stack.poll(); 
-        System.out.println("value = " + node.value); 
-        Node left = node.left; 
-        if (left != null) { 
-            stack.add(left); 
-        } 
-        Node right = node.right; 
-        if (right != null) { 
-            stack.add(right); 
-        } 
-    } 
-} 
-
-</code></pre><p><strong>2.DFS（深度优先搜索）</strong></p>
-<p>主要思路是从图中一个未访问的顶点 V 开始，沿着一条路一直走到底，然后从这条路尽头的节点回退到上一个节点，再从另一条路开始走到底…，不断递归重复此过程，直到所有的顶点都遍历完成，它的特点是不撞南墙不回头，先走完一条路，再换一条路继续走。</p>
-<p>1、我们从根节点 1 开始遍历，它相邻的节点有 2，3，4，先遍历节点 2，再遍历 2 的子节点 5，然后再遍历 5 的子节点 9。</p>
-<p><img src="https://s4.51cto.com/oss/202004/16/ca375e4d1d4a377b4a15dc9e548123d1.png" alt="img"></p>
-<p>2、上图中一条路已经走到底了(9是叶子节点，再无可遍历的节点)，此时就从 9 回退到上一个节点 5，看下节点 5 是否还有除 9 以外的节点，没有继续回退到 2，2 也没有除 5 以外的节点，回退到 1，1 有除 2 以外的节点 3，所以从节点 3 开始进行深度优先遍历，如下：</p>
-<p><img src="https://s3.51cto.com/oss/202004/16/2354c3d3f9abc912f6500140ee92458a.png" alt="img"></p>
-<p>3、同理从 10 开始往上回溯到 6, 6 没有除 10 以外的子节点，再往上回溯，发现 3 有除 6 以外的子点 7，所以此时会遍历 7。</p>
-<p><img src="https://s2.51cto.com/oss/202004/16/7e0a19b7de2356a352661c4b0f803f71.png" alt="img"></p>
-<p>3、从 7 往上回溯到 3， 1，发现 1 还有节点 4 未遍历，所以此时沿着 4， 8 进行遍历,这样就遍历完成了。</p>
-<p>完整的节点的遍历顺序如下(节点上的的蓝色数字代表)：</p>
-<p><img src="https://s5.51cto.com/oss/202004/16/92f602a1eaa301784085b8a3c4b948c0.png" alt="92f602a1eaa301784085b8a3c4b948c0.png (381×337)"></p>
-<p>看到以上的遍历不难发现这就是树的前序遍历,实际上不管是前序遍历，还是中序遍历，亦或是后序遍历，都属于深度优先遍历。</p>
-<p>那么深度优先遍历该怎么实现呢，有递归和非递归两种表现形式，接下来我们以二叉树为例来看下如何分别用递归和非递归来实现深度优先遍历。</p>
-<p><strong>1、递归实现</strong></p>
-<p>递归实现比较简单，由于是前序遍历，所以我们依次遍历当前节点，左节点，右节点即可，对于左右节点来说，依次遍历它们的左右节点即可，依此不断递归下去，直到叶节点(递归终止条件)，代码如下：</p>
-<pre><code>public class Solution { 
-    private static class Node { 
-        /** 
-         * 节点值 
-         */ 
-        public int value; 
-        /** 
-         * 左节点 
-         */ 
-        public Node left; 
-        /** 
-         * 右节点 
-         */ 
-        public Node right; 
-
-        public Node(int value, Node left, Node right) { 
-            this.value = value; 
-            this.left = left; 
-            this.right = right; 
-        } 
-    } 
-
-    public static void dfs(Node treeNode) { 
-        if (treeNode == null) { 
-            return; 
-        } 
-        // 遍历节点 
-        process(treeNode) 
-        // 遍历左节点 
-        dfs(treeNode.left); 
-        // 遍历右节点 
-        dfs(treeNode.right); 
-    } 
-} </code></pre><p>递归的表达性很好，也很容易理解，不过如果层级过深，很容易导致栈溢出。所以我们重点看下非递归实现。</p>
-<p><strong>2、非递归实现</strong></p>
-<p>仔细观察深度优先遍历的特点，对二叉树来说，由于是先序遍历(先遍历当前节点，再遍历左节点，再遍历右节点)，所以我们有如下思路：</p>
-<p>对于每个节点来说，先遍历当前节点，然后把右节点压栈，再压左节点(这样弹栈的时候会先拿到左节点遍历，符合深度优先遍历要求)。</p>
-<p>弹栈，拿到栈顶的节点，如果节点不为空，重复步骤 1， 如果为空，结束遍历。</p>
-<p>我们以以下二叉树为例来看下如何用栈来实现 DFS。</p>
-<p><img src="https://s2.51cto.com/oss/202004/16/b2a7d9fdc8fa1898a569255957428d94.png" alt="b2a7d9fdc8fa1898a569255957428d94.png (355×287)"></p>
-<p>整体动图如下：</p>
-<p><img src="C:%5CUsers%5C51403%5CDesktop%5Ce1e6a44251b69cd3b930f3071a71ffd8.gif" alt="e1e6a44251b69cd3b930f3071a71ffd8"></p>
-<p>整体思路还是比较清晰的，使用栈来将要遍历的节点压栈，然后出栈后检查此节点是否还有未遍历的节点，有的话压栈，没有的话不断回溯(出栈)，有了思路，不难写出如下用栈实现的二叉树的深度优先遍历代码：</p>
-<pre><code>/** 
- * 使用栈来实现 dfs 
- * @param root 
- */ 
-public static void dfsWithStack(Node root) { 
-    if (root == null) { 
-        return; 
-    } 
-
-    Stack&lt;Node&gt; stack = new Stack&lt;&gt;(); 
-    // 先把根节点压栈 
-    stack.push(root); 
-    while (!stack.isEmpty()) { 
-        Node treeNode = stack.pop(); 
-        // 遍历节点 
-        process(treeNode) 
-
-        // 先压右节点 
-        if (treeNode.right != null) { 
-            stack.push(treeNode.right); 
-        } 
-
-        // 再压左节点 
-        if (treeNode.left != null) { 
-            stack.push(treeNode.left); 
-        } 
-    } 
-} </code></pre><p><strong>3.启发式搜索</strong></p>
-<p>  启发式搜索：启发式搜索就是在状态空间中的搜索对每一个搜索的位置进行评估，得到最好的位置，再从这个位置进行搜索直到目标。这样可以省略大量无谓的搜索路径，提高了效率</p>
-<p><strong>解决此问题的启发策略：</strong></p>
-<p>每次移动的时候，正确位置数码的个数要大于交换前正确位置数码个数。</p>
-<p>正确位置数码个数：每个数码的位置与最终格局的对比，如果位置相同，则说明此数码在正确位置。</p>
-<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200922175210300.png" alt="image-20200922175210300"></p>
-<p>图1.3中右边为最终格局，左边为当前格局，红色字体标识的数码为 正确位置数码，由此可以发现其正确位置的数码个数为4个。那么图1.2中正确数码如下图所示：</p>
-<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200922175336459.png" alt="image-20200922175336459"></p>
-<p>由上图所示可得，正确位置数码个数大于等于4的只有左下方的格局，那么下一步选择的就是左下方的格局，再次调用次算法如下图：</p>
-<p><img src="C:%5CUsers%5C51403%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200922175404359.png" alt="image-20200922175404359"></p>
-<p>由八数码问题的部分状态图可以看出，从初始节点开始，在通向目标节点的路径上，各节点的数码格局同目标节点相比较，其数码不同的位置个数在逐渐减少，最后为零。所以，这个数码不同的位置个数便是标志一个节点到目标节点距离远近的一个启发性信息，利用这个信息就可以指导搜索。即可以利用启发信息来扩展节点的选择，减少搜索范围，提高搜索速度。</p>
-<p> 启发函数设定。对于八数码问题，可以利用棋局差距作为一个度量。搜索过程中，差距会逐渐减少，最终为零，为零即搜索完成，得到目标棋局。</p>
-<pre><code>
-/*
-程序名：八数码问题
-描述：
-主要函数列表：
-      1.show()     显示当前待调整数码矩阵
-      2.exchange() 交换数码中的 begin[row_one][column_one] 与 begin[row_two][column_two] 这两个数
-      3.judge()    判断待调整的数码与最终数码相比正确位置数码的个数
-      4.yidong()   将待调整数码从开始位置移动到终止位置，并将其过程输出
-      5.shuru()    有用户输入待调整的数码矩阵最初状态的数，并将其存入到begin[][]数组中
-其它说明：此程序运用到启发式搜索的策略，
-          （1）：将空格的地方存储零，这样便于操作
-          （2）：每次交换0上下左右4个方向元素的位置，当交换位置后正确数码个数 大于或等于 交换前正确数码的个数则算交换成功，
-                 交换成功则重复步骤2，失败的话则跳回上一轮交换。
-          （3）：当交换到最终所有的数码的位置都正确时结束
-*/
-
-#include"stdio.h"
-#define num 3 //宏定义数码的行列数为3
-
-/*显示当前待调整数码矩阵*/
-void show(int begin[num][num])  
-{
-    for(int i = 0; i &lt; num; i++)
-    {
-        for(int j = 0; j &lt; num; j++)
-            printf("%d ", begin[i][j]);
-        printf("\n");
-    }
-    printf("\n");
-}
-
-/*交换数码中的 begin[row_one][column_one] 与 begin[row_two][column_two] 这两个数*/
-void exchange(int begin[num][num], int row_one, int column_one, int row_two, int column_two)  
-{
-    int temp;
-    temp = begin[row_two][column_two] ;
-    begin[row_two][column_two] = begin[row_one][column_one];
-    begin[row_one][column_one] = temp;
-}
-
-/*判断待调整的数码与最终数码相比正确位置数码的个数*/
-int judge(int begin[num][num], int end[num][num]) 
-{
-    int count=0;           //count记录数码中正确位置的个数
-    for(int i = 0; i &lt; num; i++)   //检查当前图形的正确度
-        for(int j = 0; j &lt; num; j++)
-        {
-            if(begin[i][j] == end[i][j] &amp;&amp; end[i][j] != 0)
-                count++;
-        }
-    return count;           //返回数码中正确位置的个数
-}
-
-/* 将待调整数码从开始位置移动到终止位置，并将其过程输出*/
-int yidong(int begin[num][num], int end[num][num]
-           , int right, int jishu, int ji_shu[50][3][3]
-           , int biaoji, int row, int column) //biaoji存储上一轮移动的反方向代号
-{ 
-    int temp_zhi;
-    show(begin);   //显示数组矩阵
-    if(jishu &gt;= 20)
-        return 0;
-    int node;  //,node为标记
-    int temp;               //存储当前待调整数码正确的个数
-    for(int q=0; q&lt;jishu; q++)  //检查交换后的end[][]图形是否先前已经遍历过了
-    {
-        node = 1;
-        for(int w=0; w&lt;num &amp;&amp; node; w++)
-            for(int r=0; r&lt;num &amp;&amp; node; r++)
-                if(ji_shu[q][w][r] != begin[w][r])
-                    node = 0;
-        if(node == 1)   //如果先前遍历过，返回0
-        {
-            return 0;
-        }
-    }
-    for(int i = 0; i &lt; num; i++)   
-        for(int j = 0; j &lt; num; j++)
-            ji_shu[jishu][i][j] = begin[i][j];
-
-    if(right == num * num - 1)  //如果待调整数码与最终数码完全相同时，返回1
-        return 1;
-    if(row &gt; 0 &amp;&amp; biaoji != 0)             //存储0的位置不是在第一行
-    {
-        exchange(begin, row - 1, column, row , column);  //将0与其上面的元素交换存储位置
-        temp = judge(begin, end);
-        if(temp &lt; right)   //如果交换后正确数码的个数不大于原来正确数码的个数
-            exchange(begin, row - 1, column, row , column); //再将其交换回来        
-        else if(temp &gt;= right)          //如果交换后正确数码的个数大于或等于原来正确数码的个数
-        {
-            temp_zhi = yidong(begin, end, temp, jishu+1, ji_shu, 2, row-1, column);
-             if( temp_zhi == 1)  //进行下一步的移动
-                 return 1;
-            exchange(begin, row - 1, column, row , column); //再将其交换回来
-        }
-    }
-    if(column &gt; 0 &amp;&amp; biaoji != 1)
-    {
-           exchange(begin, row, column - 1, row , column); //将0与其左边的元素交换存储位置
-        temp = judge(begin, end);        
-        if(temp &lt; right)   
-              exchange(begin, row, column - 1, row , column);            
-        else if(temp &gt;= right)
-        {
-            temp_zhi = yidong(begin, end, temp, jishu+1, ji_shu ,3, row, column - 1);
-            if(temp_zhi == 1)  
-                 return 1;
-            exchange(begin, row, column - 1, row , column);
-        }
-    }
-
-    if(row &lt; num-1 &amp;&amp; biaoji != 2)
-    {
-        exchange(begin, row + 1, column, row , column); //将0与其下面的元素交换存储位置
-        temp = judge(begin, end);    
-        if(temp &lt; right) 
-            exchange(begin, row + 1, column, row , column);
-        else if(temp &gt;= right)
-        {
-            temp_zhi =yidong(begin, end, temp, jishu+1, ji_shu, 0, row+1, column);
-           if(temp_zhi == 1)  
-              return 1;
-           exchange(begin, row + 1, column, row , column);
-        }
-    }
-    if(column &lt; num-1 &amp;&amp; biaoji != 3)
-    {
-        exchange(begin, row, column + 1, row , column); //将0与其右边的元素交换存储位置
-        temp = judge(begin, end);    
-        if(temp &lt; right)   
-            exchange(begin, row, column + 1, row , column);        
-        else if(temp &gt;= right)  
-        {
-            temp_zhi = yidong(begin, end, temp, jishu+1, ji_shu, 1, row, column+1);
-            if(temp_zhi == 1)  
-               return 1;
-            exchange(begin, row, column + 1, row , column);    
-        }
-    }
-    return 0;   //移动失败，返回0
-}
-
-/*有用户输入待调整的数码矩阵最初状态的数，并将其存入到begin[][]数组中*/
-void shuru(int begin[][num],int blank[])  
-{
-    int temp, node, zero = 0;
-    for (int i = 0; i &lt; num; i++)
-        for(int j = 0; j &lt; num; j++)
-        {
-            node = 1;
-            printf("请输入第%d行，第%d列的元素的值：", i+1, j+1);
-            scanf("%d", &amp;temp);
-            for (int q = 0; q &lt;= i &amp;&amp; node == 1; q++)  //当输入的值有重复的，提示重新输入
-                for (int w = 0; w &lt; j; w++)
-                    if(temp == begin[q][w])
-                    {
-                        printf("输入重复，请重新输入\n");
-                        node = 0;
-                        j--;
-                        break;
-                    }
-            if(temp &lt; 0 || temp &gt; num*num-1)   //当输入的值不是在数码的区间范围内时，提示重新输入
-            {
-                printf("请输入从%d到%d的数\n", zero, num*num-1);
-                node = 0;
-                j--;
-            }
-            if(node == 1)   //如果输入满足条件    
-            {
-                if(temp == 0) //如果输入的值为零，由blank[0]记录行号，blank[1]记录列号
-                {
-                    blank[0] = i;
-                    blank[1] = j;
-                }
-                begin[i][j] = temp;//将满足条件的值存储起来
-            }
-        }
-}
-
-int main()
-{
-    int jishu = 0, ji_shu[50][3][3];//jishu存储已经遍历过的八数码图形的个数，jishu[][][]存储已经遍历过的八数码图形的形状
-    int row;     //存储数字零的行数
-    int column;  //存储数字零的列数
-    int begin[num][num], blank[2],count=1;     
-    int end[num][num] = {1, 2, 3, 8, 0, 4, 7, 6, 5};  //给最终状态的数码矩阵赋值
-    printf ("-------%d数码游戏开始！--------\n", num);
-    shuru(begin, blank);   //输入带调整状态的数码矩阵的值
-    row = blank[0];
-    column = blank[1];
-    if(yidong (begin, end,judge(begin,end),jishu,ji_shu,4,row,column) == 0)  
-       printf("\n此8数码的问题可能无解！");
-    else 
-       show(begin);
-    getchar();getchar();
-    return 0;
-}</code></pre><script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -871,7 +523,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lingisme9.club/2020/092226468.html">https://lingisme9.club/2020/092226468.html</a>
+                    <a href="https://lingisme9.club/2020/071157899.html">https://lingisme9.club/2020/071157899.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1337,48 +989,9 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2020/092226468.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="人工智能">
-                        
-                        <span class="card-title">人工智能</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            人工智能作业
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            坏蛋先生
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2020/072037829.html">
                     <div class="card-image">
@@ -1396,9 +1009,9 @@ int main()
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1406,6 +1019,59 @@ int main()
                             
                         </span>
                     </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/053054657.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python学习笔记">
+                        
+                        <span class="card-title">python学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            个人学习python笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">程序设计</span>
+                    </a>
+                    
                 </div>
                 
             </div>
