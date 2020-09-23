@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>python描述的数据结构</title>
+      <link href="/2020/092322154.html"/>
+      <url>/2020/092322154.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="python数据结构"><a href="#python数据结构" class="headerlink" title="python数据结构"></a>python数据结构</h1><p>1.<a href="http://9fdf7a.coding-pages.com/index.html" target="_blank" rel="noopener">python数据结构</a></p><p>2.<a href="https://www.bilibili.com/video/BV1e4411s7Kw?p=2" target="_blank" rel="noopener">时间复杂度大O记法视频</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法总结</title>
       <link href="/2020/092257899.html"/>
       <url>/2020/092257899.html</url>
