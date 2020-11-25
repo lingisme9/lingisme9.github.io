@@ -28,8 +28,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Lingisme9" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Lingisme9" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -514,7 +514,7 @@
 <p>2、新建<code>readerme</code>文件，什么都不用添加</p>
 <p>3、访问：<code>你的用户名.github.io</code>（不出现404就行）</p>
 <h2 id="三、git安装配置"><a href="#三、git安装配置" class="headerlink" title="三、git安装配置"></a>三、git安装配置</h2><p>1、<a href="https://git-scm.com/" target="_blank" rel="noopener">下载git</a></p>
-<p>2、安装git（除图片这一步选第二个其他都next）<br>3、因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为你github注册的账号和邮箱右键打开git-bash.exe<br><code>$ git config --global user.name "你的github用户名"</code><br><code>$ git config --global user.email "你注册github的邮箱"</code><br><img src="https://s1.ax1x.com/2020/04/22/JNHwx1.png" alt=""></p>
+<p>2、安装git（除图片这一步选第二个其他都next）<br>3、因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为你github注册的账号和邮箱右键打开git-bash.exe<br><code>$ git config --global user.name &quot;你的github用户名&quot;</code><br><code>$ git config --global user.email &quot;你注册github的邮箱&quot;</code><br><img src="https://s1.ax1x.com/2020/04/22/JNHwx1.png" alt=""></p>
 <p>4、为Github账户设置<code>SSH key</code>(ssh key是加密传输)<br>    首先检查是否生成了秘钥,如果没有生成，那么通过如下命令：<br>    <code>$ ssh-keygen -t rsa -C “你的github注册邮箱”</code>        </p>
 <pre><code>1.是路径确认，直接按回车存默认路径即可
 
@@ -523,7 +523,7 @@
 3.直接回车键</code></pre><p><img src="https://s1.ax1x.com/2020/04/22/JNHqiQ.png" alt=""></p>
 <p>5、可以打开你的电脑<code>C:\Users\Administrator.ssh</code>里面找到，生成成功后，可以查看 <code>id_rsa.pub</code> 公钥文件</p>
 <p>6、为github账号配置<code>ssh_key</code>：setting—&gt;SSH and GPG keys<br> <img src="https://s1.ax1x.com/2020/04/22/JNbKoD.png" alt=""></p>
-<p>7、验证是否成功输入如下代码：<br>    <code>$ ssh -T git@github.com</code><br>正常情况下会出现(有警告可以不用管)：<br>    <code>Hi Your Name! You've successfully authenticated, but GitHub does not provide shell access.</code></p>
+<p>7、验证是否成功输入如下代码：<br>    <code>$ ssh -T git@github.com</code><br>正常情况下会出现(有警告可以不用管)：<br>    <code>Hi Your Name! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></p>
 <h2 id="四、hexo安装"><a href="#四、hexo安装" class="headerlink" title="四、hexo安装"></a>四、hexo安装</h2><h3 id="这里介绍两种方法安装："><a href="#这里介绍两种方法安装：" class="headerlink" title="这里介绍两种方法安装："></a>这里介绍两种方法安装：</h3><h4 id="1、正常安装"><a href="#1、正常安装" class="headerlink" title="1、正常安装"></a>1、正常安装</h4><p>(1)右键打开<code>git bash here</code>输入如下代码：<br>    <code>$ npm install -g hexo-cli</code><br>如下成功：<br><img src="https://s1.ax1x.com/2020/04/22/JNqxET.png" alt=""><br>(2)查看版本信息输入如下代码：<br>    <code>$ hexo -v</code><br><img src="https://s1.ax1x.com/2020/04/22/JNLM2d.jpg" alt=""><br>(3)初始化hexo程序任意你想要保存博客文件的位置(推荐桌面,文件名随意)输入代码：<br>    <code>$ hexo init myblog</code></p>
 <p>(4)进入<code>myblog</code>查看文件目录</p>
 <p>** node_modules: 依赖包<br>** scaffolds：生成文章的一些模板<br>** source：用来存放你的文章<br>** themes：主题<br>** _config.yml: 博客的配置文件<br>** package.json：项目所需模块项目的配置信息</p>
@@ -550,56 +550,56 @@ deploy:
 hexo g       // 生成静态网页
 hexo d       // 开始部署</code></pre><h3 id="2、访问：你的用户名-github-io查看"><a href="#2、访问：你的用户名-github-io查看" class="headerlink" title="2、访问：你的用户名.github.io查看"></a>2、访问：<code>你的用户名.github.io</code>查看</h3><h2 id="六、下载matery主题"><a href="#六、下载matery主题" class="headerlink" title="六、下载matery主题"></a>六、下载matery主题</h2><h4 id="matery"><a href="#matery" class="headerlink" title="matery"></a><a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">matery</a></h4><h2 id="七、配置matery主题"><a href="#七、配置matery主题" class="headerlink" title="七、配置matery主题"></a>七、配置matery主题</h2><h3 id="1-解压缩后，将hexo-theme-matery的文件夹复制到你-Hexo-的themes文件夹中即可。"><a href="#1-解压缩后，将hexo-theme-matery的文件夹复制到你-Hexo-的themes文件夹中即可。" class="headerlink" title="(1) 解压缩后，将hexo-theme-matery的文件夹复制到你 Hexo 的themes文件夹中即可。"></a>(1) 解压缩后，将<code>hexo-theme-matery</code>的文件夹复制到你 <code>Hexo</code> 的<code>themes</code>文件夹中即可。</h3><h3 id="2-切换主题"><a href="#2-切换主题" class="headerlink" title="(2) 切换主题"></a>(2) 切换主题</h3><pre><code>    修改 `Hexo `根目录下的` _config.yml `的 `theme `的值：`theme: hexo-theme-matery`</code></pre><h3 id="3-config-yml文件的其它修改建议"><a href="#3-config-yml文件的其它修改建议" class="headerlink" title="(3)_config.yml文件的其它修改建议:"></a>(3)<code>_config.yml</code>文件的其它修改建议:</h3><pre><code>请修改 _config.yml 的 url 的值为你的网站主 `URL（如：http://xxx.github.io）`。
 建议修改两个 `per_page `的分页条数值为 6 的倍数，如：12、18 等，这样文章列表在各个屏幕下都能较好的显示。
-如果你是中文用户，则建议修改 language 的值为` zh-CN`</code></pre><h3 id="4-新建分类-categories-页-注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签"><a href="#4-新建分类-categories-页-注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签" class="headerlink" title="(4)新建分类 categories 页(注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签)"></a>(4)新建分类 <code>categories</code> 页(<code>注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签</code>)</h3><p><code>categories</code>页是用来展示所有分类的页面，如果在你的博客 <code>source</code>目录下还没有 <code>categories/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "categories"</code><br>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>至少需要以下内容：</p>
+如果你是中文用户，则建议修改 language 的值为` zh-CN`</code></pre><h3 id="4-新建分类-categories-页-注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签"><a href="#4-新建分类-categories-页-注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签" class="headerlink" title="(4)新建分类 categories 页(注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签)"></a>(4)新建分类 <code>categories</code> 页(<code>注意页面上的分类不用你自己写，而是你在写文章时给文章写，matery会自己生成分类、标签</code>)</h3><p><code>categories</code>页是用来展示所有分类的页面，如果在你的博客 <code>source</code>目录下还没有 <code>categories/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page &quot;categories&quot;</code><br>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>至少需要以下内容：</p>
 <pre><code>---
 title: categories
 date: 2018-09-30 17:25:30
-type: "categories"
-layout: "categories"
----</code></pre><h3 id="5-新建标签-tags-页"><a href="#5-新建标签-tags-页" class="headerlink" title="(5)新建标签 tags 页"></a>(5)新建标签 tags 页</h3><p><code>tags</code> 页是用来展示所有标签的页面，如果在你的博客 <code>source</code>目录下还没有<code>tags/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "tags"</code><br>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
+type: &quot;categories&quot;
+layout: &quot;categories&quot;
+---</code></pre><h3 id="5-新建标签-tags-页"><a href="#5-新建标签-tags-页" class="headerlink" title="(5)新建标签 tags 页"></a>(5)新建标签 tags 页</h3><p><code>tags</code> 页是用来展示所有标签的页面，如果在你的博客 <code>source</code>目录下还没有<code>tags/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page &quot;tags&quot;</code><br>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
 <pre><code>---
 title: tags
 date: 2018-09-30 18:23:38
-type: "tags"
-layout: "tags"
----</code></pre><h3 id="6-新建关于我-about-页"><a href="#6-新建关于我-about-页" class="headerlink" title="(6)新建关于我 about 页"></a>(6)新建关于我 <code>about</code> 页</h3><p>about 页是用来展示关于我和我的博客信息的页面，如果在你的博客 <code>source</code>目录下还没有<code>about/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "about"</code><br>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
+type: &quot;tags&quot;
+layout: &quot;tags&quot;
+---</code></pre><h3 id="6-新建关于我-about-页"><a href="#6-新建关于我-about-页" class="headerlink" title="(6)新建关于我 about 页"></a>(6)新建关于我 <code>about</code> 页</h3><p>about 页是用来展示关于我和我的博客信息的页面，如果在你的博客 <code>source</code>目录下还没有<code>about/index.md</code>文件，那么你就需要新建一个，命令如下：<br><code>hexo new page &quot;about&quot;</code><br>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
 <pre><code>---
 title: about
 date: 2018-09-30 17:25:30
-type: "about"
-layout: "about"
----</code></pre><h3 id="7-新建友情连接-friends页（可选的）"><a href="#7-新建友情连接-friends页（可选的）" class="headerlink" title="(7)新建友情连接 friends页（可选的）"></a>(7)新建友情连接 <code>friends</code>页（可选的）</h3><p><code>friends</code> 页是用来展示友情连接信息的页面，如果在你的博客 source 目录下还没有<code>friends/index.md</code> 文件，那么你就需要新建一个，命令如下：<br><code>hexo new page "friends"</code><br>编辑你刚刚新建的页面文件 <code>/source/friends/index.md</code>至少需要以下内容：</p>
+type: &quot;about&quot;
+layout: &quot;about&quot;
+---</code></pre><h3 id="7-新建友情连接-friends页（可选的）"><a href="#7-新建友情连接-friends页（可选的）" class="headerlink" title="(7)新建友情连接 friends页（可选的）"></a>(7)新建友情连接 <code>friends</code>页（可选的）</h3><p><code>friends</code> 页是用来展示友情连接信息的页面，如果在你的博客 source 目录下还没有<code>friends/index.md</code> 文件，那么你就需要新建一个，命令如下：<br><code>hexo new page &quot;friends&quot;</code><br>编辑你刚刚新建的页面文件 <code>/source/friends/index.md</code>至少需要以下内容：</p>
 <pre><code>---
 title: friends
 date: 2018-12-12 21:25:30
-type: "friends"
-layout: "friends"
+type: &quot;friends&quot;
+layout: &quot;friends&quot;
 ---</code></pre><p>同时，在你的博客 <code>source</code> 目录下新建 <code>_data</code>目录，在 <code>_data</code>目录中新建 <code>friends.json</code> 文件，文件内容如下所示：</p>
 <pre><code>[{
-    "avatar": "http://image.luokangyuan.com/1_qq_27922023.jpg",
-    "name": "码酱",
-    "introduction": "我不是大佬，只是在追寻大佬的脚步",
-    "url": "http://luokangyuan.com/",
-    "title": "前去学习"
+    &quot;avatar&quot;: &quot;http://image.luokangyuan.com/1_qq_27922023.jpg&quot;,
+    &quot;name&quot;: &quot;码酱&quot;,
+    &quot;introduction&quot;: &quot;我不是大佬，只是在追寻大佬的脚步&quot;,
+    &quot;url&quot;: &quot;http://luokangyuan.com/&quot;,
+    &quot;title&quot;: &quot;前去学习&quot;
 }, {
-    "avatar": "http://image.luokangyuan.com/4027734.jpeg",
-    "name": "闪烁之狐",
-    "introduction": "编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬",
-    "url": "https://blinkfox.github.io/",
-    "title": "前去学习"
+    &quot;avatar&quot;: &quot;http://image.luokangyuan.com/4027734.jpeg&quot;,
+    &quot;name&quot;: &quot;闪烁之狐&quot;,
+    &quot;introduction&quot;: &quot;编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬&quot;,
+    &quot;url&quot;: &quot;https://blinkfox.github.io/&quot;,
+    &quot;title&quot;: &quot;前去学习&quot;
 }, {
-    "avatar": "http://image.luokangyuan.com/avatar.jpg",
-    "name": "ja_rome",
-    "introduction": "平凡的脚步也可以走出伟大的行程",
-    "url": "ttps://me.csdn.net/jlh912008548",
-    "title": "前去学习"
+    &quot;avatar&quot;: &quot;http://image.luokangyuan.com/avatar.jpg&quot;,
+    &quot;name&quot;: &quot;ja_rome&quot;,
+    &quot;introduction&quot;: &quot;平凡的脚步也可以走出伟大的行程&quot;,
+    &quot;url&quot;: &quot;ttps://me.csdn.net/jlh912008548&quot;,
+    &quot;title&quot;: &quot;前去学习&quot;
 }]</code></pre><h3 id="8-代码高亮"><a href="#8-代码高亮" class="headerlink" title="(8)代码高亮"></a>(8)代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 hexo-prism-plugin 的 Hexo 插件来做代码高亮，安装命令如下：<br><code>npm i -S hexo-prism-plugin</code><br>然后，修改 <code>Hexo</code>根目录下 <code>_config.yml</code> 文件中<code>highlight.enable</code> 的值为 <code>false</code>，并新增<code>prism</code> 插件相关的配置，主要配置如下：</p>
 <pre><code>highlight:
   enable: false
 
 prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
+  mode: &#39;preprocess&#39;    # realtime/preprocess
+  theme: &#39;tomorrow&#39;
   line_number: false    # default false
   custom_css:</code></pre><h3 id="9-搜索"><a href="#9-搜索" class="headerlink" title="(9)搜索"></a>(9)搜索</h3><p>本主题中还使用到了 <code>hexo-generator-search</code> 的 <code>Hex</code>o 插件来做内容搜索，安装命令如下：<br><code>npm install hexo-generator-search --save</code><br>在 <code>Hexo</code>根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
 <pre><code>search:
@@ -607,7 +607,7 @@ prism_plugin:
   field: post</code></pre><h3 id="10-中文链接转拼音（可选的）"><a href="#10-中文链接转拼音（可选的）" class="headerlink" title="(10)中文链接转拼音（可选的）"></a>(10)中文链接转拼音（可选的）</h3><p>如果你的文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。我们可以用<code>hexo-permalink-pinyin Hexo</code>插件使在生成文章时生成中文拼音的永久链接。<br>安装命令如下：<br><code>npm i hexo-permalink-pinyin --save</code><br>在 <code>Hexo</code>根目录下的<code>_config.yml</code>文件中，新增以下的配置项：</p>
 <pre><code>permalink_pinyin:
   enable: true
-  separator: '-' # default: '-'</code></pre><h3 id="11-文章字数统计插件（可选的）"><a href="#11-文章字数统计插件（可选的）" class="headerlink" title="(11)文章字数统计插件（可选的）"></a>(11)文章字数统计插件（可选的）</h3><p>如果你想要在文章中显示文章字数、阅读时长信息，可以安装 <code>hexo-wordcount</code>插件。<br>安装命令如下：<br><code>npm i --save hexo-wordcount</code><br>然后只需在本主题下的 <code>_config.yml</code>文件中，激活以下配置项即可：</p>
+  separator: &#39;-&#39; # default: &#39;-&#39;</code></pre><h3 id="11-文章字数统计插件（可选的）"><a href="#11-文章字数统计插件（可选的）" class="headerlink" title="(11)文章字数统计插件（可选的）"></a>(11)文章字数统计插件（可选的）</h3><p>如果你想要在文章中显示文章字数、阅读时长信息，可以安装 <code>hexo-wordcount</code>插件。<br>安装命令如下：<br><code>npm i --save hexo-wordcount</code><br>然后只需在本主题下的 <code>_config.yml</code>文件中，激活以下配置项即可：</p>
 <pre><code>wordCount:
   enable: false # 将这个值设置为 true 即可.
   postWordCount: true
@@ -620,11 +620,11 @@ prism_plugin:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: ' '
+  content_limit_delim: &#39; &#39;
   order_by: -date</code></pre><p>执行<code>hexo clean &amp;&amp; hexo g</code> 重新生成博客文件，然后在 <code>public</code> 文件夹中即可看到 <code>atom.xml</code>文件，说明你已经安装成功了。</p>
 <h3 id="13-修改社交链接-主题中本来就有不用复制粘贴，源代码中修改即可"><a href="#13-修改社交链接-主题中本来就有不用复制粘贴，源代码中修改即可" class="headerlink" title="(13)修改社交链接(主题中本来就有不用复制粘贴，源代码中修改即可)"></a>(13)修改社交链接(<code>主题中本来就有不用复制粘贴，源代码中修改即可</code>)</h3><p>在主题的 _config.yml 文件中，默认支持 QQ、GitHub 和邮箱的配置，你可以在主题文件的 <code>/layout/_partial/social-link.ejs</code> 文件中，新增、修改你需要的社交链接地址，增加链接可参考如下代码：</p>
-<pre><code>&lt;a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"&gt;
-    &lt;i class="fa fa-github"&gt;&lt;/i&gt;
+<pre><code>&lt;a href=&quot;https://github.com/blinkfox&quot; class=&quot;tooltipped&quot; target=&quot;_blank&quot; data-tooltip=&quot;访问我的GitHub&quot; data-position=&quot;top&quot; data-delay=&quot;50&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;</code></pre><p>其中，社交图标（如：<code>fa-github</code>）你可以在<code>Font Awesome</code>中搜索找到。以下是常用社交图标的标识，供你参考：</p>
 <pre><code>    Facebook: fa-facebook
     Twitter: fa-twitter
@@ -640,20 +640,20 @@ prism_plugin:
 <h3 id="15-配置音乐播放器（可选的）"><a href="#15-配置音乐播放器（可选的）" class="headerlink" title="(15)配置音乐播放器（可选的）"></a>(15)配置音乐播放器（可选的）</h3><p>要支持音乐播放，就必须开启音乐的播放配置和音乐数据的文件。</p>
 <p>首先，在你的博客 <code>source</code> 目录下的 <code>_data</code> 目录（没有的话就新建一个）中新建 <code>musics.json</code> 文件，文件内容如下所示：</p>
 <pre><code>[{
-    "name": "五月雨变奏电音",
-    "artist": "AnimeVibe",
-    "url": "http://xxx.com/music1.mp3",
-    "cover": "http://xxx.com/music-cover1.png"
+    &quot;name&quot;: &quot;五月雨变奏电音&quot;,
+    &quot;artist&quot;: &quot;AnimeVibe&quot;,
+    &quot;url&quot;: &quot;http://xxx.com/music1.mp3&quot;,
+    &quot;cover&quot;: &quot;http://xxx.com/music-cover1.png&quot;
 }, {
-    "name": "Take me hand",
-    "artist": "DAISHI DANCE,Cecile Corbel",
-    "url": "/medias/music/music2.mp3",
-    "cover": "/medias/music/cover2.png"
+    &quot;name&quot;: &quot;Take me hand&quot;,
+    &quot;artist&quot;: &quot;DAISHI DANCE,Cecile Corbel&quot;,
+    &quot;url&quot;: &quot;/medias/music/music2.mp3&quot;,
+    &quot;cover&quot;: &quot;/medias/music/cover2.png&quot;
 }, {
-    "name": "Shape of You",
-    "artist": "J.Fla",
-    "url": "http://xxx.com/music3.mp3",
-    "cover": "http://xxx.com/music-cover3.png"
+    &quot;name&quot;: &quot;Shape of You&quot;,
+    &quot;artist&quot;: &quot;J.Fla&quot;,
+    &quot;url&quot;: &quot;http://xxx.com/music3.mp3&quot;,
+    &quot;cover&quot;: &quot;http://xxx.com/music-cover3.png&quot;
 }]</code></pre><p>注：以上 <code>JSON</code>中的属性：<code>name、artist、url、cover</code> 分别表示音乐的名称、作者、音乐文件地址、音乐封面。<br>然后，在主题的 <code>_config.yml</code>配置文件中激活配置即可：</p>
 <pre><code># 是否在首页显示音乐.
 music:
@@ -662,10 +662,10 @@ music:
   title: 听听音乐
   fixed: false # 是否开启吸底模式
   autoplay: false # 是否自动播放
-  theme: '#42b983'
-  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
-  order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
-  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
+  theme: &#39;#42b983&#39;
+  loop: &#39;all&#39; # 音频循环播放, 可选值: &#39;all&#39;, &#39;one&#39;, &#39;none&#39;
+  order: &#39;list&#39; # 音频循环顺序, 可选值: &#39;list&#39;, &#39;random&#39;
+  preload: &#39;auto&#39; # 预加载，可选值: &#39;none&#39;, &#39;metadata&#39;, &#39;auto&#39;
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: false # 列表默认折叠
   listMaxHeight: # 列表最大高度</code></pre><h3 id="16-文章-Front-matter介绍-阅读文章时显示的信息"><a href="#16-文章-Front-matter介绍-阅读文章时显示的信息" class="headerlink" title="(16)文章 Front-matter介绍(阅读文章时显示的信息)"></a>(16)文章 <code>Front-matter</code>介绍(阅读文章时显示的信息)</h3><pre><code>---
@@ -698,7 +698,7 @@ tags:
     /* 动态切换背景颜色. */
 }</code></pre><h3 id="2-修改-banner图和文章特色图-只要名字命名一样就行，图过大加载慢，图小不清晰图片批量压缩（密码：yvb5）"><a href="#2-修改-banner图和文章特色图-只要名字命名一样就行，图过大加载慢，图小不清晰图片批量压缩（密码：yvb5）" class="headerlink" title="(2)修改 banner图和文章特色图(只要名字命名一样就行，图过大加载慢，图小不清晰图片批量压缩（密码：yvb5）)"></a>(2)修改 <code>banner</code>图和文章特色图(只要名字命名一样就行，图过大加载慢，图小不清晰<a href="https://pan.baidu.com/s/1DlxWnHm5GLiopsJ21wkKyg" target="_blank" rel="noopener">图片批量压缩（密码：yvb5）</a>)</h3><p>你可以直接在 <code>/source/medias/banner</code>文件夹中更换你喜欢的 <code>banner</code> 图片，主题代码中是每天动态切换一张，只需 7 张即可。如果你会 <code>JavaScript</code> 代码，可以修改成你自己喜欢切换逻辑，如：随机切换等，</p>
 <p><code>banner</code>切换的代码位置在 /<code>layout/_partial/bg-cover-content.ejs</code>文件的 <code>&lt;script&gt;&lt;/script&gt;</code> 代码中：</p>
-<p><code>$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');</code></p>
+<p><code>$(&#39;.bg-cover&#39;).css(&#39;background-image&#39;, &#39;url(/medias/banner/&#39; + new Date().getDay() + &#39;.jpg)&#39;);</code></p>
 <p>在<code>/source/medias/featureimages</code> 文件夹中默认有 24 张特色图片，你可以再增加或者减少，并需要在 _config.yml 做同步修改。</p>
 <h3 id="3-添加emoji表情支持（可选的）"><a href="#3-添加emoji表情支持（可选的）" class="headerlink" title="(3)添加emoji表情支持（可选的）"></a>(3)添加emoji表情支持（可选的）</h3><p>本主题新增了对emoji表情的支持，使用到了 hexo-filter-github-emojis 的 Hexo 插件来支持 emoji表情的生成，把对应的markdown emoji语法（::,例如：:smile:）转变成会跳跃的emoji表情，安装命令如下：<br><code>npm install hexo-filter-github-emojis --save</code><br>在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
 <pre><code>githubEmojis:
@@ -720,38 +720,20 @@ guest_info: nick,mail,link
 pageSize: 10</code></pre><h3 id="5-修改头部幻灯片滤镜颜色和透明度"><a href="#5-修改头部幻灯片滤镜颜色和透明度" class="headerlink" title="(5)修改头部幻灯片滤镜颜色和透明度"></a>(5)修改头部幻灯片滤镜颜色和透明度</h3><p>打开matery.css，找到450行左右(建议直接注释掉，不好看)<br><img src="https://s1.ax1x.com/2020/04/22/JUSNmd.png" alt=""></p>
 <h3 id="6-添加樱花飘落效果"><a href="#6-添加樱花飘落效果" class="headerlink" title="(6)添加樱花飘落效果"></a>(6)添加樱花飘落效果</h3><p>在<code>themes/matery/source/js</code>目录下新建<code>sakura.js</code>文件，打开这个网址<a href="https://cdn.jsdelivr.net/gh/baifeng66/cdn@1.1/source/js/sakura.js" target="_blank" rel="noopener">传送门</a>，将内容复制粘贴到sakura.js即可。</p>
 <p>然后再themes/matery/layout/layout.ejs文件内添加下面的内容：</p>
-<pre><code>&lt;script type="text/javascript"&gt;
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
 //只在桌面版网页启用特效
 var windowWidth = $(window).width();
 if (windowWidth &gt; 768) {
-    document.write('&lt;script type="text/javascript" src="/js/sakura.js"&gt;&lt;\/script&gt;');
+    document.write(&#39;&lt;script type=&quot;text/javascript&quot; src=&quot;/js/sakura.js&quot;&gt;&lt;\/script&gt;&#39;);
 }
 &lt;/script&gt;</code></pre><h3 id="7-添加雪花飘落效果"><a href="#7-添加雪花飘落效果" class="headerlink" title="(7)添加雪花飘落效果"></a>(7)添加雪花飘落效果</h3><p>在<code>themes/matery/source/js</code>目录下新建<code>snow.js</code>文件，打开这个网址<a href="https://cdn.jsdelivr.net/gh/baifeng66/cdn@1.1/source/js/snow.js" target="_blank" rel="noopener">传送门</a>，将内容复制粘贴到<code>snow.js</code>即可。<br>然后再<code>themes/matery/layout/layout.ejs</code>文件内添加下面的内容：</p>
-<pre><code>&lt;script src="/js/snow.js"&gt;&lt;/script&gt;</code></pre><h3 id="8-文章生成永久链接-提交github时会自动生成"><a href="#8-文章生成永久链接-提交github时会自动生成" class="headerlink" title="(8)文章生成永久链接(提交github时会自动生成)"></a>(8)文章生成永久链接(提交github时会自动生成)</h3><p>主题默认的文章链接配置是<br><code>permalink: :year/:month/:day/:title</code><br>这种生成的链接地址很长，文章版权的链接地址会出现一大串字符编码，一点也不好看。因此需要修改文章生成链接的格式。<br>首先再根目录下执行下面的命令：<br><code>npm install hexo-abbrlink --save</code><br>然后再根目录yml文件下添加如下配置：</p>
+<pre><code>&lt;script src=&quot;/js/snow.js&quot;&gt;&lt;/script&gt;</code></pre><h3 id="8-文章生成永久链接-提交github时会自动生成"><a href="#8-文章生成永久链接-提交github时会自动生成" class="headerlink" title="(8)文章生成永久链接(提交github时会自动生成)"></a>(8)文章生成永久链接(提交github时会自动生成)</h3><p>主题默认的文章链接配置是<br><code>permalink: :year/:month/:day/:title</code><br>这种生成的链接地址很长，文章版权的链接地址会出现一大串字符编码，一点也不好看。因此需要修改文章生成链接的格式。<br>首先再根目录下执行下面的命令：<br><code>npm install hexo-abbrlink --save</code><br>然后再根目录yml文件下添加如下配置：</p>
 <pre><code>abbrlink:
     alg: crc16   #算法： crc16(default) and crc32
     rep: hex     #进制： dec(default) and hex: dec #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制</code></pre><p>然后再根目录yml文件下<code>permalink</code>的值修改为：<br><code>permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink</code><br>生成完后，原md文件的Front-matter 内会增加abbrlink 字段，值为生成的ID 。这个字段确保了在我们修改了Front-matter 内的博客标题title或创建日期date字段之后而不会改变链接地址。</p>
 <h2 id="提交github（剧终）"><a href="#提交github（剧终）" class="headerlink" title="提交github（剧终）"></a>提交github（剧终）</h2><pre><code>hexo clean   // 清除缓存 网页正常情况下可以忽略此条命令
 hexo g       // 生成静态网页
-hexo d       // 开始部署</code></pre><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+hexo d       // 开始部署</code></pre>
             </div>
             <hr/>
 
@@ -1258,31 +1240,31 @@ hexo d       // 开始部署</code></pre><script>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04233337.html">
+                <a href="/2020/042423408.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python操作数据库">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Hexo文章编辑后台搭建">
                         
-                        <span class="card-title">python操作数据库</span>
+                        <span class="card-title">Hexo文章编辑后台搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python笔记
+                            hexo博客后台搭建
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
                                 </a>
                             
                             
@@ -1292,12 +1274,12 @@ hexo d       // 开始部署</code></pre><script>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                        <span class="chip bg-color">后台</span>
                     </a>
                     
                 </div>

@@ -28,8 +28,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Lingisme9" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Lingisme9" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -497,7 +497,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hexo博客后台搭建"><a href="#Hexo博客后台搭建" class="headerlink" title="Hexo博客后台搭建"></a>Hexo博客后台搭建</h1><iframe frameborder="no" bordered="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28208212&amp;auto=1&amp;height=66"></iframe>
+                <h1 id="Hexo博客后台搭建"><a href="#Hexo博客后台搭建" class="headerlink" title="Hexo博客后台搭建"></a>Hexo博客后台搭建</h1><iframe frameborder="no" bordered="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28208212&auto=1&height=66"></iframe>
 
 <h2 id="一、插件介绍"><a href="#一、插件介绍" class="headerlink" title="一、插件介绍"></a>一、插件介绍</h2><pre><code> hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。如果你使用的是非静态托管服务器，比如自己买的主机搭建的hexo，那么一定要设置hexo-admin 的密码，否则谁都可以编辑你的文章。</code></pre><h2 id="二、实例"><a href="#二、实例" class="headerlink" title="二、实例"></a>二、实例</h2><p><img src="https://s1.ax1x.com/2020/04/24/JDZBTI.png" alt="JDZBTI.png"></p>
 <p><img src="https://s1.ax1x.com/2020/04/24/JDeicD.png" alt="JDeicD.png"></p>
@@ -516,12 +516,12 @@
 <p><img src="https://s1.ax1x.com/2020/04/24/JDmuZ9.png" alt="JDmuZ9.png"></p>
 <p>然后填入如下代码</p>
 <pre><code>hexo g -d
-</code></pre><p>然后在_config.yml中的admin下添加<code>deployCommand: 'hexo-pubish.bat'</code>(和之前创建的文件名相同)</p>
+</code></pre><p>然后在_config.yml中的admin下添加<code>deployCommand: &#39;hexo-pubish.bat&#39;</code>(和之前创建的文件名相同)</p>
 <pre><code>admin:
   username: myfavoritename
   password_hash: be121740bf988b2225a313fa1f107ca1
   secret: a secret something
-  deployCommand: 'hexo-pubish.bat'
+  deployCommand: &#39;hexo-pubish.bat&#39;
 </code></pre><p>设置发布执行的脚本，点击<code>Deploy</code>就会执行这个命令并提交到GitHub上。</p>
 <p><img src="https://s1.ax1x.com/2020/04/24/JDnzAs.png" alt="JDnzAs.png"></p>
 <p>开始提交：<br><img src="https://s1.ax1x.com/2020/04/24/JDKZM8.png" alt="JDKZM8.png"></p>
@@ -529,25 +529,7 @@
 <h2 id="六、其他建议：添加一键本地运行"><a href="#六、其他建议：添加一键本地运行" class="headerlink" title="六、其他建议：添加一键本地运行"></a>六、其他建议：添加一键本地运行</h2><p>根目录下新建文件<code>hexo-s.bat</code><br><img src="https://s1.ax1x.com/2020/04/24/JDuljO.png" alt="JDuljO.png"></p>
 <p>输入如下代码：</p>
 <pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s </code></pre><p>这样双击<code>hexo-s.bat</code>就可以直接本地查看了，很方便<br><img src="https://s1.ax1x.com/2020/04/24/JDuIrF.png" alt="JDuIrF.png"></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -1050,31 +1032,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/042463275.html">
+                <a href="/2020/042718991.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="python爬取网页图片">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt=" VIP视频解析网站源码（放到coding就可用）">
                         
-                        <span class="card-title">python爬取网页图片</span>
+                        <span class="card-title"> VIP视频解析网站源码（放到coding就可用）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python笔记
+                            VIP解析网站，腾讯，优酷啥的
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E6%BA%90%E7%A0%81/" class="post-category">
+                                    源码
                                 </a>
                             
                             
@@ -1084,12 +1066,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/VIP/">
+                        <span class="chip bg-color">VIP</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BE%E7%89%87/">
-                        <span class="chip bg-color">图片</span>
+                    <a href="/tags/%E6%BA%90%E7%A0%81/">
+                        <span class="chip bg-color">源码</span>
                     </a>
                     
                 </div>
@@ -1103,31 +1085,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04233337.html">
+                <a href="/2020/042219999.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python操作数据库">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="hexo框架matery主题+github搭建个人博客">
                         
-                        <span class="card-title">python操作数据库</span>
+                        <span class="card-title">hexo框架matery主题+github搭建个人博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python笔记
+                            hexo个人博客搭建
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
                                 </a>
                             
                             
@@ -1137,12 +1119,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
                     </a>
                     
                 </div>

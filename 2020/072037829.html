@@ -28,8 +28,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Lingisme9" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Lingisme9" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -489,7 +489,7 @@ import schedule
 
 def job():
         # 打开excel文件，获取处于活跃状态的表格
-        workbook = load_workbook(filename='num.xlsx')
+        workbook = load_workbook(filename=&#39;num.xlsx&#39;)
         sheet = workbook.active
         for i in [2, 3, 4, 5 ,6 ,7 ,8 ,9]:
                 # 实列化对象，选择启用谷歌，打开浏览器
@@ -497,74 +497,56 @@ def job():
                 driver.implicitly_wait(10)
 
                 # 访问网页
-                driver.get("http://tjxx.lnu.edu.cn/login.asp")
+                driver.get(&quot;http://tjxx.lnu.edu.cn/login.asp&quot;)
 
                 # 输入账号
                 cell1 = sheet.cell(row=i, column=1).value
-                ele = driver.find_element_by_name("userid")
+                ele = driver.find_element_by_name(&quot;userid&quot;)
                 ele.send_keys(cell1)
 
                 # 输入密码
                 paw = sheet.cell(row=i, column=2).value
-                ele1 = driver.find_element_by_name("userpwd")
+                ele1 = driver.find_element_by_name(&quot;userpwd&quot;)
                 ele1.send_keys(paw)
 
                 # 点击登录
-                driver.find_element_by_id("formSubmitBtn").click()
+                driver.find_element_by_id(&quot;formSubmitBtn&quot;).click()
 
                 # 选中第一个无
-                ele4 = driver.find_element_by_xpath("/html/body/div[1]/form/div[3]/div[2]/label[1]/div[2]/input")
-                driver.execute_script("arguments[0].click();", ele4)
+                ele4 = driver.find_element_by_xpath(&quot;/html/body/div[1]/form/div[3]/div[2]/label[1]/div[2]/input&quot;)
+                driver.execute_script(&quot;arguments[0].click();&quot;, ele4)
 
                 # 选中第二个无
-                ele5 = driver.find_element_by_xpath("/html/body/div[1]/form/div[4]/div[2]/label[1]/div[2]/input")
-                driver.execute_script("arguments[0].click();", ele5)
+                ele5 = driver.find_element_by_xpath(&quot;/html/body/div[1]/form/div[4]/div[2]/label[1]/div[2]/input&quot;)
+                driver.execute_script(&quot;arguments[0].click();&quot;, ele5)
 
                 # 选中健康
-                ele6 = driver.find_element_by_xpath("/html/body/div[1]/form/div[5]/div[2]/label[1]/div[2]/input")
-                driver.execute_script("arguments[0].click();", ele6)
+                ele6 = driver.find_element_by_xpath(&quot;/html/body/div[1]/form/div[5]/div[2]/label[1]/div[2]/input&quot;)
+                driver.execute_script(&quot;arguments[0].click();&quot;, ele6)
 
                 # 选中隔离
-                ele7 = driver.find_element_by_xpath("/html/body/div[1]/form/div[6]/div[2]/label[1]/div[2]/input")
-                driver.execute_script("arguments[0].click();", ele7)
+                ele7 = driver.find_element_by_xpath(&quot;/html/body/div[1]/form/div[6]/div[2]/label[1]/div[2]/input&quot;)
+                driver.execute_script(&quot;arguments[0].click();&quot;, ele7)
 
                 # 是否在校
-                ele8 = driver.find_element_by_xpath("/html/body/div[1]/form/div[7]/div[2]/label[1]/div[2]/input")
-                driver.execute_script("arguments[0].click();", ele8)
+                ele8 = driver.find_element_by_xpath(&quot;/html/body/div[1]/form/div[7]/div[2]/label[1]/div[2]/input&quot;)
+                driver.execute_script(&quot;arguments[0].click();&quot;, ele8)
                 # # 提交
-                # driver.find_element_by_xpath("/html/body/div[1]/form/div[8]/a").click()
+                # driver.find_element_by_xpath(&quot;/html/body/div[1]/form/div[8]/a&quot;).click()
                 # # 确认提交
-                # driver.find_element_by_xpath("/html/body/div[3]/div[2]/div[2]/a[2]").click()
+                # driver.find_element_by_xpath(&quot;/html/body/div[3]/div[2]/div[2]/a[2]&quot;).click()
                 # 退出
-                # driver.find_element_by_xpath("/html/body/div/div[2]/div[3]/a").click()
+                # driver.find_element_by_xpath(&quot;/html/body/div/div[2]/div[3]/a&quot;).click()
                 driver.quit()
-                print("提交成功")
+                print(&quot;提交成功&quot;)
 
-schedule.every().day.at("21:48").do(job)
+schedule.every().day.at(&quot;21:48&quot;).do(job)
 
 while True:
     schedule.run_pending()
 time.sleep(3)
 
-</code></pre><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+</code></pre>
             </div>
             <hr/>
 
@@ -1055,31 +1037,30 @@ time.sleep(3)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/092226468.html">
+                <a href="/2020/072037829.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="人工智能">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="辽大自动疫情打卡">
                         
-                        <span class="card-title">人工智能</span>
+                        <span class="card-title">辽大自动疫情打卡</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            人工智能作业1.第一章：1.为什么神经网络在人工智能第一次浪潮中并没有获得成功，而如今却获得突飞猛进的进展？
-答：
-    50年代末，F·Rosenblatt设计制作了“感知机”，它是一种多层的神经网络。这项工作首次把人工神经网络的研究从
+                            python 自动化疫情打卡
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1088,6 +1069,7 @@ time.sleep(3)
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1098,48 +1080,32 @@ time.sleep(3)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/053054657.html">
+                <a href="/2020/043011637.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python学习笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="css字体和背景">
                         
-                        <span class="card-title">python学习笔记</span>
+                        <span class="card-title">css字体和背景</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人学习python笔记
+                            css 笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            坏蛋先生
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">程序设计</span>
-                    </a>
-                    
                 </div>
                 
             </div>
